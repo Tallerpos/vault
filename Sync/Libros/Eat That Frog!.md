@@ -17,6 +17,7 @@ estado: leyendo
 ## Tesis
 
 ## Notas brutas
+- [[21 maneras]]
 
 ---
 
