@@ -3,7 +3,7 @@
 ## Mis libros
 ```dataview
 TABLE autor, año, rating, estado
-FROM ""
+FROM "Libros"
 WHERE tipo = "libro"
 SORT rating DESC
 ```
@@ -36,8 +36,8 @@ if (temaMap.size === 0) {
 ## Ideas recientes
 ```dataview
 TABLE fuente, temas
-FROM ""
-WHERE tipo = "ideas"
+FROM "ideas"
+WHERE tipo = "idea"
 SORT file.ctime DESC
 LIMIT 10
 ```

@@ -15,7 +15,7 @@ const link = nombre ? "[[" + nombre + "]]" : "";
 // ── 2. TEMAS CONTROLADOS ─────────────────────────────
 // Lee temas existentes de otras ideas para no inventar nuevos
 const todasIdeas = app.vault.getMarkdownFiles()
-  .filter(f => f.path.startsWith("Ideas/"));
+  .filter(f => f.path.startsWith("ideas/"));
 
 const temasSet = new Set();
 for (const idea of todasIdeas) {
