@@ -8,14 +8,6 @@ tags: config
 
 ```space-lua
 -- priority: 100
-config.set("shortcuts", {
-  { command = "Navigate: Home",    key = "Ctrl-Alt-h" },
-  { command = "Journal: Today",    key = "Ctrl-Shift-j" },
-  { command = "Quick Note",        key = "Ctrl-Shift-n" },
-  { command = "Insert: Date",      key = "Ctrl-Shift-d" },
-  { command = "Stats: Word Count", key = "Ctrl-Shift-w" },
-})
-
 config.set("std.widgets.toc.minHeaders", 3)
 ```
 
@@ -56,17 +48,15 @@ end
 
 command.define {
   name = "Journal: Today",
+  key = "Ctrl-Shift-j",
   run = function()
     local page = "Journal/" .. os.date("%Y/%m/%Y-%m-%d")
-    local found = query[[
-      from p = index.tag "page"
-      where p.name == page
-    ]]
+    local found = query[[from p = index.tag "page" where p.name == page]]
     if #found == 0 then
       space.writePage(page,
-        "---\ntags: journal\ndate: " .. os.date("%Y-%m-%d") .. "\n---\n\n" ..
-        "# " .. os.date("%Y-%m-%d") .. "\n\n" ..
-        "## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n\n"
+        "---\ntags: journal\ndate: " .. os.date("%Y-%m-%d") .. "\n---\n\n"
+        .. "# " .. os.date("%Y-%m-%d") .. "\n\n"
+        .. "## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n\n"
       )
     end
     editor.navigate { kind = "page", page = page }
@@ -75,17 +65,16 @@ command.define {
 
 command.define {
   name = "Quick Note",
+  key = "Ctrl-Shift-n",
   run = function()
     local name = editor.prompt("Nombre de la nota:")
     if not name or name == "" then return end
     local page = "Notas/" .. name
-    local found = query[[
-      from p = index.tag "page"
-      where p.name == page
-    ]]
+    local found = query[[from p = index.tag "page" where p.name == page]]
     if #found == 0 then
       space.writePage(page,
-        "---\ntags: note\ncreated: " .. datetime_now() .. "\n---\n\n# " .. name .. "\n\n"
+        "---\ntags: note\ncreated: " .. datetime_now() .. "\n---\n\n"
+        .. "# " .. name .. "\n\n"
       )
     end
     editor.navigate { kind = "page", page = page }
@@ -94,6 +83,7 @@ command.define {
 
 command.define {
   name = "Insert: Date",
+  key = "Ctrl-Shift-d",
   run = function()
     local pos = editor.getCursor()
     editor.insertAtPos(pos, os.date("%Y-%m-%d"))
@@ -110,6 +100,7 @@ command.define {
 
 command.define {
   name = "Stats: Word Count",
+  key = "Ctrl-Shift-w",
   run = function()
     local text = editor.getText()
     local words = word_count(text)
@@ -126,6 +117,7 @@ command.define {
 
 command.define {
   name = "Navigate: Home",
+  key = "Ctrl-Alt-h",
   run = function()
     editor.navigate { kind = "page", page = "index" }
   end
@@ -145,7 +137,109 @@ command.define {
 }
 ```
 
+## 4 · Widgets
 
+```space-lua
+-- priority: 10
+
+function callout(tipo, titulo, contenido)
+  local icon = "i"
+  if tipo == "tip"     then icon = "!" end
+  if tipo == "warning" then icon = "?" end
+  if tipo == "danger"  then icon = "X" end
+  return widget.new {
+    display = "block",
+    html = "<div class='sb-callout sb-callout-" .. (tipo or "note") .. "'>"
+      .. "<div class='sb-callout-header'>"
+      .. "<span class='sb-callout-icon'>[" .. icon .. "]</span>"
+      .. "<strong>" .. (titulo or "Nota") .. "</strong>"
+      .. "</div>"
+      .. "<p class='sb-callout-body'>" .. (contenido or "") .. "</p>"
+      .. "</div>"
+  }
+end
+
+function progress(pct, label)
+  pct = math.max(0, math.min(100, pct or 0))
+  local color = "#ef4444"
+  if pct >= 80 then color = "#22c55e"
+  elseif pct >= 40 then color = "#f59e0b" end
+  return widget.new {
+    display = "block",
+    html = "<div class='sb-progress-wrap'>"
+      .. "<div class='sb-progress-header'>"
+      .. "<span>" .. (label or "Progreso") .. "</span>"
+      .. "<span class='sb-progress-pct'>" .. tostring(pct) .. "%</span>"
+      .. "</div>"
+      .. "<div class='sb-progress-track'>"
+      .. "<div class='sb-progress-bar' style='width:" .. tostring(pct) .. "%;background:" .. color .. "'></div>"
+      .. "</div>"
+      .. "</div>"
+  }
+end
+
+function page_stats()
+  local text = editor.getText()
+  local words = word_count(text)
+  local lines = 0
+  for _ in text:gmatch("\n") do lines = lines + 1 end
+  local tt, td = 0, 0
+  for _ in text:gmatch("%- %[.%]") do tt = tt + 1 end
+  for _ in text:gmatch("%- %[x%]") do td = td + 1 end
+  return widget.new {
+    display = "block",
+    html = "<div class='sb-stats-row'>"
+      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(words) .. "</div><div class='sb-stat-lbl'>palabras</div></div>"
+      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(lines + 1) .. "</div><div class='sb-stat-lbl'>lineas</div></div>"
+      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(td) .. "/" .. tostring(tt) .. "</div><div class='sb-stat-lbl'>tareas</div></div>"
+      .. "</div>"
+  }
+end
+
+function recent_pages(n)
+  n = n or 5
+  local pages = query[[from p = index.tag "page" order by p.lastModified desc]]
+  local lines = {}
+  local count = 0
+  for _, p in ipairs(pages) do
+    if count >= n then break end
+    count = count + 1
+    local d = ""
+    if p.lastModified then
+      d = " (" .. date_format(p.lastModified) .. ")"
+    end
+    table.insert(lines, "- [[" .. p.name .. "]]" .. d)
+  end
+  if #lines == 0 then
+    return widget.new { display = "block", markdown = "Sin paginas." }
+  end
+  return widget.new { display = "block", markdown = table.concat(lines, "\n") }
+end
+
+function badge(texto, color)
+  color = color or "#4f98a3"
+  return widget.new {
+    display = "inline",
+    html = "<span class='sb-badge' style='background:" .. color .. "20;color:" .. color .. ";border:1px solid " .. color .. "50'>" .. texto .. "</span>"
+  }
+end
+
+function today_chip()
+  return widget.new {
+    display = "inline",
+    html = "<span class='sb-date-chip'>Hoy: " .. os.date("%d/%m/%Y") .. "</span>"
+  }
+end
+
+function kv_table(datos)
+  local header = "| Clave | Valor |\n|---|---|\n"
+  local rows = ""
+  for _, pair in ipairs(datos) do
+    rows = rows .. "| " .. tostring(pair) .. " | " .. tostring(pair[1]) .. " |\n"
+  end
+  return widget.new { display = "block", markdown = header .. rows }
+end
+```
 
 ## 5 · Estilos
 
@@ -175,25 +269,20 @@ command.define {
 
 .sb-badge     { border-radius: 999px; padding: 1px 8px; font-size: 0.76em; font-weight: 600; letter-spacing: 0.03em; vertical-align: middle; }
 .sb-date-chip { font-size: 0.86em; color: var(--editor-secondary-text-color); }
-
-.sb-kv-table  { border-collapse: collapse; width: 100%; font-size: 0.88em; margin: 8px 0 12px; border: 1px solid var(--editor-border-color, rgba(128,128,128,0.2)); border-radius: 8px; overflow: hidden; }
-.sb-kv-key    { padding: 6px 14px; font-weight: 600; color: var(--editor-secondary-text-color); background: var(--editor-subtle-background-color, rgba(128,128,128,0.06)); border-bottom: 1px solid var(--editor-border-color, rgba(128,128,128,0.15)); white-space: nowrap; width: 1%; }
-.sb-kv-val    { padding: 6px 14px; border-bottom: 1px solid var(--editor-border-color, rgba(128,128,128,0.1)); }
-.sb-kv-table tr:last-child td { border-bottom: none; }
 ```
 
 ---
 
 ## Referencia
 
-| Expresion | Resultado |
+| Expresion | Uso |
 |---|---|
 | `${date_today()}` | `2026-04-04` |
 | `${time_now()}` | `14:35` |
-| `${today_chip()}` | Chip fecha |
+| `${today_chip()}` | Chip fecha inline |
 | `${page_stats()}` | Palabras / lineas / tareas |
 | `${progress(72, "Sprint 3")}` | Barra de progreso |
 | `${callout("tip", "Idea", "texto")}` | Callout estilizado |
 | `${badge("v2.5", "#22c55e")}` | Etiqueta de color |
 | `${recent_pages(5)}` | 5 paginas recientes |
-| `${kv_table({{"Clave","Valor"}})}` | Tabla clave-valor |
+| `${kv_table({{"Estado","Activo"}})}` | Tabla clave-valor |
