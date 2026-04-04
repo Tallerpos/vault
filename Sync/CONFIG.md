@@ -4,14 +4,17 @@ tags: config
 
 # CONFIG
 
-## 1 · Config
+## Setup
 
 ```space-lua
 -- priority: 100
+config.set("std.widgets.toc.enabled", true)
 config.set("std.widgets.toc.minHeaders", 3)
+config.set("std.widgets.linkedMentions.enabled", true)
+config.set("std.widgets.linkedTasks.enabled", true)
 ```
 
-## 2 · Utilidades
+## Utils
 
 ```space-lua
 -- priority: 50
@@ -28,151 +31,160 @@ function datetime_now()
   return os.date("%Y-%m-%d %H:%M")
 end
 
-function date_format(ts, fmt)
-  fmt = fmt or "%Y-%m-%d"
-  if ts > 1e10 then ts = ts / 1000 end
-  return os.date(fmt, ts)
-end
-
 function word_count(text)
   local n = 0
-  for _ in text:gmatch("%S+") do n = n + 1 end
+  for _ in text:gmatch("%S+") do
+    n = n + 1
+  end
   return n
+end
+
+function date_format(ts, fmt)
+  fmt = fmt or "%Y-%m-%d"
+  if ts > 10000000000 then
+    ts = ts / 1000
+  end
+  return os.date(fmt, ts)
 end
 ```
 
-## 3 · Comandos
+## Slash Commands
 
 ```space-lua
 -- priority: 10
 
-command.define {
-  name = "Journal: Today",
-  key = "Ctrl-Shift-j",
+slashCommand.define {
+  name = "date",
+  run = function()
+    editor.insertAtCursor(os.date("%Y-%m-%d"))
+  end
+}
+
+slashCommand.define {
+  name = "time",
+  run = function()
+    editor.insertAtCursor(os.date("%H:%M"))
+  end
+}
+
+slashCommand.define {
+  name = "datetime",
+  run = function()
+    editor.insertAtCursor(os.date("%Y-%m-%d %H:%M"))
+  end
+}
+
+slashCommand.define {
+  name = "todo",
+  run = function()
+    editor.insertAtCursor("- [ ] ")
+  end
+}
+
+slashCommand.define {
+  name = "done",
+  run = function()
+    editor.insertAtCursor("- [x] ")
+  end
+}
+
+slashCommand.define {
+  name = "hr",
+  run = function()
+    editor.insertAtCursor("\n\n---\n\n")
+  end
+}
+
+slashCommand.define {
+  name = "journal",
   run = function()
     local page = "Journal/" .. os.date("%Y/%m/%Y-%m-%d")
     local found = query[[from p = index.tag "page" where p.name == page]]
     if #found == 0 then
-      space.writePage(page,
-        "---\ntags: journal\ndate: " .. os.date("%Y-%m-%d") .. "\n---\n\n"
-        .. "# " .. os.date("%Y-%m-%d") .. "\n\n"
-        .. "## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n\n"
+      space.writePage(
+        page,
+        "---\ntags: journal\ndate: "
+          .. os.date("%Y-%m-%d")
+          .. "\n---\n\n# "
+          .. os.date("%Y-%m-%d")
+          .. "\n\n## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n"
       )
     end
     editor.navigate { kind = "page", page = page }
   end
 }
 
-command.define {
-  name = "Quick Note",
-  key = "Ctrl-Shift-n",
+slashCommand.define {
+  name = "newnote",
   run = function()
     local name = editor.prompt("Nombre de la nota:")
-    if not name or name == "" then return end
-    local page = "Notas/" .. name
-    local found = query[[from p = index.tag "page" where p.name == page]]
-    if #found == 0 then
-      space.writePage(page,
-        "---\ntags: note\ncreated: " .. datetime_now() .. "\n---\n\n"
-        .. "# " .. name .. "\n\n"
-      )
+    if not name or name == "" then
+      return
     end
+    local page = "Notas/" .. name
+    space.writePage(
+      page,
+      "---\ntags: note\ncreated: "
+        .. datetime_now()
+        .. "\n---\n\n# "
+        .. name
+        .. "\n"
+    )
     editor.navigate { kind = "page", page = page }
   end
 }
 
-command.define {
-  name = "Insert: Date",
-  key = "Ctrl-Shift-d",
-  run = function()
-    local pos = editor.getCursor()
-    editor.insertAtPos(pos, os.date("%Y-%m-%d"))
-  end
-}
-
-command.define {
-  name = "Insert: DateTime",
-  run = function()
-    local pos = editor.getCursor()
-    editor.insertAtPos(pos, os.date("%Y-%m-%d %H:%M"))
-  end
-}
-
-command.define {
-  name = "Stats: Word Count",
-  key = "Ctrl-Shift-w",
+slashCommand.define {
+  name = "stats",
   run = function()
     local text = editor.getText()
     local words = word_count(text)
     local lines = 0
-    for _ in text:gmatch("\n") do lines = lines + 1 end
-    local tt, td = 0, 0
-    for _ in text:gmatch("%- %[.%]") do tt = tt + 1 end
-    for _ in text:gmatch("%- %[x%]") do td = td + 1 end
+    local total = 0
+    local done = 0
+
+    for _ in text:gmatch("\n") do
+      lines = lines + 1
+    end
+
+    for _ in text:gmatch("%- %[.%]") do
+      total = total + 1
+    end
+
+    for _ in text:gmatch("%- %[x%]") do
+      done = done + 1
+    end
+
     editor.flashNotification(
-      string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, td, tt)
+      string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, done, total)
     )
-  end
-}
-
-command.define {
-  name = "Navigate: Home",
-  key = "Ctrl-Alt-h",
-  run = function()
-    editor.navigate { kind = "page", page = "index" }
-  end
-}
-
-command.define {
-  name = "Page: Duplicate",
-  run = function()
-    local src = editor.getCurrentPage()
-    local name = editor.prompt("Nombre de la copia:")
-    if not name or name == "" then return end
-    local content = space.readPage(src)
-    space.writePage(name, content)
-    editor.flashNotification("Duplicada: " .. name)
-    editor.navigate { kind = "page", page = name }
   end
 }
 ```
 
-## 4 · Widgets
+## Widgets
 
 ```space-lua
 -- priority: 10
 
-function callout(tipo, titulo, contenido)
-  local icon = "i"
-  if tipo == "tip"     then icon = "!" end
-  if tipo == "warning" then icon = "?" end
-  if tipo == "danger"  then icon = "X" end
-  return widget.new {
-    display = "block",
-    html = "<div class='sb-callout sb-callout-" .. (tipo or "note") .. "'>"
-      .. "<div class='sb-callout-header'>"
-      .. "<span class='sb-callout-icon'>[" .. icon .. "]</span>"
-      .. "<strong>" .. (titulo or "Nota") .. "</strong>"
-      .. "</div>"
-      .. "<p class='sb-callout-body'>" .. (contenido or "") .. "</p>"
-      .. "</div>"
-  }
-end
-
 function progress(pct, label)
   pct = math.max(0, math.min(100, pct or 0))
   local color = "#ef4444"
-  if pct >= 80 then color = "#22c55e"
-  elseif pct >= 40 then color = "#f59e0b" end
+  if pct >= 80 then
+    color = "#22c55e"
+  elseif pct >= 40 then
+    color = "#f59e0b"
+  end
+
   return widget.new {
     display = "block",
-    html = "<div class='sb-progress-wrap'>"
-      .. "<div class='sb-progress-header'>"
+    html = "<div class=\"sb-pw\">"
+      .. "<div class=\"sb-ph\">"
       .. "<span>" .. (label or "Progreso") .. "</span>"
-      .. "<span class='sb-progress-pct'>" .. tostring(pct) .. "%</span>"
+      .. "<span class=\"sb-pp\">" .. tostring(pct) .. "%</span>"
       .. "</div>"
-      .. "<div class='sb-progress-track'>"
-      .. "<div class='sb-progress-bar' style='width:" .. tostring(pct) .. "%;background:" .. color .. "'></div>"
+      .. "<div class=\"sb-pt\">"
+      .. "<div class=\"sb-pb\" style=\"width:" .. tostring(pct) .. "%;background:" .. color .. ";\"></div>"
       .. "</div>"
       .. "</div>"
   }
@@ -182,16 +194,27 @@ function page_stats()
   local text = editor.getText()
   local words = word_count(text)
   local lines = 0
-  for _ in text:gmatch("\n") do lines = lines + 1 end
-  local tt, td = 0, 0
-  for _ in text:gmatch("%- %[.%]") do tt = tt + 1 end
-  for _ in text:gmatch("%- %[x%]") do td = td + 1 end
+  local total = 0
+  local done = 0
+
+  for _ in text:gmatch("\n") do
+    lines = lines + 1
+  end
+
+  for _ in text:gmatch("%- %[.%]") do
+    total = total + 1
+  end
+
+  for _ in text:gmatch("%- %[x%]") do
+    done = done + 1
+  end
+
   return widget.new {
     display = "block",
-    html = "<div class='sb-stats-row'>"
-      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(words) .. "</div><div class='sb-stat-lbl'>palabras</div></div>"
-      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(lines + 1) .. "</div><div class='sb-stat-lbl'>lineas</div></div>"
-      .. "<div class='sb-stat'><div class='sb-stat-val'>" .. tostring(td) .. "/" .. tostring(tt) .. "</div><div class='sb-stat-lbl'>tareas</div></div>"
+    html = "<div class=\"sb-sr\">"
+      .. "<div class=\"sb-st\"><div class=\"sb-sv\">" .. tostring(words) .. "</div><div class=\"sb-sl\">palabras</div></div>"
+      .. "<div class=\"sb-st\"><div class=\"sb-sv\">" .. tostring(lines + 1) .. "</div><div class=\"sb-sl\">lineas</div></div>"
+      .. "<div class=\"sb-st\"><div class=\"sb-sv\">" .. tostring(done) .. "/" .. tostring(total) .. "</div><div class=\"sb-sl\">tareas</div></div>"
       .. "</div>"
   }
 end
@@ -199,90 +222,156 @@ end
 function recent_pages(n)
   n = n or 5
   local pages = query[[from p = index.tag "page" order by p.lastModified desc]]
-  local lines = {}
+  local items = {}
   local count = 0
+
   for _, p in ipairs(pages) do
-    if count >= n then break end
-    count = count + 1
-    local d = ""
-    if p.lastModified then
-      d = " (" .. date_format(p.lastModified) .. ")"
+    if count >= n then
+      break
     end
-    table.insert(lines, "- [[" .. p.name .. "]]" .. d)
+    count = count + 1
+    local extra = ""
+    if p.lastModified then
+      extra = " (" .. date_format(p.lastModified) .. ")"
+    end
+    table.insert(items, "- [[" .. p.name .. "]]" .. extra)
   end
-  if #lines == 0 then
-    return widget.new { display = "block", markdown = "Sin paginas." }
-  end
-  return widget.new { display = "block", markdown = table.concat(lines, "\n") }
-end
 
-function badge(texto, color)
-  color = color or "#4f98a3"
+  if #items == 0 then
+    return widget.new {
+      display = "block",
+      markdown = "Sin paginas."
+    }
+  end
+
   return widget.new {
-    display = "inline",
-    html = "<span class='sb-badge' style='background:" .. color .. "20;color:" .. color .. ";border:1px solid " .. color .. "50'>" .. texto .. "</span>"
+    display = "block",
+    markdown = table.concat(items, "\n")
   }
-end
-
-function today_chip()
-  return widget.new {
-    display = "inline",
-    html = "<span class='sb-date-chip'>Hoy: " .. os.date("%d/%m/%Y") .. "</span>"
-  }
-end
-
-function kv_table(datos)
-  local header = "| Clave | Valor |\n|---|---|\n"
-  local rows = ""
-  for _, pair in ipairs(datos) do
-    rows = rows .. "| " .. tostring(pair) .. " | " .. tostring(pair[1]) .. " |\n"
-  end
-  return widget.new { display = "block", markdown = header .. rows }
 end
 ```
 
-## 5 · Estilos
+## Style
 
 ```space-style
-.sb-callout { border-radius: 8px; padding: 10px 14px; margin: 10px 0; border: 1px solid; font-size: 0.9em; line-height: 1.55; }
-.sb-callout-note    { background: oklch(65% 0.08 195 / 0.08); border-color: oklch(65% 0.08 195 / 0.3); }
-.sb-callout-tip     { background: oklch(80% 0.14 80  / 0.08); border-color: oklch(80% 0.14 80  / 0.3); }
-.sb-callout-warning { background: oklch(75% 0.14 60  / 0.08); border-color: oklch(75% 0.14 60  / 0.35); }
-.sb-callout-danger  { background: oklch(60% 0.18 25  / 0.08); border-color: oklch(60% 0.18 25  / 0.3); }
-.sb-callout-header  { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; font-weight: 600; font-size: 0.92em; }
-.sb-callout-note    .sb-callout-header { color: oklch(65% 0.10 195); }
-.sb-callout-tip     .sb-callout-header { color: oklch(72% 0.14 80); }
-.sb-callout-warning .sb-callout-header { color: oklch(68% 0.16 60); }
-.sb-callout-danger  .sb-callout-header { color: oklch(58% 0.20 25); }
-.sb-callout-body { color: var(--editor-secondary-text-color); margin: 0; }
+html {
+  --ui-accent-color: #0ea5e9;
+  --editor-width: 980px !important;
+  --editor-font: "Inter", "Segoe UI", sans-serif !important;
+}
 
-.sb-progress-wrap   { margin: 6px 0 10px; }
-.sb-progress-header { display: flex; justify-content: space-between; font-size: 0.82em; margin-bottom: 5px; color: var(--editor-secondary-text-color); }
-.sb-progress-pct    { font-weight: 700; font-variant-numeric: tabular-nums; }
-.sb-progress-track  { background: var(--editor-subtle-background-color, rgba(128,128,128,0.15)); border-radius: 999px; height: 7px; overflow: hidden; }
-.sb-progress-bar    { height: 100%; border-radius: 999px; transition: width 0.35s ease; min-width: 4px; }
+html[data-theme="dark"] {
+  --ui-accent-color: #38bdf8;
+}
 
-.sb-stats-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 12px; }
-.sb-stat      { background: var(--editor-subtle-background-color, rgba(128,128,128,0.10)); border: 1px solid var(--editor-border-color, rgba(128,128,128,0.2)); border-radius: 10px; padding: 8px 18px; text-align: center; min-width: 76px; }
-.sb-stat-val  { font-size: 1.25em; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--editor-highlight-color, #4f98a3); line-height: 1.2; }
-.sb-stat-lbl  { font-size: 0.68em; color: var(--editor-faint-text-color, rgba(128,128,128,0.7)); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; }
+#sb-top {
+  background: linear-gradient(90deg, #f8fafc, #eef6ff) !important;
+  border-bottom: 1px solid rgba(14, 165, 233, 0.15) !important;
+}
 
-.sb-badge     { border-radius: 999px; padding: 1px 8px; font-size: 0.76em; font-weight: 600; letter-spacing: 0.03em; vertical-align: middle; }
-.sb-date-chip { font-size: 0.86em; color: var(--editor-secondary-text-color); }
+html[data-theme="dark"] #sb-top {
+  background: linear-gradient(90deg, #0f172a, #111827) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18) !important;
+}
+
+.cm-editor .cm-content {
+  line-height: 1.7;
+}
+
+.sb-sr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+
+.sb-st {
+  background: var(--editor-subtle-background-color, rgba(128,128,128,0.10));
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,0.18));
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  min-width: 96px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.sb-sv {
+  font-size: 1.35em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ui-accent-color, #0ea5e9);
+  line-height: 1.15;
+}
+
+.sb-sl {
+  font-size: 0.68em;
+  color: var(--editor-faint-text-color, rgba(128,128,128,0.7));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.sb-pw {
+  margin: 8px 0 14px;
+  padding: 10px 12px;
+  background: var(--editor-subtle-background-color, rgba(128,128,128,0.08));
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,0.14));
+  border-radius: 12px;
+}
+
+.sb-ph {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84em;
+  margin-bottom: 8px;
+  color: var(--editor-secondary-text-color);
+}
+
+.sb-pp {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-pt {
+  background: rgba(148,163,184,0.18);
+  border-radius: 999px;
+  height: 9px;
+  overflow: hidden;
+}
+
+.sb-pb {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+  min-width: 4px;
+}
+
+.sb-hashtag[data-tag-name] {
+  border-radius: 999px;
+  padding: 1px 8px;
+}
 ```
 
----
+## Uso
 
-## Referencia
+Escribe `/` en cualquier pagina para ver estos comandos:
 
-| Expresion | Uso |
-|---|---|
-| `${date_today()}` | `2026-04-04` |
-| `${time_now()}` | `14:35` |
-| `${today_chip()}` | Chip fecha inline |
-| `${page_stats()}` | Palabras / lineas / tareas |
-| `${progress(72, "Sprint 3")}` | Barra de progreso |
-| `${callout("tip", "Idea", "texto")}` | Callout estilizado |
-| `${badge("v2.5", "#22c55e")}` | Etiqueta de color |
-| `${recent_pages(5)}` | 5 paginas recientes |
-| `${kv_table({{"Estado","Activo"}})}` | Tabla clave-valor |
+- `/date`
+- `/time`
+- `/datetime`
+- `/todo`
+- `/done`
+- `/hr`
+- `/journal`
+- `/newnote`
+- `/stats`
+
+## Demo
+
+${page_stats()}
+
+${progress(62, "Configuracion")}
+
+### Paginas recientes
+
+${recent_pages(5)}
