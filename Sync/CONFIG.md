@@ -1,8 +1,25 @@
-This is where you configure SilverBullet to your liking. See [[^Library/Std/Config]] for a full list of configuration options.
+-- priority: 100
+config.set {
+  -- ─── Plugs ──────────────────────────────────────────────────────────
+  -- Descomenta los que quieras activar.
+  plugs = {
+    -- "github:silverbulletmd/silverbullet-git/git.plug.js",
+    -- "github:silverbulletmd/silverbullet-ai/ai.plug.js",
+  },
 
-```space-lua
-config.set("plugs", {
-  -- Add your plugs here (https://silverbullet.md/Plugs)
-  -- Then run the `Plugs: Update` command to update them
-})
-```
+  -- ─── Atajos de teclado ──────────────────────────────────────────────
+  shortcuts = {
+    { command = "Navigate: Home",    key = "Ctrl-Alt-h" },
+    { command = "Journal: Today",    key = "Ctrl-Shift-j" },
+    { command = "Quick Note",        key = "Ctrl-Shift-n" },
+    { command = "Insert: Date",      key = "Ctrl-Shift-d" },
+    { command = "Stats: Word Count", key = "Ctrl-Shift-w" },
+    -- { command = "Git: Sync",      key = "Ctrl-Alt-." },
+  },
+
+  -- ─── Sync (si usas Git plug) ─────────────────────────────────────────
+  -- git = {
+  --   autoSync  = true,
+  --   syncOnSave = true,
+  -- },
+}
