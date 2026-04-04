@@ -17,7 +17,7 @@ estado: leyendo
 ## Tesis
 
 ## Notas brutas
-- [[dos cosas]]
+
 
 ---
 
