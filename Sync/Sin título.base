@@ -1,0 +1,5 @@
+views:
+  - type: table
+    name: Tabla
+    order:
+      - file.name
