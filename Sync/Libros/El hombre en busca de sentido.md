@@ -2,7 +2,7 @@
 tipo: libro
 autor: Viktor E. Frankl
 año: 1946
-portada: "https://covers.openlibrary.org/b/id/8231856-L.jpg"
+portada: "https://covers.openlibrary.org/b/id/11203708-L.jpg"
 temas: ["Psicología", "Holocausto", "Logoterapia", "Existencialismo"]
 rating: 5
 estado: leyendo
@@ -10,14 +10,13 @@ estado: leyendo
 
 # El hombre en busca de sentido
 
-![Portada|https://covers.openlibrary.org/b/id/8231856-L.jpg]
+![Portada|https://covers.openlibrary.org/b/id/11203708-L.jpg]
 
 ## Por qué lo leí
 
 ## Tesis
 
 ## Notas brutas
-
 
 ---
 
