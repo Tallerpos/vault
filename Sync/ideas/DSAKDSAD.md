@@ -1,7 +1,6 @@
 ---
 tipo: idea
-fuente:
-  - - PDSADSD
+fuente: "[[PDSADSD]]"
 temas:
   - DASDASD
 ---
