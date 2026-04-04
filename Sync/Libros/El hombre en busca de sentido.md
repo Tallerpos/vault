@@ -1,7 +1,7 @@
 ---
 tipo: libro
-autor: <% tp.system.prompt("Autor") %>
-año: <% tp.system.prompt("Año") %>
+autor: 2303
+año: 3232
 rating:
 estado: leyendo
 temas: []
