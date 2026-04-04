@@ -2,7 +2,7 @@
 
 ## 📚 Biblioteca Visual
 ```dataviewjs
-// Inject standard professional styles
+// Inject professional styles for the grid
 const styles = `
 .dashboard-grid {
     display: grid;
