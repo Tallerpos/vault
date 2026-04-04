@@ -1,7 +1,9 @@
 ---
 tags: home
 ---
-ji
+ji+ijij
+ok
+
 # Inicio
 
 ${sb_btn_primary("Diario de hoy", "Go: Journal")} ${sb_btn("Nueva nota", "Go: New Note")} ${sb_btn("Estadisticas", "Stats: Words")} ${sb_btn("Recargar", "System: Reload")}
