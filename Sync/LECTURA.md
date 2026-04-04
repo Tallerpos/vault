@@ -34,4 +34,4 @@ LIST fuente
 FROM "Ideas"
 SORT file.ctime DESC
 LIMIT 10
-```[[DSAKDSAD]]
+```
