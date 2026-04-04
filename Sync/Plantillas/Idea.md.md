@@ -15,14 +15,14 @@ const link = nombre ? "[[" + nombre + "]]" : "";
 
 // ── 2. TEMAS INTELIGENTES (HERENCIA) ──────────────────
 const cacheLibro = libro ? app.metadataCache.getFileCache(libro) : null;
-const temasLibro = cacheLibro?.frontmatter?.temas || [];
-const temasPropuestos = Array.isArray(temasLibro) ? temasLibro : [temasLibro];
+const temasLibroRaw = cacheLibro?.frontmatter?.temas || [];
+const temasLibro = Array.isArray(temasLibroRaw) ? temasLibroRaw : [temasLibroRaw];
 
 // Leer temas existentes de otras ideas
 const todasIdeas = app.vault.getMarkdownFiles()
   .filter(f => f.path.startsWith("ideas/"));
 
-const temasSet = new Set(temasPropuestos); // Empezamos con los del libro
+const temasSet = new Set(temasLibro); // Empezamos con los del libro
 for (const idea of todasIdeas) {
   const cache = app.metadataCache.getFileCache(idea);
   const t = cache?.frontmatter?.temas;
@@ -31,31 +31,32 @@ for (const idea of todasIdeas) {
 }
 
 const opciones = ["＋ Nuevo tema...", ...([...temasSet].sort())];
-const temasElegidos = [];
+const temasElegidos = new Set(); // USAMOS SET PARA EVITAR DUPLICADOS
 let seguir = true;
 
 while (seguir) {
   const sel = await tp.system.suggester(
-    x => (temasPropuestos.includes(x) ? "📖 " : "🏷️ ") + x,
+    x => (temasLibro.includes(x) ? "📖 " : "🏷️ ") + x,
     opciones,
     false,
-    `Tema #${temasElegidos.length + 1} (ESC para terminar)`
+    `Tema #${temasElegidos.size + 1} (ESC para terminar)`
   );
   if (!sel) {
     seguir = false;
   } else if (sel === "＋ Nuevo tema...") {
     const nuevo = await tp.system.prompt("Escribe el nuevo tema:");
-    if (nuevo) { temasElegidos.push(nuevo); opciones.push(nuevo); }
+    if (nuevo) { temasElegidos.add(nuevo); opciones.push(nuevo); }
   } else {
     // Si elegimos un tema que ya incluye el prefijo visual
     const limpio = sel.replace(/^[📖🏷️]\s/, "");
-    temasElegidos.push(limpio);
+    temasElegidos.add(limpio); // El Set se encarga de no duplicar
     opciones.splice(opciones.indexOf(sel), 1);
   }
 }
 
-const temasYaml = temasElegidos.length
-  ? "\n" + temasElegidos.map(t => "  - " + t).join("\n")
+const temasFinal = [...temasElegidos];
+const temasYaml = temasFinal.length
+  ? "\n" + temasFinal.map(t => "  - " + t).join("\n")
   : " []";
 
 // ── 3. AGREGAR LINK AL LIBRO AUTOMÁTICAMENTE ─────────

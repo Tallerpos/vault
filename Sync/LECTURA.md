@@ -1,6 +1,9 @@
 # 🧠 Centro de Conocimiento
 
-<style>
+## 📚 Biblioteca Visual
+```dataviewjs
+// Inject standard professional styles
+const styles = `
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -8,11 +11,11 @@
     padding: 20px 0;
 }
 .book-card {
-    background: #1e1e1e;
+    background: var(--background-secondary);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     text-decoration: none !important;
@@ -20,7 +23,7 @@
 .book-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    border-color: #444;
+    border-color: var(--interactive-accent);
 }
 .book-cover {
     width: 100%;
@@ -35,7 +38,7 @@
     font-weight: 600;
     font-size: 0.95em;
     margin-bottom: 4px;
-    color: #efefef;
+    color: var(--text-normal);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -43,12 +46,12 @@
 }
 .book-author {
     font-size: 0.8em;
-    color: #888;
+    color: var(--text-muted);
 }
-</style>
+`;
 
-## 📚 Biblioteca Visual
-```dataviewjs
+dv.el("style", styles);
+
 const books = dv.pages('"Libros"').where(p => p.tipo === "libro");
 
 if (books.length === 0) {
