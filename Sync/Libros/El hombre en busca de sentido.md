@@ -10,13 +10,14 @@ estado: leyendo
 
 # El hombre en busca de sentido
 
-![Portada|]
+![Portad[[dos cosas]]a|]
 
 ## Por qué lo leí
 
 ## Tesis
 
 ## Notas brutas
+- [[dos cosas]]
 
 ---
 
