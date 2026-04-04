@@ -10,7 +10,7 @@ estado: leyendo
 
 # El hombre en busca de sentido
 
-![Portad[[dos cosas]]a|]
+![Portada]
 
 ## Por qué lo leí
 
