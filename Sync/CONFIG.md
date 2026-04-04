@@ -41,10 +41,17 @@ end
 
 function date_format(ts, fmt)
   fmt = fmt or "%Y-%m-%d"
-  if ts > 10000000000 then
+  if ts and ts > 10000000000 then
     ts = ts / 1000
   end
   return os.date(fmt, ts)
+end
+
+function safe_ts(val)
+  if type(val) == "number" then
+    return val
+  end
+  return 0
 end
 ```
 
@@ -107,19 +114,15 @@ command.define {
     local lines = 0
     local total = 0
     local done = 0
-
     for _ in text:gmatch("\n") do
       lines = lines + 1
     end
-
     for _ in text:gmatch("%- %[.%]") do
       total = total + 1
     end
-
     for _ in text:gmatch("%- %[x%]") do
       done = done + 1
     end
-
     editor.flashNotification(
       string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, done, total)
     )
@@ -230,13 +233,11 @@ end
 function progress(pct, label)
   pct = math.max(0, math.min(100, pct or 0))
   local color = "#ef4444"
-
   if pct >= 80 then
     color = "#22c55e"
   elseif pct >= 40 then
     color = "#f59e0b"
   end
-
   return widget.new {
     display = "block",
     html = "<div class=\"sb-pw\">"
@@ -257,19 +258,15 @@ function page_stats()
   local lines = 0
   local total = 0
   local done = 0
-
   for _ in text:gmatch("\n") do
     lines = lines + 1
   end
-
   for _ in text:gmatch("%- %[.%]") do
     total = total + 1
   end
-
   for _ in text:gmatch("%- %[x%]") do
     done = done + 1
   end
-
   return widget.new {
     display = "block",
     html = "<div class=\"sb-sr\">"
@@ -282,112 +279,103 @@ end
 
 function recent_pages(n)
   n = n or 5
-  local pages = query[[from p = index.tag "page" order by p.lastModified desc]]
+  local all = query[[from p = index.tag "page"]]
+  local sorted = {}
+  for _, p in ipairs(all) do
+    table.insert(sorted, {
+      name = p.name,
+      ts = safe_ts(p.lastModified)
+    })
+  end
+  table.sort(sorted, function(a, b)
+    return a.ts > b.ts
+  end)
   local items = {}
   local count = 0
-
-  for _, p in ipairs(pages) do
+  for _, p in ipairs(sorted) do
     if count >= n then
       break
     end
     count = count + 1
     local extra = ""
-    if p.lastModified then
-      extra = " (" .. date_format(p.lastModified) .. ")"
+    if p.ts > 0 then
+      extra = " (" .. date_format(p.ts) .. ")"
     end
     table.insert(items, "- [[" .. p.name .. "]]" .. extra)
   end
-
   if #items == 0 then
-    return widget.new {
-      display = "block",
-      markdown = "Sin paginas."
-    }
+    return widget.new { display = "block", markdown = "Sin paginas." }
   end
-
-  return widget.new {
-    display = "block",
-    markdown = table.concat(items, "\n")
-  }
+  return widget.new { display = "block", markdown = table.concat(items, "\n") }
 end
 
 function recent_journal(n)
   n = n or 5
-  local pages = query[[from p = index.tag "journal" order by p.lastModified desc]]
+  local all = query[[from p = index.tag "journal"]]
+  local sorted = {}
+  for _, p in ipairs(all) do
+    table.insert(sorted, {
+      name = p.name,
+      ts = safe_ts(p.lastModified)
+    })
+  end
+  table.sort(sorted, function(a, b)
+    return a.ts > b.ts
+  end)
   local items = {}
   local count = 0
-
-  for _, p in ipairs(pages) do
+  for _, p in ipairs(sorted) do
     if count >= n then
       break
     end
     count = count + 1
     table.insert(items, "- [[" .. p.name .. "]]")
   end
-
   if #items == 0 then
-    return widget.new {
-      display = "block",
-      markdown = "Sin entradas de diario."
-    }
+    return widget.new { display = "block", markdown = "Sin entradas de diario." }
   end
-
-  return widget.new {
-    display = "block",
-    markdown = table.concat(items, "\n")
-  }
+  return widget.new { display = "block", markdown = table.concat(items, "\n") }
 end
 ```
 
 ## Estilos
 
 ```space-style
-html {
-  --ui-accent-color: #0ea5e9;
-  --editor-width: 980px;
-}
-
-html[data-theme="dark"] {
-  --ui-accent-color: #38bdf8;
-}
-
-.cm-editor .cm-content {
-  line-height: 1.75;
-}
-
-button.sb-btn {
+.sb-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 7px 16px;
   border-radius: 8px;
-  border: 1px solid var(--editor-border-color, rgba(128,128,128,.25));
-  background: var(--editor-subtle-background-color, rgba(128,128,128,.08));
-  color: var(--editor-text-color);
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,.3));
+  background: var(--editor-subtle-background-color, rgba(128,128,128,.1));
+  color: var(--editor-text-color, inherit);
   font-size: 0.88em;
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
   transition: all 0.15s ease;
   margin: 2px;
+  text-decoration: none;
 }
 
-button.sb-btn:hover {
-  background: var(--ui-accent-color, #0ea5e9);
-  border-color: var(--ui-accent-color, #0ea5e9);
+.sb-btn:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
   color: #fff;
-  box-shadow: 0 2px 10px rgba(14,165,233,.3);
+  box-shadow: 0 2px 10px rgba(14,165,233,.35);
 }
 
-button.sb-btn-primary {
-  background: var(--ui-accent-color, #0ea5e9);
-  border-color: var(--ui-accent-color, #0ea5e9);
+.sb-btn-primary {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
   color: #fff;
   box-shadow: 0 2px 8px rgba(14,165,233,.25);
 }
 
-button.sb-btn-primary:hover {
-  opacity: 0.88;
+.sb-btn-primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
   box-shadow: 0 3px 14px rgba(14,165,233,.4);
 }
 
@@ -405,14 +393,13 @@ button.sb-btn-primary:hover {
   padding: 10px 20px;
   text-align: center;
   min-width: 96px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
 }
 
 .sb-sv {
   font-size: 1.35em;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--ui-accent-color, #0ea5e9);
+  color: #0ea5e9;
   line-height: 1.15;
 }
 
@@ -428,7 +415,7 @@ button.sb-btn-primary:hover {
   margin: 8px 0 14px;
   padding: 12px 14px;
   background: var(--editor-subtle-background-color, rgba(128,128,128,.08));
-  border: 1px solid var(--editor-border-color, rgba(128,128,128,.14));
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,.18));
   border-radius: 12px;
 }
 
@@ -437,7 +424,7 @@ button.sb-btn-primary:hover {
   justify-content: space-between;
   font-size: 0.84em;
   margin-bottom: 8px;
-  color: var(--editor-secondary-text-color);
+  color: var(--editor-secondary-text-color, rgba(128,128,128,.8));
 }
 
 .sb-pp {
@@ -446,7 +433,7 @@ button.sb-btn-primary:hover {
 }
 
 .sb-pt {
-  background: rgba(148,163,184,.18);
+  background: rgba(148,163,184,.2);
   border-radius: 999px;
   height: 9px;
   overflow: hidden;
