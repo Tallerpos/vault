@@ -1,16 +1,16 @@
 ---
 tipo: libro
-autor: Bryan Tracy
-año: 
-portada: ""
+autor: Brian Tracy
+año: 2001
+portada: "https://covers.openlibrary.org/b/id/847534-M.jpg"
 temas: []
 rating: 
 estado: leyendo
 ---
 
-# Tragate ese sapo
+# Eat That Frog!
 
-![Portada|]
+![Portada|https://covers.openlibrary.org/b/id/847534-M.jpg]
 
 ## Por qué lo leí
 
