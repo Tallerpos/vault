@@ -14,7 +14,7 @@ config.set("std.widgets.linkedMentions.enabled", true)
 config.set("std.widgets.linkedTasks.enabled", true)
 ```
 
-## Utils
+## Utilidades
 
 ```space-lua
 -- priority: 50
@@ -46,6 +46,85 @@ function date_format(ts, fmt)
   end
   return os.date(fmt, ts)
 end
+```
+
+## Comandos
+
+```space-lua
+-- priority: 10
+
+command.define {
+  name = "Go: Journal",
+  run = function()
+    local page = "Journal/" .. os.date("%Y/%m/%Y-%m-%d")
+    local found = query[[from p = index.tag "page" where p.name == page]]
+    if #found == 0 then
+      space.writePage(
+        page,
+        "---\ntags: journal\ndate: "
+          .. os.date("%Y-%m-%d")
+          .. "\n---\n\n# "
+          .. os.date("%Y-%m-%d")
+          .. "\n\n## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n"
+      )
+    end
+    editor.navigate { kind = "page", page = page }
+  end
+}
+
+command.define {
+  name = "Go: New Note",
+  run = function()
+    local name = editor.prompt("Nombre de la nota:")
+    if not name or name == "" then
+      return
+    end
+    local page = "Notas/" .. name
+    space.writePage(
+      page,
+      "---\ntags: note\ncreated: "
+        .. datetime_now()
+        .. "\n---\n\n# "
+        .. name
+        .. "\n"
+    )
+    editor.navigate { kind = "page", page = page }
+  end
+}
+
+command.define {
+  name = "Go: Home",
+  run = function()
+    editor.navigate { kind = "page", page = "index" }
+  end
+}
+
+command.define {
+  name = "Stats: Words",
+  run = function()
+    local text = editor.getText()
+    local words = word_count(text)
+    local lines = 0
+    local total = 0
+    local done = 0
+
+    for _ in text:gmatch("\n") do
+      lines = lines + 1
+    end
+
+    for _ in text:gmatch("%- %[.%]") do
+      total = total + 1
+    end
+
+    for _ in text:gmatch("%- %[x%]") do
+      done = done + 1
+    end
+
+    editor.flashNotification(
+      string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, done, total)
+    )
+  end
+}
 ```
 
 ## Slash Commands
@@ -98,68 +177,49 @@ slashCommand.define {
 slashCommand.define {
   name = "journal",
   run = function()
-    local page = "Journal/" .. os.date("%Y/%m/%Y-%m-%d")
-    local found = query[[from p = index.tag "page" where p.name == page]]
-    if #found == 0 then
-      space.writePage(
-        page,
-        "---\ntags: journal\ndate: "
-          .. os.date("%Y-%m-%d")
-          .. "\n---\n\n# "
-          .. os.date("%Y-%m-%d")
-          .. "\n\n## Tareas\n- [ ] \n\n## Notas\n\n## Cierre\n"
-      )
-    end
-    editor.navigate { kind = "page", page = page }
+    editor.invokeCommand("Go: Journal")
   end
 }
 
 slashCommand.define {
   name = "newnote",
   run = function()
-    local name = editor.prompt("Nombre de la nota:")
-    if not name or name == "" then
-      return
-    end
-    local page = "Notas/" .. name
-    space.writePage(
-      page,
-      "---\ntags: note\ncreated: "
-        .. datetime_now()
-        .. "\n---\n\n# "
-        .. name
-        .. "\n"
-    )
-    editor.navigate { kind = "page", page = page }
+    editor.invokeCommand("Go: New Note")
   end
 }
 
 slashCommand.define {
   name = "stats",
   run = function()
-    local text = editor.getText()
-    local words = word_count(text)
-    local lines = 0
-    local total = 0
-    local done = 0
-
-    for _ in text:gmatch("\n") do
-      lines = lines + 1
-    end
-
-    for _ in text:gmatch("%- %[.%]") do
-      total = total + 1
-    end
-
-    for _ in text:gmatch("%- %[x%]") do
-      done = done + 1
-    end
-
-    editor.flashNotification(
-      string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, done, total)
-    )
+    editor.invokeCommand("Stats: Words")
   end
 }
+```
+
+## Botones
+
+```space-lua
+-- priority: 10
+
+function sb_btn(text, cmd)
+  return widget.html(dom.button {
+    class = "sb-btn",
+    onclick = function()
+      editor.invokeCommand(cmd)
+    end,
+    text
+  })
+end
+
+function sb_btn_primary(text, cmd)
+  return widget.html(dom.button {
+    class = "sb-btn sb-btn-primary",
+    onclick = function()
+      editor.invokeCommand(cmd)
+    end,
+    text
+  })
+end
 ```
 
 ## Widgets
@@ -170,6 +230,7 @@ slashCommand.define {
 function progress(pct, label)
   pct = math.max(0, math.min(100, pct or 0))
   local color = "#ef4444"
+
   if pct >= 80 then
     color = "#22c55e"
   elseif pct >= 40 then
@@ -249,33 +310,85 @@ function recent_pages(n)
     markdown = table.concat(items, "\n")
   }
 end
+
+function recent_journal(n)
+  n = n or 5
+  local pages = query[[from p = index.tag "journal" order by p.lastModified desc]]
+  local items = {}
+  local count = 0
+
+  for _, p in ipairs(pages) do
+    if count >= n then
+      break
+    end
+    count = count + 1
+    table.insert(items, "- [[" .. p.name .. "]]")
+  end
+
+  if #items == 0 then
+    return widget.new {
+      display = "block",
+      markdown = "Sin entradas de diario."
+    }
+  end
+
+  return widget.new {
+    display = "block",
+    markdown = table.concat(items, "\n")
+  }
+end
 ```
 
-## Style
+## Estilos
 
 ```space-style
 html {
   --ui-accent-color: #0ea5e9;
-  --editor-width: 980px !important;
-  --editor-font: "Inter", "Segoe UI", sans-serif !important;
+  --editor-width: 980px;
 }
 
 html[data-theme="dark"] {
   --ui-accent-color: #38bdf8;
 }
 
-#sb-top {
-  background: linear-gradient(90deg, #f8fafc, #eef6ff) !important;
-  border-bottom: 1px solid rgba(14, 165, 233, 0.15) !important;
-}
-
-html[data-theme="dark"] #sb-top {
-  background: linear-gradient(90deg, #0f172a, #111827) !important;
-  border-bottom: 1px solid rgba(56, 189, 248, 0.18) !important;
-}
-
 .cm-editor .cm-content {
-  line-height: 1.7;
+  line-height: 1.75;
+}
+
+button.sb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,.25));
+  background: var(--editor-subtle-background-color, rgba(128,128,128,.08));
+  color: var(--editor-text-color);
+  font-size: 0.88em;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  margin: 2px;
+}
+
+button.sb-btn:hover {
+  background: var(--ui-accent-color, #0ea5e9);
+  border-color: var(--ui-accent-color, #0ea5e9);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(14,165,233,.3);
+}
+
+button.sb-btn-primary {
+  background: var(--ui-accent-color, #0ea5e9);
+  border-color: var(--ui-accent-color, #0ea5e9);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(14,165,233,.25);
+}
+
+button.sb-btn-primary:hover {
+  opacity: 0.88;
+  box-shadow: 0 3px 14px rgba(14,165,233,.4);
 }
 
 .sb-sr {
@@ -286,13 +399,13 @@ html[data-theme="dark"] #sb-top {
 }
 
 .sb-st {
-  background: var(--editor-subtle-background-color, rgba(128,128,128,0.10));
-  border: 1px solid var(--editor-border-color, rgba(128,128,128,0.18));
+  background: var(--editor-subtle-background-color, rgba(128,128,128,.1));
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,.18));
   border-radius: 12px;
   padding: 10px 20px;
   text-align: center;
   min-width: 96px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
 }
 
 .sb-sv {
@@ -305,7 +418,7 @@ html[data-theme="dark"] #sb-top {
 
 .sb-sl {
   font-size: 0.68em;
-  color: var(--editor-faint-text-color, rgba(128,128,128,0.7));
+  color: var(--editor-faint-text-color, rgba(128,128,128,.7));
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 4px;
@@ -313,9 +426,9 @@ html[data-theme="dark"] #sb-top {
 
 .sb-pw {
   margin: 8px 0 14px;
-  padding: 10px 12px;
-  background: var(--editor-subtle-background-color, rgba(128,128,128,0.08));
-  border: 1px solid var(--editor-border-color, rgba(128,128,128,0.14));
+  padding: 12px 14px;
+  background: var(--editor-subtle-background-color, rgba(128,128,128,.08));
+  border: 1px solid var(--editor-border-color, rgba(128,128,128,.14));
   border-radius: 12px;
 }
 
@@ -333,7 +446,7 @@ html[data-theme="dark"] #sb-top {
 }
 
 .sb-pt {
-  background: rgba(148,163,184,0.18);
+  background: rgba(148,163,184,.18);
   border-radius: 999px;
   height: 9px;
   overflow: hidden;
@@ -345,33 +458,4 @@ html[data-theme="dark"] #sb-top {
   transition: width 0.4s ease;
   min-width: 4px;
 }
-
-.sb-hashtag[data-tag-name] {
-  border-radius: 999px;
-  padding: 1px 8px;
-}
 ```
-
-## Uso
-
-Escribe `/` en cualquier pagina para ver estos comandos:
-
-- `/date`
-- `/time`
-- `/datetime`
-- `/todo`
-- `/done`
-- `/hr`
-- `/journal`
-- `/newnote`
-- `/stats`
-
-## Demo
-
-${page_stats()}
-
-${progress(62, "Configuracion")}
-
-### Paginas recientes
-
-${recent_pages(5)}
