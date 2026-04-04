@@ -7,17 +7,20 @@ const libro = await tp.system.suggester(
   true,
   "¿De qué libro viene esta idea?"
 );
-const libroLink = libro ? `[[${libro.basename}]]` : "";
+const nombre = libro ? libro.basename : "";
+const link = nombre ? "[[" + nombre + "]]" : "";
 -%>
 ---
 tipo: idea
-fuente: <% libroLink %>
+fuente: <% link %>
 temas: []
 ---
 
+**Fuente:** <% link %>
+
 # <% tp.file.title %>
 
-(Explica la idea en 3-8 líneas en tus palabras)
+(Explica la idea en tus palabras, 3-8 líneas)
 
 **Aplica cuando:**
 
