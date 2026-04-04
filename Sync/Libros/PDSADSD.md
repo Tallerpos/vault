@@ -1,10 +1,11 @@
 ---
 tipo: libro
 autor: SAODASD
-año: ASDASD
-rating:
-estado: leyendo
-temas: []
+año: 2011
+portada: "https://covers.openlibrary.org/b/id/8231856-M.jpg"
+rating: 5
+estado: terminado
+temas: ["Antropología", "Historia", "Evolución"]
 ---
 
 ## Por qué lo leí
