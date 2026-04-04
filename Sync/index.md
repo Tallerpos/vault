@@ -1,14 +1,16 @@
 ---
 tags: home
 ---
-
+ji
 # Inicio
 
-${sb_btn_primary("Diario de hoy", "Go: Journal")} ${sb_btn("Nueva nota", "Go: New Note")} ${sb_btn("Recargar", "System: Reload")} ${sb_btn("Estadisticas", "Stats: Words")}
+${sb_btn_primary("Diario de hoy", "Go: Journal")} ${sb_btn("Nueva nota", "Go: New Note")} ${sb_btn("Estadisticas", "Stats: Words")} ${sb_btn("Recargar", "System: Reload")}
 
 ---
 
 ${page_stats()}
+
+${progress(60, "Configuracion")}
 
 ---
 
