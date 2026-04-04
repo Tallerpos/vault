@@ -15,4 +15,4 @@
 - [[CONFIG.md]]
 
 ---
-[Ver Tareas Completas]([[Tareas_Pendientes]]) | [Ver Enlaces Rotos]([[Integridad]])
+[Ver Tareas Comletas]([[Tareas_Pendientes]]) | [Ver Enlaces Rotos]([[Integridad]])
