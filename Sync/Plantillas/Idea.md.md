@@ -15,7 +15,7 @@ fuente: <% libroLink %>
 temas: []
 ---
 
-# <% tp.file.title [[La logoterapia como paz]]%>
+# <% tp.file.title %>
 
 (Explica la idea en 3-8 líneas en tus palabras)
 
