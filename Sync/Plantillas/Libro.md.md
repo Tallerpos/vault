@@ -1,7 +1,7 @@
 <%*
-const autor = await tp.system.prompt("Autor del libro");
-const anio = await tp.system.prompt("Año de publicación");
--%>
+const autor = await tp.system.prompt("Autor");
+const anio = await tp.system.prompt("Año");
+_%>
 ---
 tipo: libro
 autor: <% autor %>
