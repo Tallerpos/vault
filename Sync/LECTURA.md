@@ -1,8 +1,8 @@
 # 🧠 Centro de Conocimiento
 
-## 📚 Biblioteca Visual
+## 📚 Biblioteca Visual (Galería)
 ```dataviewjs
-// Inject professional styles for the grid
+// 1. Inject Styles
 const styles = `
 .dashboard-grid {
     display: grid;
@@ -11,7 +11,7 @@ const styles = `
     padding: 20px 0;
 }
 .book-card {
-    background: var(--background-secondary);
+    background: var(--background-secondary) !important;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -31,32 +31,23 @@ const styles = `
     object-fit: cover;
     background: #2a2a2a;
 }
-.book-info {
-    padding: 12px;
-}
+.book-info { padding: 12px; }
 .book-title {
     font-weight: 600;
     font-size: 0.95em;
-    margin-bottom: 4px;
     color: var(--text-normal);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
-.book-author {
-    font-size: 0.8em;
-    color: var(--text-muted);
-}
+.book-author { font-size: 0.8em; color: var(--text-muted); }
 `;
-
 dv.el("style", styles);
 
+// 2. Fetch Books
 const books = dv.pages('"Libros"').where(p => p.tipo === "libro");
 
 if (books.length === 0) {
-    dv.paragraph("No hay libros registrados aún.");
+    dv.paragraph("⚠️ No se encontraron libros en la carpeta 'Libros'. Asegúrate de que tengan `tipo: libro` en el YAML.");
 } else {
+    // 3. Render Card Grid
     let html = '<div class="dashboard-grid">';
     for (const book of books) {
         const cover = book.portada || "https://via.placeholder.com/180x250?text=Sin+Portada";
@@ -65,7 +56,7 @@ if (books.length === 0) {
                 <img src="${cover}" class="book-cover">
                 <div class="book-info">
                     <div class="book-title">${book.file.name}</div>
-                    <div class="book-author">${book.autor || "Autor desconocido"}</div>
+                    <div class="book-author">${book.autor || "Desconocido"}</div>
                 </div>
             </a>
         `;
@@ -93,7 +84,7 @@ for (const idea of ideas) {
 }
 
 if (temaMap.size === 0) {
-  dv.paragraph("Crea tu primera idea para ver la clasificación por temas.");
+  dv.paragraph("ℹ️ No hay ideas aún. Usa la plantilla de Idea para crear una.");
 } else {
   for (const [tema, notas] of [...temaMap.entries()].sort()) {
     dv.header(3, `🏷️ ${tema} (${notas.length})`);

@@ -27,7 +27,7 @@ const temasLibro = Array.isArray(temasLibroRaw) ? temasLibroRaw : [temasLibroRaw
 const todasIdeas = app.vault.getMarkdownFiles()
   .filter(f => f.path.startsWith("ideas/"));
 
-const temasSet = new Set(temasLibro); // Empezamos con los del libro
+const temasSet = new Set(temasLibro);
 for (const idea of todasIdeas) {
   const cache = app.metadataCache.getFileCache(idea);
   const t = cache?.frontmatter?.temas;
@@ -53,7 +53,6 @@ while (seguir) {
     const nuevo = await tp.system.prompt("Escribe el nuevo tema:");
     if (nuevo) { temasElegidos.add(nuevo); opciones.push(nuevo); }
   } else {
-    // Si elegimos un tema que ya incluye el prefijo visual
     const limpio = sel.replace(/^[📖🏷️]\s/, "");
     temasElegidos.add(limpio);
   }
