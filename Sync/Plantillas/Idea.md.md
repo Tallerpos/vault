@@ -1,6 +1,6 @@
 <%*
 const libros = app.vault.getMarkdownFiles()
-  .filter(f => f.path.startsWith("📚 Libros/"));
+  .filter(f => f.path.startsWith("Libros/"));
 const libro = await tp.system.suggester(
   f => f.basename,
   libros,
