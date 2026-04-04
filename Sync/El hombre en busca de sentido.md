@@ -1,7 +1,7 @@
 ---
 tipo: libro
-autor: <% tp.system.prompt("Autor") %>
-año: <% tp.system.prompt("Año") %>
+autor: Pablo escobar
+año: 2023
 rating:
 estado: leyendo
 temas: []
