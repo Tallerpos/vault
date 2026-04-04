@@ -3,6 +3,11 @@
 const libros = app.vault.getMarkdownFiles()
   .filter(f => f.path.startsWith("Libros/"));
 
+if (libros.length === 0) {
+  new Notice("Crea un libro primero para poder asociar esta idea.");
+  return;
+}
+
 const libro = await tp.system.suggester(
   f => f.basename,
   libros,
@@ -31,16 +36,17 @@ for (const idea of todasIdeas) {
 }
 
 const opciones = ["＋ Nuevo tema...", ...([...temasSet].sort())];
-const temasElegidos = new Set(); // USAMOS SET PARA EVITAR DUPLICADOS
+const temasElegidos = new Set();
 let seguir = true;
 
 while (seguir) {
   const sel = await tp.system.suggester(
-    x => (temasLibro.includes(x) ? "📖 " : "🏷️ ") + x,
+    x => (temasLibro.includes(x) ? "📖 " : "🏷️ ") + (x === "＋ Nuevo tema..." ? x : x),
     opciones,
     false,
     `Tema #${temasElegidos.size + 1} (ESC para terminar)`
   );
+  
   if (!sel) {
     seguir = false;
   } else if (sel === "＋ Nuevo tema...") {
@@ -49,8 +55,7 @@ while (seguir) {
   } else {
     // Si elegimos un tema que ya incluye el prefijo visual
     const limpio = sel.replace(/^[📖🏷️]\s/, "");
-    temasElegidos.add(limpio); // El Set se encarga de no duplicar
-    opciones.splice(opciones.indexOf(sel), 1);
+    temasElegidos.add(limpio);
   }
 }
 
@@ -65,7 +70,7 @@ if (libro) {
   const ideaLink = "\n- [[" + tp.file.title + "]]";
   const actualizado = contenido.includes("## Notas brutas")
     ? contenido.replace("## Notas brutas", "## Notas brutas" + ideaLink)
-    : contenido + "\n- [[" + tp.file.title + "]]";
+    : (contenido + "\n## Notas brutas" + ideaLink);
   await app.vault.modify(libro, actualizado);
 }
 _%>

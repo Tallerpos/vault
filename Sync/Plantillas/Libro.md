@@ -1,29 +1,37 @@
 <%*
 // ── 1. PREPARACIÓN DE BÚSQUEDA ──────────────────────
-// Si el archivo ya tiene un nombre (Templater/QuickAdd), lo usamos para buscar
+// Usamos el título del archivo o pedimos uno si es genérico
 let query = tp.file.title;
-if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro") {
+if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
   query = await tp.system.prompt("Título del libro o Autor");
 }
 
 if (!query) return;
 
-const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+// Según documentación: Identificarse mejora el límite de peticiones
+const headers = {
+  "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)"
+};
+
+// q: búsqueda general, limit: 20 resultados, sort: editions (prioriza obras principales)
+const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=20&sort=editions`;
+
+const response = await fetch(url, { headers });
 const data = await response.json();
-const results = data.docs.slice(0, 10); // Más resultados para mayor precisión
+const results = data.docs;
 
 if (results.length === 0) {
-  new Notice("Exacto no encontrado. Procediendo manualmente.");
+  new Notice("No se encontraron resultados en Open Library.");
   var autor = await tp.system.prompt("Autor (Manual)");
   var anio = await tp.system.prompt("Año (Manual)");
   var portada = "";
   var temasExtras = [];
 } else {
   const selected = await tp.system.suggester(
-    (item) => `${item.title} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} ${item.isbn?.[0] ? "["+item.isbn[0]+"]" : ""}`,
+    (item) => `${item.title} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} [${item.edition_count || 1} ediciones]`,
     results,
     false,
-    "Selecciona la edición correcta"
+    "Selecciona la edición correcta (Las primeras suelen ser las principales)"
   );
   
   if (!selected) return;
