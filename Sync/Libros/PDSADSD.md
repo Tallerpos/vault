@@ -19,7 +19,7 @@ temas: []
 ## Ideas generadas
 ```dataview
 LIST
-FROM "Ideas"
+FROM "ideas"
 WHERE contains(file.outlinks, this.file.link)
 SORT file.ctime ASC
 ```
