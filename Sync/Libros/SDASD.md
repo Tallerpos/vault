@@ -1,7 +1,7 @@
 ---
 tipo: libro
-autor: 2303
-año: 3232
+autor: DSADAS
+año: DASDSD
 rating:
 estado: leyendo
 temas: []
@@ -9,18 +9,16 @@ temas: []
 
 ## Por qué lo leí
 
-
 ## Tesis
-
 
 ## Notas brutas
 
-
 ---
+
 ## Ideas generadas
 ```dataview
 LIST
 FROM "Ideas"
-WHERE contains(fuente, this.file.link)
+WHERE contains(file.outlinks, this.file.link)
 SORT file.ctime ASC
 ```
