@@ -37,7 +37,7 @@ if (temaMap.size === 0) {
 ```dataview
 TABLE fuente, temas
 FROM ""
-WHERE tipo = "idea"
+WHERE tipo = "Idea"
 SORT file.ctime DESC
 LIMIT 10
 ```
