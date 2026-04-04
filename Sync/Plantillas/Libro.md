@@ -1,6 +1,5 @@
 <%*
 // ── 1. PREPARACIÓN DE BÚSQUEDA ──────────────────────
-// Usamos el título del archivo o pedimos uno si es genérico
 let query = tp.file.title;
 if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
   query = await tp.system.prompt("Título del libro o Autor");
@@ -8,30 +7,31 @@ if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro"
 
 if (!query) return;
 
-// Según documentación: Identificarse mejora el límite de peticiones
-const headers = {
-  "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)"
-};
+const headers = { "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)" };
 
-// q: búsqueda general, limit: 20 resultados, sort: editions (prioriza obras principales)
-const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=20&sort=editions`;
+// q: búsqueda general con filtro de idioma español
+const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&language=spa&limit=20&sort=editions`;
 
 const response = await fetch(url, { headers });
 const data = await response.json();
 const results = data.docs;
 
 if (results.length === 0) {
-  new Notice("No se encontraron resultados en Open Library.");
+  new Notice("No se encontró la edición en español. Procediendo manualmente.");
   var autor = await tp.system.prompt("Autor (Manual)");
   var anio = await tp.system.prompt("Año (Manual)");
   var portada = "";
   var temasExtras = [];
 } else {
   const selected = await tp.system.suggester(
-    (item) => `${item.title} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} [${item.edition_count || 1} ediciones]`,
+    (item) => {
+        const t = item.title_suggest || item.title;
+        const orig = item.title !== t ? ` [${item.title}]` : "";
+        return `${t}${orig} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} [${item.edition_count || 1} ed.]`;
+    },
     results,
     false,
-    "Selecciona la edición correcta (Las primeras suelen ser las principales)"
+    "Elige la edición (en español si es posible)"
   );
   
   if (!selected) return;
