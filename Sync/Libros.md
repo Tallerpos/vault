@@ -1,53 +1,41 @@
 ---
-tipo: libro
-autor: ["[[ ]]"]
-estado: #lectura/pendiente
-temas: []
-relacionados: []
-fuente: 
+aliases: []
+author: []
+tags: []
+status: unread
+related_books: []
+date_finished: 
 ---
 
-# 📖 [[Título del Libro]]
+# {{title}}
 
-> [!abstract] La Tesis en una Frase (Feynman)
-> Si no puedes explicar la premisa central del libro de forma sencilla, no lo has entendido. Escríbela aquí.
+## Tesis Central
+> [!summary] 
+> Sintetiza la premisa fundamental del autor en una sola oración. Si no es posible reducirlo a una oración, el nivel de comprensión aún es insuficiente.
 
----
+## Marco Analítico
+*Identificación de la estructura argumentativa del texto.*
 
-## 🛠️ Fase 1: Filtro de Inspección
-*No pierdas tiempo. Antes de leer a fondo, responde esto en 5 minutos.*
-- **¿Cuál es el problema que el autor intenta resolver?**
-- **¿Es este libro un "maestro" o solo un "informante"?** (Si es informante, no pases a la Fase 2).
+- **Problema Principal:** ¿Qué pregunta o problema específico intenta resolver el autor?
+- **Proposiciones Clave:**
+    - [Afirmación fundamental 1]
+    - [Afirmación fundamental 2]
+- **Términos del Autor:** (Define conceptos específicos que el autor utiliza con un significado particular para evitar ambigüedades).
 
-## 🧠 Fase 2: El Esqueleto (Lectura Analítica)
-*Basado en Adler. No resumas capítulos; mapea argumentos.*
+## Enlaces Sintópicos
+*Mapeo del libro dentro de la red de conocimiento existente.*
 
-### 1. El Mensaje Central
-- **Palabras clave (Términos):** Define los términos específicos del autor para evitar malentendidos.
-- **Proposiciones:** ¿Qué afirmaciones hace el autor que consideras fundamentales?
+- **Soporta a:** [[ ]] en el argumento de...
+- **Refuta a:** [[ ]] respecto a la idea de...
+- **Expande la base de:** [[ ]] utilizando la metodología de...
 
-### 2. El Veredicto Crítico
-- [ ] **¿Es verdad?** (En todo o en parte).
-- [ ] **¿Qué de ello?** (¿Por qué debería importarme esta información ahora mismo?).
+## Extracción Atómica (Zettelkasten)
+*No hacer resúmenes cronológicos. Extraer conceptos aislados y generar enlaces bidireccionales hacia nuevas notas permanentes.*
 
----
+- [[ ]]
+- [[ ]]
+- [[ ]]
 
-## ⚗️ Fase 3: Semillas Atómicas (Zettelkasten)
-*Aquí es donde el libro desaparece y tus ideas nacen. No pongas texto del libro, pon ENLACES a nuevas notas.*
-
-- [[Idea Atómica 1]]: Explicación breve de cómo esta idea cambia tu sistema.
-- [[Idea Atómica 2]]: Conexión directa con un proyecto o problema actual.
-
----
-
-## 🔗 Fase 4: Diálogo Sintópico (Interconectividad)
-*Esta es la parte que pediste: asociar datos entre libros.*
-
-- **Contradice a:** [[Libro X]] porque...
-- **Complementa a:** [[Libro Y]] en el concepto de...
-- **Evolución de la idea:** Esta idea de [[Concepto]] es una mejora de lo visto en [[Libro Z]].
-
----
-
-## 🚀 Aplicación Real
-- [ ] **Acción inmediata:** ¿Qué voy a cambiar en mi vida/trabajo mañana después de leer esto?
+## Evaluación Crítica y Utilidad
+- **Validez:** ¿Los argumentos están respaldados por evidencia sólida? Indicar sesgos o fallas lógicas detectadas.
+- **Implementación:** ¿Cómo altera esta información los modelos mentales actuales o qué impacto directo tiene en los proyectos activos?
