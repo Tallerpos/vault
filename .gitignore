@@ -1,0 +1,15 @@
+# SilverBullet indexing and internal data
+.silverbullet/
+Sync/.silverbullet/
+*.sqlite
+*.sqlite-journal
+
+# Obsidian internal data (optional, but good to keep cache out)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache/
+.trash/
+
+# System files
+.DS_Store
+Thumbs.db
