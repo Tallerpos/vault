@@ -11,12 +11,12 @@ if (!query) return;
 const isISBN = /^(97(8|9))?\d{9}(\d|X)$/.test(query.replace(/-/g, ""));
 const searchType = isISBN ? `isbn:${query}` : query;
 
-// Eliminamos langRestrict=es para permitir encontrar clásicos internacionales
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchType)}&maxResults=10&orderBy=relevance`;
+// Usamos requestUrl de Obsidian para evitar problemas de CORS y mayor estabilidad
+const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchType)}&maxResults=10`;
 
 try {
-  const response = await fetch(url);
-  const data = await response.json();
+  const response = await requestUrl({ url: url });
+  const data = response.json;
   const results = data.items;
 
   if (!results || results.length === 0) {
