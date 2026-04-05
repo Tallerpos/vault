@@ -66,7 +66,7 @@ const temasYaml = temasFinal.length
 // ── 3. AGREGAR LINK AL LIBRO AUTOMÁTICAMENTE ─────────
 if (libro) {
   const contenido = await app.vault.read(libro);
-  const ideaLink = "\n- [[" + tp.file.title + "]]";
+  const ideaLink = "\n- [" + "[" + tp.file.title + "]]";
   const actualizado = contenido.includes("## Notas brutas")
     ? contenido.replace("## Notas brutas", "## Notas brutas" + ideaLink)
     : (contenido + "\n## Notas brutas" + ideaLink);
