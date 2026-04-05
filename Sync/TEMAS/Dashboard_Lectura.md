@@ -6,7 +6,7 @@
 
 ```dataviewjs
 
-const ideas = dv.pages('"20_Cerebro"').where(p => p.tipo === "idea");
+const ideas = dv.pages('"NOTAS"').where(p => p.tipo === "idea");
 
 if (ideas.length > 0) {
 
@@ -52,7 +52,7 @@ dv.el("span", randomIdea.file.link, { container: titleLinkCont });
 
 // 1. Obtener Libros Ordenados
 
-const books = dv.pages('"30_Biblioteca/Libros"')
+const books = dv.pages('"BIBLIOTECA/Libros"')
 
 .where(p => p.tipo === "libro")
 
@@ -64,7 +64,7 @@ const books = dv.pages('"30_Biblioteca/Libros"')
 
 if (books.length === 0) {
 
-dv.paragraph("No se detectaron libros en la carpeta '30_Biblioteca/Libros'.");
+dv.paragraph("No se detectaron libros en la carpeta 'BIBLIOTECA/Libros'.");
 
 } else {
 
@@ -130,7 +130,7 @@ dv.el("div", html);
 
 ```dataviewjs
 
-const ideas = dv.pages('"20_Cerebro"').where(p => p.tipo === "idea");
+const ideas = dv.pages('"NOTAS"').where(p => p.tipo === "idea");
 
 const orphanIdeas = ideas.filter(i => !i.fuente || !String(i.fuente).includes("\u005B\u005B"));
 
@@ -160,7 +160,7 @@ dv.paragraph("Integridad del conocimiento: Óptima.");
 
 ```dataviewjs
 
-const ideas = dv.pages('"20_Cerebro"').where(p => p.tipo === "idea");
+const ideas = dv.pages('"NOTAS"').where(p => p.tipo === "idea");
 
 const temaMap = new Map();
 

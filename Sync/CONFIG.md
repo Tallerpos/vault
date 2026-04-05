@@ -63,7 +63,7 @@ end
 command.define {
   name = "Go: Journal",
   run = function()
-    local page = "00_Captura/Diario/" .. os.date("%Y/%m/%Y-%m-%d")
+    local page = "CAPTURA/Diario/" .. os.date("%Y/%m/%Y-%m-%d")
     local found = query[[from p = index.tag "page" where p.name == page]]
     if #found == 0 then
       space.writePage(
@@ -86,7 +86,7 @@ command.define {
     if not name or name == "" then
       return
     end
-    local page = "20_Cerebro/" .. name
+    local page = "NOTAS/" .. name
     space.writePage(
       page,
       "---\ntags: note\ncreated: "
@@ -102,7 +102,7 @@ command.define {
 command.define {
   name = "Go: Home",
   run = function()
-    editor.navigate { kind = "page", page = "10_Nexo/Dashboard_Lectura" }
+    editor.navigate { kind = "page", page = "TEMAS/Dashboard_Lectura" }
   end
 }
 
@@ -128,7 +128,7 @@ command.define {
 
 function recent_pages(n)
   n = n or 5
-  local all = query[[from p = index.tag "page" where p.name =~ "20_Cerebro/"]]
+  local all = query[[from p = index.tag "page" where p.name =~ "NOTAS/"]]
   local sorted = {}
   for _, p in ipairs(all) do
     table.insert(sorted, { name = p.name, ts = safe_ts(p.lastModified) })
