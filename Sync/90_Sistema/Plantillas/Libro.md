@@ -163,7 +163,7 @@ fecha_fin:
 ## Ideas clave
 ```dataview
 LIST
-FROM "ideas"
+FROM "20_Cerebro"
 WHERE contains(fuente, this.file.name)
 SORT file.ctime ASC
 ```

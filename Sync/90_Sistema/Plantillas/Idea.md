@@ -1,11 +1,11 @@
 <%*
 // ── 1. SELECCIONAR LIBRO ──────────────────────────────────────────────────────
 const libros = app.vault.getMarkdownFiles()
-    .filter(f => f.path.startsWith("Libros/"))
+    .filter(f => f.path.startsWith("30_Biblioteca/Libros/"))
     .sort((a, b) => b.stat.mtime - a.stat.mtime); // más recientes primero
 
 if (libros.length === 0) {
-    new Notice("⚠ No hay libros en la carpeta Libros/. Crea uno primero.");
+    new Notice("⚠ No hay libros en 30_Biblioteca/Libros/. Crea uno primero.");
     return;
 }
 
@@ -42,7 +42,7 @@ const temasLibro    = Array.isArray(temasLibroRaw)
 
 // Recopilar todos los temas existentes en ideas
 const todasIdeas = app.vault.getMarkdownFiles()
-    .filter(f => f.path.startsWith("ideas/"));
+    .filter(f => f.path.startsWith("20_Cerebro/"));
 
 const temasSet = new Set(temasLibro);
 for (const idea of todasIdeas) {
@@ -102,9 +102,9 @@ const fechaHoy = tp.date.now("YYYY-MM-DD");
 // ── 5. MOVER A CARPETA CORRECTA ───────────────────────────────────────────────
 // Garantiza que la idea siempre esté en ideas/ para que la herencia funcione
 const rutaActual = tp.file.path(true);
-if (!rutaActual.startsWith("ideas/")) {
+if (!rutaActual.startsWith("20_Cerebro/")) {
     const safeTitle = tp.file.title.replace(/[\\/#^[\]|:]/g, "").trim();
-    await tp.file.move(`ideas/${safeTitle}`);
+    await tp.file.move(`20_Cerebro/${safeTitle}`);
 }
 
 // ── 6. INSERTAR LINK EN EL LIBRO (patch robusto) ─────────────────────────────
