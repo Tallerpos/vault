@@ -1,29 +1,29 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-05 05:31
+Último análisis: 2026-04-05 05:46
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
 | obsidian-webdav | 13.46MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 21.03MiB / 512MiB | 0.01% |
+| obsidian-silverbullet | 21.09MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
 | firefly_sentinel | 68.66MiB / 15.61GiB | 0.00% |
 | paisa | 22.1MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 384KiB / 32MiB | 0.00% |
-| firefly_iii_core | 80.43MiB / 256MiB | 0.01% |
+| firefly_iii_core | 79.73MiB / 256MiB | 0.01% |
 | firefly_iii_db | 22.88MiB / 128MiB | 0.00% |
-| fava | 51.35MiB / 256MiB | 0.04% |
-| paperless_app | 432.8MiB / 768MiB | 0.05% |
-| paperless-ngx-db-1 | 55.73MiB / 1GiB | 0.01% |
-| paperless-ngx-broker-1 | 9.738MiB / 768MiB | 0.48% |
-| actual_budget | 87.88MiB / 512MiB | 0.01% |
-| tallerpos_api | 94.19MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 57.84MiB / 1GiB | 0.60% |
-| tallerpos_db_dev | 37.24MiB / 1GiB | 0.02% |
-| tallerpos_cache_dev | 5.918MiB / 512MiB | 0.49% |
+| fava | 51.35MiB / 256MiB | 0.06% |
+| paperless_app | 471MiB / 768MiB | 0.18% |
+| paperless-ngx-db-1 | 55.73MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 9.738MiB / 768MiB | 0.61% |
+| actual_budget | 87.9MiB / 512MiB | 0.01% |
+| tallerpos_api | 94.2MiB / 1.5GiB | 0.00% |
+| siyuan-main-1 | 57.84MiB / 1GiB | 0.73% |
+| tallerpos_db_dev | 37.24MiB / 1GiB | 0.01% |
+| tallerpos_cache_dev | 5.918MiB / 512MiB | 0.56% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.69MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 77.98MiB / 15.61GiB | 0.02% |
+| infra-api-1 | 78.09MiB / 15.61GiB | 0.24% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
@@ -32,9 +32,9 @@
 | /opt/faceguard | 1.4G |
 | /opt/tallerpos | 1.2G |
 | /opt/paperless-ngx | 224M |
-| /var/log | 120M |
+| /var/log | 118M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
 | /opt/sentinel-hub | 9.8M |
-| /opt/vault | 6.0M |
+| /opt/vault | 6.1M |
 | /opt/firefly | 788K |
