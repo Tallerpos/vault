@@ -1,87 +1,81 @@
 # Dashboard de Lectura
+> [!NOTE]
+> Versión 3.1: Si no ves este título en español, por favor cierra y vuelve a abrir la nota para forzar la sincronización de archivos.
 
 ## Biblioteca Visual (Galería)
 ```dataviewjs
-// 1. Inyección de Estilos Premium
+// 1. Inyección de Estilos Ultra-Robustos
 const styles = `
 .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 25px;
-    padding: 24px 0;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    gap: 30px !important;
+    padding: 24px 0 !important;
+    width: 100% !important;
 }
 .book-card {
-    background: var(--background-secondary-alt);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease-in-out;
-    border: 1px solid var(--divider-color);
-    display: flex;
-    flex-direction: column;
+    background: var(--background-secondary-alt) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid var(--divider-color) !important;
+    display: flex !important;
+    flex-direction: column !important;
     text-decoration: none !important;
-    backdrop-filter: blur(8px);
 }
 .book-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-    border-color: var(--interactive-accent);
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
+    border-color: var(--interactive-accent) !important;
 }
 .book-cover-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: var(--background-primary);
+    width: 100% !important;
+    aspect-ratio: 2 / 3 !important;
+    background: var(--background-primary) !important;
 }
 .book-cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: scale 0.5s ease;
-}
-.book-card:hover .book-cover {
-    scale: 1.05;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 .book-info {
-    padding: 12px;
-    background: var(--background-secondary);
-    flex-grow: 1;
+    padding: 15px !important;
+    background: var(--background-secondary) !important;
+    flex-grow: 1 !important;
 }
 .book-title {
-    font-weight: 700;
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-bottom: 4px;
-    color: var(--text-normal);
+    font-weight: 700 !important;
+    font-size: 0.95em !important;
+    margin-bottom: 5px !important;
+    color: var(--text-normal) !important;
 }
 .book-author {
-    font-size: 0.8em;
-    color: var(--text-muted);
+    font-size: 0.85em !important;
+    color: var(--text-muted) !important;
 }
 .book-rating {
-    margin-top: 8px;
-    font-size: 0.75em;
-    letter-spacing: 1px;
-    color: var(--text-accent);
+    margin-top: 10px !important;
+    font-size: 0.8em !important;
+    color: var(--text-accent) !important;
+    font-weight: 600 !important;
 }
 `;
 dv.el("style", styles);
 
-// 2. Obtener y Ordenar Libros
-// Prioridad: Rating (desc) -> Última modificación (desc)
+// 2. Obtener Libros Ordenados
 const books = dv.pages('"Libros"')
     .where(p => p.tipo === "libro")
-    .sort(p => p.rating, 'desc')
-    .sort(p => p.file.mtime, 'desc');
+    .sort(p => p.rating, "desc")
+    .sort(p => p.file.mtime, "desc");
 
 if (books.length === 0) {
-    dv.paragraph("No se encontraron libros en la carpeta 'Libros'. Asegúrate de que tengan 'tipo: libro' en los metadatos.");
+    dv.paragraph("No se detectaron libros. Verifica que los archivos en la carpeta 'Libros' tengan 'tipo: libro' en su configuración inicial.");
 } else {
-    // 3. Renderizar Grid de Tarjetas
+    // 3. Renderizado del Grid
     let html = '<div class="dashboard-grid">';
     for (const book of books) {
         const cover = book.portada || "https://via.placeholder.com/180x270?text=Sin+Portada";
-        const rating = book.rating ? "Puntuación: " + book.rating + "/5" : "Sin calificar";
+        const ratingText = book.rating ? "Puntuación: " + book.rating + "/5" : "Pendiente de calificar";
         html += `
             <a href="${book.file.path}" class="internal-link book-card">
                 <div class="book-cover-container">
@@ -89,8 +83,8 @@ if (books.length === 0) {
                 </div>
                 <div class="book-info">
                     <div class="book-title">${book.file.name}</div>
-                    <div class="book-author">${book.autor || "Autor desconocido"}</div>
-                    <div class="book-rating">${rating}</div>
+                    <div class="book-author">${book.autor || "Desconocido"}</div>
+                    <div class="book-rating">${ratingText}</div>
                 </div>
             </a>
         `;
@@ -102,7 +96,7 @@ if (books.length === 0) {
 
 ---
 
-## Ideas por Tema
+## Ideas por Temas
 ```dataviewjs
 const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
 const temaMap = new Map();
@@ -110,7 +104,7 @@ const temaMap = new Map();
 for (const idea of ideas) {
   const temas = idea.temas
     ? (Array.isArray(idea.temas) ? idea.temas : [idea.temas])
-    : ["Sin tema"];
+    : ["Sin clasificar"];
   for (const tema of temas) {
     if (!temaMap.has(tema)) temaMap.set(tema, []);
     temaMap.get(tema).push(idea);
@@ -118,7 +112,7 @@ for (const idea of ideas) {
 }
 
 if (temaMap.size === 0) {
-  dv.paragraph("No se encontraron ideas. Usa la plantilla de Idea para crear una.");
+  dv.paragraph("Aún no has generado ideas. Usa la plantilla para empezar.");
 } else {
   for (const [tema, notas] of [...temaMap.entries()].sort()) {
     dv.header(3, `${tema} (${notas.length})`);
@@ -129,9 +123,9 @@ if (temaMap.size === 0) {
 
 ---
 
-## Ideas Recientes
+## Actividad Reciente
 ```dataview
-TABLE fuente as "Fuente", temas as "Temas"
+TABLE fuente as "Origen", temas as "Temas"
 FROM "ideas"
 WHERE tipo = "idea"
 SORT file.ctime DESC
