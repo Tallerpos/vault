@@ -4,7 +4,7 @@ autor: Brian Tracy
 año: 2001
 portada: https://covers.openlibrary.org/b/id/847534-M.jpg
 temas: []
-rating: 2
+rating: 2.4
 estado: leyendo
 ---
 
