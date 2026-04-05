@@ -1,116 +1,105 @@
 <%*
-// ── 1. BÚSQUEDA EN GOOGLE BOOKS ──────────────────────────────────────────────
+// ── 1. CONFIGURACIÓN E IDENTIFICACIÓN ─────────────────────────────────────────
 let query = tp.file.title;
 const titulosGenericos = ["Untitled", "Sin título", "Libro", "New note", ""];
-if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
-    query = await tp.system.prompt("Título del libro (añade el autor si es muy famoso)");
-}
-if (!query) { new Notice("Cancelado."); return; }
+const esGenerico = titulosGenericos.some(t => query.startsWith(t) || query === "");
 
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&langRestrict=es&printType=books`;
-let results = null;
-try {
-    const response = await fetch(url);
-    const data = await response.json();
-    results = data.items || null;
-} catch(e) {
-    new Notice("Error de red. Continúa manualmente.");
+if (esGenerico) {
+    query = await tp.system.prompt("Título del libro (añade el autor para precisión)");
+    if (!query) { new Notice("Cancelado."); return; }
 }
 
-// ── 2. VARIABLES BASE ─────────────────────────────────────────────────────────
-var titulo      = query;
-var autor       = "";
-var anio        = "";
-var isbn        = "";
-var portada     = "";
-var paginas     = "";
-var idioma      = "";
-var editorial   = "";
-var sinopsis    = "";
-var temasExtras = [];
-var fechaInicio = tp.date.now("YYYY-MM-DD");
+// ── 2. BÚSQUEDA INTERACTIVA (GOOGLE BOOKS) ────────────────────────────────────
+let selected = null;
+let manualMode = false;
 
-// ── 3. SELECCIÓN O MODO MANUAL ────────────────────────────────────────────────
-if (!results || results.length === 0) {
-    new Notice("Sin resultados. Rellena los datos manualmente.");
-    titulo    = await tp.system.prompt("Título") || query;
-    autor     = await tp.system.prompt("Autor") || "";
-    anio      = await tp.system.prompt("Año") || "";
-    editorial = await tp.system.prompt("Editorial") || "";
-    paginas   = await tp.system.prompt("Número de páginas") || "";
-} else {
-    const selected = await tp.system.suggester(
-        (item) => {
-            const info   = item.volumeInfo;
-            const t      = info.title || "Sin título";
-            const author = info.authors ? info.authors.join(", ") : "Desconocido";
-            const year   = info.publishedDate ? info.publishedDate.substring(0, 4) : "S.F.";
-            const lang   = info.language ? ` [${info.language.toUpperCase()}]` : "";
-            return `${t} · ${author} · ${year}${lang}`;
-        },
-        results,
-        false,
-        "Selecciona el libro correcto (ESC = manual)"
-    );
+while (!selected && !manualMode) {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=20&langRestrict=es&printType=books`;
+    let results = [];
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        results = data.items || [];
+    } catch(e) {
+        new Notice("Error de red. Pasando a modo manual.");
+        manualMode = true;
+        break;
+    }
 
-    if (!selected) {
-        new Notice("Selección cancelada. Rellena los datos manualmente.");
-        titulo    = await tp.system.prompt("Título") || query;
-        autor     = await tp.system.prompt("Autor") || "";
-        anio      = await tp.system.prompt("Año") || "";
-        editorial = await tp.system.prompt("Editorial") || "";
-        paginas   = await tp.system.prompt("Número de páginas") || "";
-    } else {
-        const info = selected.volumeInfo;
+    // Preparar opciones del buscador
+    const options = results.map(item => {
+        const info = item.volumeInfo;
+        const t = info.title || "Sin título";
+        const author = info.authors ? info.authors.join(", ") : "Desconocido";
+        const year = info.publishedDate ? info.publishedDate.substring(0, 4) : "S.F.";
+        return { 
+            display: `📖 ${t} · ${author} (${year})`, 
+            value: item,
+            type: "book"
+        };
+    });
 
-        titulo    = info.title        || query;
-        autor     = info.authors      ? info.authors.join(", ")              : "";
-        anio      = info.publishedDate ? info.publishedDate.substring(0, 4)  : "";
-        paginas   = info.pageCount    ? String(info.pageCount)               : "";
-        editorial = info.publisher    || "";
-        idioma    = info.language     ? info.language.toUpperCase()          : "";
-        temasExtras = info.categories || [];
+    // Añadir opciones de control
+    options.push({ display: "🔍 Buscar otro título...", value: null, type: "search" });
+    options.push({ display: "✏️ Rellenar manualmente...", value: null, type: "manual" });
 
-        // Sinopsis: limpia HTML y recorta a 500 caracteres
-        if (info.description) {
-            sinopsis = info.description
-                .replace(/(<([^>]+)>)/gi, "")
-                .replace(/\s+/g, " ")
-                .trim()
-                .substring(0, 500);
-            if (info.description.length > 500) sinopsis += "…";
-        }
+    const choice = await tp.system.suggester(item => item.display, options, false, `Resultados para: "${query}"`);
 
-        // ISBN (preferir ISBN-13)
-        if (info.industryIdentifiers) {
-            const id13 = info.industryIdentifiers.find(id => id.type === "ISBN_13");
-            const id10 = info.industryIdentifiers.find(id => id.type === "ISBN_10");
-            isbn = id13 ? id13.identifier : (id10 ? id10.identifier : "");
-        }
-
-        // Portada — fife=w400 funciona sin bloqueo de referrer
-        if (info.imageLinks) {
-            const base = info.imageLinks.extraLarge
-                      || info.imageLinks.large
-                      || info.imageLinks.medium
-                      || info.imageLinks.thumbnail
-                      || "";
-            portada = base
-                .replace("http:", "https:")
-                .replace("&edge=curl", "")
-                .replace(/zoom=\d/, "fife=w400");
-        }
-
-        // Fallback: Open Library por ISBN (no tiene bloqueo de referrer)
-        if (!portada && isbn) {
-            portada = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-        }
+    if (!choice) { // Cancelado con ESC
+        new Notice("Cancelado."); return;
+    } else if (choice.type === "book") {
+        selected = choice.value;
+    } else if (choice.type === "search") {
+        query = await tp.system.prompt("Nuevo título a buscar", query);
+        if (!query) return;
+    } else if (choice.type === "manual") {
+        manualMode = true;
     }
 }
 
+// ── 3. EXTRACCIÓN DE DATOS ────────────────────────────────────────────────────
+let titulo = query, autor = "", anio = "", isbn = "", portada = "", paginas = "", idioma = "", editorial = "", sinopsis = "", temasExtras = [];
+const fechaInicio = tp.date.now("YYYY-MM-DD");
+
+if (selected) {
+    const info = selected.volumeInfo;
+    titulo = info.title || query;
+    autor = info.authors ? info.authors.join(", ") : "";
+    anio = info.publishedDate ? info.publishedDate.substring(0, 4) : "";
+    paginas = info.pageCount ? String(info.pageCount) : "";
+    editorial = info.publisher || "";
+    idioma = info.language ? info.language.toUpperCase() : "";
+    temasExtras = info.categories || [];
+
+    if (info.description) {
+        sinopsis = info.description.replace(/(<([^>]+)>)/gi, "").replace(/\s+/g, " ").trim().substring(0, 500);
+        if (info.description.length > 500) sinopsis += "…";
+    }
+
+    if (info.industryIdentifiers) {
+        const id13 = info.industryIdentifiers.find(id => id.type === "ISBN_13");
+        isbn = id13 ? id13.identifier : (info.industryIdentifiers[0]?.identifier || "");
+    }
+
+    if (info.imageLinks) {
+        const base = info.imageLinks.extraLarge || info.imageLinks.large || info.imageLinks.medium || info.imageLinks.thumbnail || "";
+        portada = base.replace("http:", "https:").replace("&edge=curl", "").replace(/zoom=\d/, "fife=w400");
+    }
+} else if (manualMode) {
+    titulo = await tp.system.prompt("Título", query) || query;
+    autor = await tp.system.prompt("Autor") || "";
+    anio = await tp.system.prompt("Año") || "";
+}
+
+// Fallback Portada
+if (!portada && isbn) {
+    portada = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+}
+
 // ── 4. RENOMBRAR ARCHIVO ──────────────────────────────────────────────────────
-if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
-    const safeTitle = titulo.replace(/[\\/#^[\]|:]/g, "").trim();
+if (esGenerico) {
+    const safeTitle = titulo.replace(/[\\/#^[\]|:?]/g, "").trim();
     await tp.file.rename(safeTitle);
 }
 _%>
