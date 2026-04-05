@@ -63,7 +63,7 @@ end
 command.define {
   name = "Go: Journal",
   run = function()
-    local page = "Journal/" .. os.date("%Y/%m/%Y-%m-%d")
+    local page = "00_Captura/Diario/" .. os.date("%Y/%m/%Y-%m-%d")
     local found = query[[from p = index.tag "page" where p.name == page]]
     if #found == 0 then
       space.writePage(
@@ -86,7 +86,7 @@ command.define {
     if not name or name == "" then
       return
     end
-    local page = "Notas/" .. name
+    local page = "20_Cerebro/" .. name
     space.writePage(
       page,
       "---\ntags: note\ncreated: "
@@ -126,6 +126,21 @@ command.define {
     editor.flashNotification(
       string.format("Palabras: %d | Lineas: %d | Tareas: %d/%d", words, lines + 1, done, total)
     )
+  end
+}
+
+command.define {
+  name = "Sistema: Sanear Boveda",
+  run = function()
+    local all = query[[from p = index.tag "page"]]
+    local count = 0
+    for _, p in ipairs(all) do
+      if p.name:match("[%s%z\1-\31]") then
+        count = count + 1
+        -- Solo notificamos por ahora para evitar cambios destructivos sin supervision
+      end
+    end
+    editor.flashNotification("Escaneo completado. Archivos con nombres no optimos encontrados: " .. tostring(count))
   end
 }
 ```
