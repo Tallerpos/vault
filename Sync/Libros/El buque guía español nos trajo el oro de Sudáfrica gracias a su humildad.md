@@ -1,10 +1,64 @@
+<%*
+// ── 1. BÚSQUEDA EN GOOGLE BOOKS (V10.1) ──────────────
+let query = tp.file.title;
+if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
+  query = await tp.system.prompt("Título, Autor o ISBN");
+}
+
+if (!query) return;
+
+// Detectar si es un ISBN (solo números, 10 o 13 dígitos)
+const isISBN = /^(97(8|9))?\d{9}(\d|X)$/.test(query.replace(/-/g, ""));
+const searchType = isISBN ? `isbn:${query}` : query;
+
+// Eliminamos langRestrict=es para permitir encontrar clásicos internacionales
+const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchType)}&maxResults=10&orderBy=relevance`;
+
+try {
+  const response = await fetch(url);
+  const data = await response.json();
+  const results = data.items;
+
+  if (!results || results.length === 0) {
+    new Notice("No se encontró el libro en Google Books. Procediendo manualmente.");
+    var autor = await tp.system.prompt("Autor (Manual)");
+    var anio = await tp.system.prompt("Año (Manual)");
+    var isbn = isISBN ? query : "";
+    var portada = "";
+    var temasExtras = [];
+  } else {
+    const selected = await tp.system.suggester(
+      (item) => {
+          const info = item.volumeInfo;
+          return `${info.title} (${info.authors?.[0] || "Desconocido"}) - ${info.publishedDate || "S.F."}`;
+      },
+      results,
+      false,
+      "Selecciona el libro correcto (Google Books)"
+    );
+    
+    if (!selected) return;
+
+    const info = selected.volumeInfo;
+    var autor = info.authors?.[0] || "";
+    var anio = info.publishedDate?.split("-")[0] || "";
+    var isbn = info.industryIdentifiers?.find(id => id.type === "ISBN_13")?.identifier || info.industryIdentifiers?.[0]?.identifier || "";
+    // Google Books imageLinks sometimes don't have 'thumbnail' or it's small, we try to get a better quality
+    var portada = info.imageLinks?.thumbnail ? info.imageLinks.thumbnail.replace("http://", "https://") : "";
+    var temasExtras = info.categories || [];
+  }
+} catch (e) {
+  new Notice("Error en la búsqueda. Procediendo manualmente.");
+  var autor = ""; var anio = ""; var isbn = ""; var portada = ""; var temasExtras = [];
+}
+_%>
 ---
 tipo: libro
-autor: null
-año: null
-isbn: 
-portada: ""
-temas: []
+autor: <% autor %>
+año: <% anio %>
+isbn: <% isbn %>
+portada: "<% portada %>"
+temas: <% JSON.stringify(temasExtras) %>
 rating: 
 estado: leyendo
 ---
