@@ -16,7 +16,7 @@ const libro = await tp.system.suggester(
 );
 
 const nombre = libro ? libro.basename : "";
-const link = nombre ? "[[" + nombre + "]]" : "";
+const link = nombre ? "\u005B\u005B" + nombre + "\u005D\u005D" : "";
 
 // ── 2. TEMAS INTELIGENTES (HERENCIA) ──────────────────
 const cacheLibro = libro ? app.metadataCache.getFileCache(libro) : null;
@@ -66,7 +66,7 @@ const temasYaml = temasFinal.length
 // ── 3. AGREGAR LINK AL LIBRO AUTOMÁTICAMENTE ─────────
 if (libro) {
   const contenido = await app.vault.read(libro);
-  const ideaLink = "\n- [" + "[" + tp.file.title + "]]";
+  const ideaLink = "\n- \u005B\u005B" + tp.file.title + "\u005D\u005D";
   const actualizado = contenido.includes("## Notas brutas")
     ? contenido.replace("## Notas brutas", "## Notas brutas" + ideaLink)
     : (contenido + "\n## Notas brutas" + ideaLink);
