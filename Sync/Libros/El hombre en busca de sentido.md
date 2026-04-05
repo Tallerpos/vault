@@ -1,21 +1,51 @@
 ---
 tipo: libro
-titulo: "El hombre en busca de sentido"
+titulo: "El hombre en busca de sentido "
 autor: ""
-año: 
+año:
 editorial: ""
 idioma: ""
 isbn: ""
-paginas: 
+paginas:
 pagina_actual: 0
 portada: ""
 temas: []
-rating: 
+rating:
 estado: leyendo
 fecha_inicio: 2026-04-05
-fecha_fin: 
+fecha_fin:
 ---
 
+_Sin portada disponible_
+
+# El hombre en busca de sentido 
+**** · 
+
+
+
+---
+
+## Por qué lo leí
+
+
+## Tesis principal
+
+
+## Notas brutas
+
+
+## Ideas clave
+```dataview
+LIST
+FROM "ideas"
+WHERE contains(fuente, this.file.name)
+SORT file.ctime ASC
+```
+
+## Resumen final
+
+
+## Rating y veredicto
 _Sin portada disponible_
 
 # El hombre en busca de sentido
