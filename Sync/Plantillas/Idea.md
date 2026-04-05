@@ -75,11 +75,11 @@ if (libro) {
 _%>
 ---
 tipo: idea
-fuente: "[[<% nombre %>]]"
+fuente: "<% "[[" + nombre + "]]" %>"
 temas:<% temasYaml %>
 ---
 
-**Fuente:** [[<% nombre %>]]
+**Fuente:** <% "[[" + nombre + "]]" %>
 
 # <% tp.file.title %>
 
@@ -91,5 +91,5 @@ temas:<% temasYaml %>
 
 **Falla cuando:**
 
-Conecta con: [[]]
-Contrasta con: [[]]
+Conecta con: 
+Contrasta con:
