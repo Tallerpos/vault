@@ -1,12 +1,12 @@
 <%*
 // ── 1. CONFIGURACIÓN E IDENTIFICACIÓN ─────────────────────────────────────────
-let query = tp.file.title;
+let query = tp.file.title || "";
 const titulosGenericos = ["Untitled", "Sin título", "Libro", "New note", ""];
 const esGenerico = titulosGenericos.some(t => query.startsWith(t) || query === "");
 
-if (esGenerico) {
+if (esGenerico || query.trim() === "") {
     query = await tp.system.prompt("Título del libro (añade el autor para precisión)");
-    if (!query) { new Notice("Cancelado."); return; }
+    if (!query) { new Notice("Búsqueda cancelada."); return; }
 }
 
 // ── 2. BÚSQUEDA INTERACTIVA (GOOGLE BOOKS) ────────────────────────────────────
@@ -18,11 +18,13 @@ while (!selected && !manualMode) {
     let results = [];
     
     try {
-        const response = await fetch(url);
-        const data = await response.json();
+        // Usamos requestUrl (API de Obsidian) para evitar problemas de CORS/red
+        const response = await requestUrl({ url: url });
+        const data = response.json;
         results = data.items || [];
     } catch(e) {
-        new Notice("Error de red. Pasando a modo manual.");
+        console.error("Error en Google Books:", e);
+        new Notice("Error de conexión. Revisa tu internet.");
         manualMode = true;
         break;
     }
@@ -41,18 +43,25 @@ while (!selected && !manualMode) {
     });
 
     // Añadir opciones de control
+    if (results.length === 0) {
+        new Notice("No se encontraron libros.");
+    }
+    
     options.push({ display: "🔍 Buscar otro título...", value: null, type: "search" });
     options.push({ display: "✏️ Rellenar manualmente...", value: null, type: "manual" });
 
-    const choice = await tp.system.suggester(item => item.display, options, false, `Resultados para: "${query}"`);
+    const choice = await tp.system.suggester(item => item.display, options, false, `Buscando: "${query}"`);
 
-    if (!choice) { // Cancelado con ESC
-        new Notice("Cancelado."); return;
-    } else if (choice.type === "book") {
+    if (!choice) { 
+        new Notice("Selección cancelada.");
+        return; 
+    } 
+    
+    if (choice.type === "book") {
         selected = choice.value;
     } else if (choice.type === "search") {
-        query = await tp.system.prompt("Nuevo título a buscar", query);
-        if (!query) return;
+        const newQuery = await tp.system.prompt("Nuevo título a buscar", query);
+        if (newQuery) query = newQuery;
     } else if (choice.type === "manual") {
         manualMode = true;
     }
