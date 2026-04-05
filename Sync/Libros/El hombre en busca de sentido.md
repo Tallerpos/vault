@@ -1,19 +1,19 @@
 ---
 tipo: libro
-titulo: "El hombre en busca de sentido"
-autor: "Viktor Emil Frankl"
+titulo: El hombre en busca de sentido
+autor: Viktor Emil Frankl
 año: 1998
 editorial: ""
-idioma: "ES"
+idioma: ES
 isbn: "9788422669999"
 paginas: 170
 pagina_actual: 0
 portada: ""
 temas: []
-rating: 
+rating:
 estado: leyendo
 fecha_inicio: 2026-04-05
-fecha_fin: 
+fecha_fin:
 ---
 
 _Sin portada disponible_
