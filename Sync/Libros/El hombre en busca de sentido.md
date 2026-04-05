@@ -15,7 +15,7 @@ estado: leyendo
 fecha_inicio: 2026-04-05
 fecha_fin: 
 ---
-
+[[La logoterapia]]
 ![El hombre en busca de sentido|200](https://books.google.com/books/content?id=eAOIDwAAQBAJ&printsec=frontcover&img=1&fife=w400&source=gbs_api)
 
 # El hombre en busca de sentido
@@ -32,6 +32,7 @@ fecha_fin:
 
 
 ## Notas brutas
+- [[La logoterapia]]
 
 
 ## Ideas clave
