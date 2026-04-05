@@ -69,13 +69,12 @@ if (books.length === 0) {
 
 ## Alertas e Integridad
 ```dataviewjs
-// Detecta si hay ideas sin fuente correctamente enlazada
 const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
-const orphanIdeas = ideas.filter(i => !i.fuente || !String(i.fuente).includes("[["));
+const orphanIdeas = ideas.filter(i => !i.fuente || !String(i.fuente).includes("\u005B\u005B"));
 
 if (orphanIdeas.length > 0) {
     const box = this.container.createDiv({ style: "background: rgba(255, 0, 0, 0.05); padding: 10px; border-radius: 8px;" });
-    box.createEl("div", { text: "Atención: Tienes ideas mal enlazadas. Revisa el Reporte de Integridad.", style: "font-size: 0.85em; color: var(--text-error);" });
+    box.createEl("div", { text: "Atención: Tienes ideas mal enlazadas. Revia el Reporte de Integridad.", style: "font-size: 0.85em; color: var(--text-error);" });
 } else {
     dv.paragraph("Integridad del conocimiento: Óptima.");
 }
