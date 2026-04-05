@@ -3,7 +3,7 @@
 
 ## 📈 Estadísticas de la Bóveda
 - **Tamaño Total:** 7.1M
-- **Archivos Totales:** 12
+
 
 ## ⚡ Estado del Servidor
 - **RAM Real Disponible:** 13Gi (Total: 16GB)
