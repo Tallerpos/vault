@@ -1,9 +1,10 @@
-# VERSION 6.3 - DISEÑO NATIVO
-> [!CAUTION]
-> **Aviso de Sincronización**: En tu captura veo que el icono de sincronización de Obsidian (abajo a la derecha) está en rojo. Eso significa que Obsidian no está guardando/cargando los cambios del servidor. He inyectado el diseño directamente aquí para forzar que funcione.
+# LECTURA
+> [!SUCCESS]
+> **Sincronización Corregida**: Veo que tus archivos ya están sincronizados. He "escondido" el diseño técnico para que el Dashboard se vea limpio y profesional.
 
-<style>
-/* ── ESTILOS NATIVOS INTEGRADOS ── */
+```dataviewjs
+// ── INYECCIÓN SILENCIOSA DE ESTILOS (v6.4) ──
+const styles = `
 .cards .dataview.table-view-table {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -53,7 +54,9 @@
     font-size: 0.8em !important;
     padding-top: 0 !important;
 }
-</style>
+`;
+this.container.createEl("style", { text: styles });
+```
 
 ---
 cssclass: cards
@@ -104,8 +107,8 @@ const orphanIdeas = ideas.filter(i => !i.fuente || !String(i.fuente).includes("[
 
 if (orphanIdeas.length > 0) {
     const box = this.container.createDiv({ style: "background: rgba(255, 0, 0, 0.05); padding: 10px; border-radius: 8px;" });
-    box.createEl("div", { text: "⚠️ Tienes ideas huérfanas. Revisa el Reporte de Integridad.", style: "font-size: 0.85em; color: var(--text-error);" });
+    box.createEl("div", { text: "⚠️ Tienes ideas huérfanas o mal enlazadas. Revisa SISTEMA/Integridad.md.", style: "font-size: 0.85em; color: var(--text-error);" });
 } else {
-    dv.paragraph("Red de conocimiento: Estable.");
+    dv.paragraph("Red de conocimiento: Estable y conectada.");
 }
 ```
