@@ -35,12 +35,13 @@ _Sin portada disponible_
 
 
 ## Ideas clave
-```dataviewjsdv.list(
+dataviewjsdv.list(
 dv.pages('"ideas"')
 .where(p => p.fuente && String(p.fuente).includes(dv.current().file.name))
 .sort(p => p.file.ctime, "asc")
 .map(p => p.file.link)
 )
+```
 
 ## Resumen final
 
