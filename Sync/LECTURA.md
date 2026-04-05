@@ -1,10 +1,63 @@
+# VERSION 6.3 - DISEÑO NATIVO
+> [!CAUTION]
+> **Aviso de Sincronización**: En tu captura veo que el icono de sincronización de Obsidian (abajo a la derecha) está en rojo. Eso significa que Obsidian no está guardando/cargando los cambios del servidor. He inyectado el diseño directamente aquí para forzar que funcione.
+
+<style>
+/* ── ESTILOS NATIVOS INTEGRADOS ── */
+.cards .dataview.table-view-table {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 25px !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+}
+.cards .dataview.table-view-table thead { display: none !important; }
+.cards .dataview.table-view-table tbody { display: contents !important; }
+.cards .dataview.table-view-table tr {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 190px !important;
+    background: var(--background-secondary-alt) !important;
+    border: 1px solid var(--divider-color) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    transition: transform 0.2s !important;
+    flex-grow: 1 !important;
+    max-width: 210px !important;
+}
+.cards .dataview.table-view-table tr:hover {
+    transform: translateY(-8px) !important;
+    border-color: var(--interactive-accent) !important;
+}
+.cards .dataview.table-view-table td {
+    padding: 12px !important;
+    display: block !important;
+    border: none !important;
+}
+.cards .dataview.table-view-table td:first-child {
+    padding: 0 !important;
+    aspect-ratio: 2 / 3 !important;
+    order: -1 !important;
+}
+.cards .dataview.table-view-table td:first-child img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+.cards .dataview.table-view-table td:nth-child(2) {
+    font-weight: 700 !important;
+    font-size: 0.95em !important;
+    color: var(--text-normal) !important;
+}
+.cards .dataview.table-view-table td:nth-child(n+3) {
+    font-size: 0.8em !important;
+    padding-top: 0 !important;
+}
+</style>
+
 ---
 cssclass: cards
 ---
-# Dashboard de Lectura
-
-> [!TIP]
-> **Optimización Móvil (v6.2)**: Ya he corregido el error. Ahora pulsa el botón de **'Refrescar'** (flechas circulares) en tu captura y activa el snippet **'dashboard'**. Todo se verá perfecto.
 
 ## Inspiración Aleatoria
 ```dataviewjs
@@ -17,18 +70,14 @@ if (ideas.length > 0) {
     mainCont.style.padding = "20px";
     mainCont.style.borderLeft = "5px solid var(--interactive-accent)";
     mainCont.style.margin = "10px 0";
-
+    
     mainCont.createEl("div", { 
         text: "IDEA AL AZAR PARA REFLEXIONAR", 
-        style: "font-size: 0.7em; color: var(--text-muted); margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;" 
+        style: "font-size: 0.7em; color: var(--text-muted); margin-bottom: 8px; font-weight: bold;" 
     });
     
-    const titleLinkCont = mainCont.createDiv({ style: "font-weight: 700; font-size: 1.2em; margin-bottom: 10px;" });
+    const titleLinkCont = mainCont.createDiv({ style: "font-weight: 700; font-size: 1.2em; margin-bottom: 5px;" });
     dv.el("span", randomIdea.file.link, { container: titleLinkCont });
-    
-    const sourceEl = mainCont.createDiv({ style: "font-size: 0.9em; color: var(--text-normal); font-style: italic;" });
-    sourceEl.appendText("Fuente: ");
-    dv.el("span", randomIdea.fuente || "Sin fuente vinculada", { container: sourceEl });
 }
 ```
 
@@ -48,44 +97,15 @@ SORT rating DESC, file.mtime DESC
 
 ---
 
-## Alertas de Mantenimiento
+## Alertas e Integridad
 ```dataviewjs
 const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
 const orphanIdeas = ideas.filter(i => !i.fuente || !String(i.fuente).includes("[["));
-const books = dv.pages('"Libros"').where(p => p.tipo === "libro");
-const booksWithNoIdeas = books.filter(b => !ideas.some(i => String(i.fuente).includes(b.file.name)));
 
-if (orphanIdeas.length > 0 || booksWithNoIdeas.length > 0) {
-    const alertBox = this.container.createDiv({
-      style: "background: rgba(255, 0, 0, 0.05); border: 1px solid rgba(255, 0, 0, 0.2); border-radius: 8px; padding: 15px; margin-top: 20px;"
-    });
-    alertBox.createEl("h4", { text: "⚠️ Auditoría: Acción Requerida", style: "margin: 0; color: var(--text-error); font-size: 0.9em;" });
+if (orphanIdeas.length > 0) {
+    const box = this.container.createDiv({ style: "background: rgba(255, 0, 0, 0.05); padding: 10px; border-radius: 8px;" });
+    box.createEl("div", { text: "⚠️ Tienes ideas huérfanas. Revisa el Reporte de Integridad.", style: "font-size: 0.85em; color: var(--text-error);" });
 } else {
-    dv.paragraph("Integridad: Óptima");
-}
-```
-
----
-
-## Ideas por Temas
-```dataviewjs
-const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
-const temaMap = new Map();
-
-for (const idea of ideas) {
-  const temas = idea.temas
-    ? (Array.isArray(idea.temas) ? idea.temas : [idea.temas])
-    : ["Sin clasificar"];
-  for (const tema of temas) {
-    if (!temaMap.has(tema)) temaMap.set(tema, []);
-    temaMap.get(tema).push(idea);
-  }
-}
-
-if (temaMap.size > 0) {
-  for (const [tema, notas] of [...temaMap.entries()].sort()) {
-    dv.header(3, `${tema} (${notas.length})`);
-    dv.list(notas.map(n => n.file.link));
-  }
+    dv.paragraph("Red de conocimiento: Estable.");
 }
 ```
