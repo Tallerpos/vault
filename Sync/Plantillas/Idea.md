@@ -41,7 +41,7 @@ let seguir = true;
 
 while (seguir) {
   const sel = await tp.system.suggester(
-    x => (temasLibro.includes(x) ? "📖 " : "🏷️ ") + (x === "＋ Nuevo tema..." ? x : x),
+    x => (temasLibro.includes(x) ? "[Libro] " : "[General] ") + (x === "＋ Nuevo tema..." ? x : x),
     opciones,
     false,
     `Tema #${temasElegidos.size + 1} (ESC para terminar)`
@@ -53,7 +53,7 @@ while (seguir) {
     const nuevo = await tp.system.prompt("Escribe el nuevo tema:");
     if (nuevo) { temasElegidos.add(nuevo); opciones.push(nuevo); }
   } else {
-    const limpio = sel.replace(/^[📖🏷️]\s/, "");
+    const limpio = sel.replace(/^\[.*?\]\s/, "");
     temasElegidos.add(limpio);
   }
 }
