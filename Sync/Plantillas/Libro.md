@@ -1,20 +1,30 @@
 <%*
 // ── 1. BÚSQUEDA EN GOOGLE BOOKS ──────────────────────────────────────────────
+const API_KEY = "AIzaSyChJ0JOuVdZ55PCj0dLoXGYcYZ2LT7_Vso";
 let query = tp.file.title;
 const titulosGenericos = ["Untitled", "Sin título", "Libro", "New note", ""];
-if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
-    query = await tp.system.prompt("Título del libro (añade el autor si es muy famoso)");
-}
-if (!query) { new Notice("Cancelado."); return; }
 
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&printType=books&orderBy=relevance`;
-let results = null;
+if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
+    query = await tp.system.prompt("Título del libro");
+}
+
+if (!query || query.trim() === "") { new Notice("Cancelado."); return; }
+
+const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&printType=books&orderBy=relevance&key=${API_KEY}`;
+let results = [];
+
 try {
-    const response = await fetch(url);
-    const data = await response.json();
-    results = data.items || null;
+    // Usamos requestUrl (API de Obsidian) para evitar bloqueos de CORS y mayor robustez
+    const response = await requestUrl({ url: url });
+    const data = response.json;
+    results = data.items || [];
 } catch(e) {
-    new Notice("Error de red. Continúa manualmente.");
+    if (e.status === 429) {
+        new Notice("Exceso de peticiones (Rate Limit). Espera un momento.");
+    } else {
+        new Notice("Error en la búsqueda. Revisa tu conexión o la API Key.");
+    }
+    console.error("Google Books Error:", e);
 }
 
 // ── 2. VARIABLES BASE ─────────────────────────────────────────────────────────
