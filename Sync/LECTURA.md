@@ -1,8 +1,8 @@
-# Reading Dashboard
+# Dashboard de Lectura
 
-## Visual Library (Gallery)
+## Biblioteca Visual (Galería)
 ```dataviewjs
-// 1. Inject Premium Styles
+// 1. Inyección de Estilos Premium
 const styles = `
 .dashboard-grid {
     display: grid;
@@ -62,25 +62,26 @@ const styles = `
     margin-top: 8px;
     font-size: 0.75em;
     letter-spacing: 1px;
+    color: var(--text-accent);
 }
 `;
 dv.el("style", styles);
 
-// 2. Fetch and Sort Books
-// Priority: Rating (desc) -> Last Modified (desc)
+// 2. Obtener y Ordenar Libros
+// Prioridad: Rating (desc) -> Última modificación (desc)
 const books = dv.pages('"Libros"')
     .where(p => p.tipo === "libro")
     .sort(p => p.rating, 'desc')
     .sort(p => p.file.mtime, 'desc');
 
 if (books.length === 0) {
-    dv.paragraph("No books found in 'Libros'. Ensure 'tipo: libro' exists in metadata.");
+    dv.paragraph("No se encontraron libros en la carpeta 'Libros'. Asegúrate de que tengan 'tipo: libro' en los metadatos.");
 } else {
-    // 3. Render Card Grid
+    // 3. Renderizar Grid de Tarjetas
     let html = '<div class="dashboard-grid">';
     for (const book of books) {
-        const cover = book.portada || "https://via.placeholder.com/180x270?text=No+Cover";
-        const rating = book.rating ? "★".repeat(book.rating) : "Not rated";
+        const cover = book.portada || "https://via.placeholder.com/180x270?text=Sin+Portada";
+        const rating = book.rating ? "Puntuación: " + book.rating + "/5" : "Sin calificar";
         html += `
             <a href="${book.file.path}" class="internal-link book-card">
                 <div class="book-cover-container">
@@ -88,7 +89,7 @@ if (books.length === 0) {
                 </div>
                 <div class="book-info">
                     <div class="book-title">${book.file.name}</div>
-                    <div class="book-author">${book.autor || "Unknown Author"}</div>
+                    <div class="book-author">${book.autor || "Autor desconocido"}</div>
                     <div class="book-rating">${rating}</div>
                 </div>
             </a>
@@ -101,7 +102,7 @@ if (books.length === 0) {
 
 ---
 
-## Ideas by Topic
+## Ideas por Tema
 ```dataviewjs
 const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
 const temaMap = new Map();
@@ -109,7 +110,7 @@ const temaMap = new Map();
 for (const idea of ideas) {
   const temas = idea.temas
     ? (Array.isArray(idea.temas) ? idea.temas : [idea.temas])
-    : ["No topic"];
+    : ["Sin tema"];
   for (const tema of temas) {
     if (!temaMap.has(tema)) temaMap.set(tema, []);
     temaMap.get(tema).push(idea);
@@ -117,7 +118,7 @@ for (const idea of ideas) {
 }
 
 if (temaMap.size === 0) {
-  dv.paragraph("No ideas found. Use the Idea template to create one.");
+  dv.paragraph("No se encontraron ideas. Usa la plantilla de Idea para crear una.");
 } else {
   for (const [tema, notas] of [...temaMap.entries()].sort()) {
     dv.header(3, `${tema} (${notas.length})`);
@@ -128,9 +129,9 @@ if (temaMap.size === 0) {
 
 ---
 
-## Recent Ideas
+## Ideas Recientes
 ```dataview
-TABLE fuente as "Source", temas as "Topics"
+TABLE fuente as "Fuente", temas as "Temas"
 FROM "ideas"
 WHERE tipo = "idea"
 SORT file.ctime DESC
