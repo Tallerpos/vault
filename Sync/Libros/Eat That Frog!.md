@@ -2,9 +2,9 @@
 tipo: libro
 autor: Brian Tracy
 año: 2001
-portada: "https://covers.openlibrary.org/b/id/847534-M.jpg"
+portada: https://covers.openlibrary.org/b/id/847534-M.jpg
 temas: []
-rating: 
+rating: 2
 estado: leyendo
 ---
 
