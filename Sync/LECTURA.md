@@ -5,28 +5,24 @@
 const ideas = dv.pages('"ideas"').where(p => p.tipo === "idea");
 if (ideas.length > 0) {
     const randomIdea = ideas[Math.floor(Math.random() * ideas.length)];
-    const container = this.container.createDiv();
-    container.style.background = "var(--background-secondary-alt)";
-    container.style.borderRadius = "12px";
-    container.style.padding = "20px";
-    container.style.borderLeft = "5px solid var(--interactive-accent)";
-    container.style.margin = "10px 0";
+    const mainCont = this.container.createDiv();
+    mainCont.style.background = "var(--background-secondary-alt)";
+    mainCont.style.borderRadius = "12px";
+    mainCont.style.padding = "20px";
+    mainCont.style.borderLeft = "5px solid var(--interactive-accent)";
+    mainCont.style.margin = "10px 0";
 
-    container.createEl("div", { 
+    mainCont.createEl("div", { 
         text: "IDEA AL AZAR PARA REFLEXIONAR", 
         style: "font-size: 0.7em; color: var(--text-muted); margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;" 
     });
     
-    const titleLink = container.createEl("div", { 
-        style: "font-weight: 700; font-size: 1.2em; margin-bottom: 10px;" 
-    });
-    dv.append(titleLink, randomIdea.file.link);
+    const titleLinkCont = mainCont.createDiv({ style: "font-weight: 700; font-size: 1.2em; margin-bottom: 10px;" });
+    dv.el("span", randomIdea.file.link, { container: titleLinkCont });
     
-    const sourceEl = container.createEl("div", { 
-        style: "font-size: 0.9em; color: var(--text-normal); font-style: italic;" 
-    });
+    const sourceEl = mainCont.createDiv({ style: "font-size: 0.9em; color: var(--text-normal); font-style: italic;" });
     sourceEl.appendText("Fuente: ");
-    dv.append(sourceEl, randomIdea.fuente || "Sin fuente vinculada");
+    dv.el("span", randomIdea.fuente || "Sin fuente vinculada", { container: sourceEl });
 }
 ```
 
@@ -104,19 +100,19 @@ if (orphanIdeas.length > 0 || booksWithNoIdeas.length > 0) {
     alertBox.createEl("h3", { text: "Atención Requerida", style: "margin-top: 0; color: var(--text-error); font-size: 1em;" });
     
     if (orphanIdeas.length > 0) {
-        const p = alertBox.createEl("p", { style: "font-size: 0.9em; margin-bottom: 8px;" });
+        const p = alertBox.createDiv({ style: "font-size: 0.9em; margin-bottom: 8px;" });
         p.createEl("strong", { text: "Ideas sin vincular: " });
         orphanIdeas.forEach((id, index) => {
-            dv.append(p, id.file.link);
+            dv.el("span", id.file.link, { container: p });
             if (index < orphanIdeas.length -1) p.appendText(", ");
         });
     }
     
     if (booksWithNoIdeas.length > 0) {
-        const p = alertBox.createEl("p", { style: "font-size: 0.9em; margin: 0;" });
+        const p = alertBox.createDiv({ style: "font-size: 0.9em; margin: 0;" });
         p.createEl("strong", { text: "Libros sin ideas aún: " });
         booksWithNoIdeas.forEach((bk, index) => {
-            dv.append(p, bk.file.link);
+            dv.el("span", bk.file.link, { container: p });
             if (index < booksWithNoIdeas.length -1) p.appendText(", ");
         });
     }
