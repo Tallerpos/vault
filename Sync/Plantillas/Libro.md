@@ -1,5 +1,5 @@
 <%*
-// ── 1. BÚSQUEDA MULTI-MOTOR (V11.0) ──────────────────
+// ── 1. BÚSQUEDA MULTI-MOTOR ULTRA-ROBUSTA (V12.0) ──────
 let query = tp.file.title;
 if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
   query = await tp.system.prompt("Título, Autor o ISBN");
@@ -11,57 +11,58 @@ const isISBN = /^(97(8|9))?\d{9}(\d|X)$/.test(query.replace(/-/g, ""));
 const searchType = isISBN ? `isbn:${query}` : query;
 
 let results = [];
-let errorOccurred = false;
 
 // --- FUNCION DE BUSQUEDA (Google Books) ---
 async function searchGoogleBooks(q) {
   const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=10`;
   try {
-    const response = await requestUrl({ url: url });
+    // Usamos app.requestUrl para máxima compatibilidad
+    const response = await app.requestUrl({ url: url });
     return response.json.items || [];
   } catch (e) {
-    console.error("Google Books Error:", e);
+    console.error("Error en Google Books:", e);
     return [];
   }
 }
 
-// --- FUNCION DE BUSQUEDA (Open Library Fallback) ---
+// --- FUNCION DE BUSQUEDA (Open Library) ---
 async function searchOpenLibrary(q) {
   const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(q)}&limit=10`;
   try {
-    const response = await requestUrl({ url: url });
+    const response = await app.requestUrl({ url: url });
     return response.json.docs || [];
   } catch (e) {
-    console.error("Open Library Error:", e);
+    console.error("Error en Open Library:", e);
     return [];
   }
 }
 
-// ── EJECUCIÓN DE BÚSQUEDA ────────────────────────────
-new Notice("Buscando libro...");
+// ── EJECUCIÓN ────────────────────────────────────────
+new Notice("🔍 Buscando libro en la red...");
 results = await searchGoogleBooks(searchType);
 
-// Si Google Books falla, intentamos con Open Library
+// Intento de respaldo si Google no responde o no encuentra nada
 if (results.length === 0) {
-  new Notice("Google Books no respondió, intentando motor alternativo...");
+  new Notice("⚠️ Google Books falló, intentando motor de respaldo...");
   const olResults = await searchOpenLibrary(searchType);
   if (olResults.length > 0) {
     results = olResults.map(item => ({
       volumeInfo: {
         title: item.title,
         authors: item.author_name,
-        publishedDate: item.first_publish_year ? String(item.first_publish_year) : "",
-        imageLinks: item.cover_i ? { thumbnail: `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg` } : null,
+        publishedDate: item.first_publish_year ? String(item.first_publish_year) : "S.F.",
+        imageLinks: item.cover_i ? { thumbnail: `https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg` } : null,
         industryIdentifiers: item.isbn ? [{ identifier: item.isbn[0] }] : []
       }
     }));
   }
 }
 
-// ── PROCESAMIENTO DE SELECCIÓN ────────────────────────
+// ── SELECCIÓN ────────────────────────────────────────
 if (results.length === 0) {
-  new Notice("No se encontró el libro automáticamente.");
+  new Notice("❌ No se encontró el libro automáticamente.");
   var autor = await tp.system.prompt("Autor (Manual)");
+  if (!autor) return;
   var anio = await tp.system.prompt("Año (Manual)");
   var isbn = isISBN ? query : "";
   var portada = "";
@@ -71,7 +72,7 @@ if (results.length === 0) {
     (item) => `${item.volumeInfo.title} (${item.volumeInfo.authors?.[0] || "Desconocido"}) - ${item.volumeInfo.publishedDate || "S.F."}`,
     results,
     false,
-    "Selecciona el libro correcto"
+    "Elige el resultado correcto"
   );
   
   if (!selected) return;
@@ -105,7 +106,7 @@ const ideasCount = dv.pages('"ideas"').filter(i => {
     return i.fuente && String(i.fuente).includes(p.file.name);
 }).length;
 
-// 2. Render de Cabecera Elite (Resiliente)
+// 2. Render de Cabecera Elite
 const container = this.container.createDiv({ style: "display: flex; flex-wrap: wrap; gap: 30px; padding: 25px; background: var(--background-secondary-alt); border-radius: 15px; border: 1px solid var(--divider-color); margin-bottom: 30px; min-height: 250px;" });
 
 const imgCol = container.createDiv({ style: "width: 180px; min-width: 150px; flex: 0 0 180px; height: 270px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; position: relative;" });
