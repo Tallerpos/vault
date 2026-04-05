@@ -1,6 +1,6 @@
 ---
 tipo: libro
-titulo: "El hombre en busca de sentido "
+titulo: "El hombre en busca de sentido"
 autor: ""
 año: 
 editorial: ""
@@ -18,7 +18,7 @@ fecha_fin:
 
 _Sin portada disponible_
 
-# El hombre en busca de sentido 
+# El hombre en busca de sentido
 **** · 
 
 
