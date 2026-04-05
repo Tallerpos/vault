@@ -18,15 +18,15 @@ try {
 }
 
 // ── 2. VARIABLES BASE ─────────────────────────────────────────────────────────
-var titulo    = query;
-var autor     = "";
-var anio      = "";
-var isbn      = "";
-var portada   = "";
-var paginas   = "";
-var idioma    = "";
-var editorial = "";
-var sinopsis  = "";
+var titulo      = query;
+var autor       = "";
+var anio        = "";
+var isbn        = "";
+var portada     = "";
+var paginas     = "";
+var idioma      = "";
+var editorial   = "";
+var sinopsis    = "";
 var temasExtras = [];
 var fechaInicio = tp.date.now("YYYY-MM-DD");
 
@@ -41,7 +41,7 @@ if (!results || results.length === 0) {
 } else {
     const selected = await tp.system.suggester(
         (item) => {
-            const info = item.volumeInfo;
+            const info   = item.volumeInfo;
             const t      = info.title || "Sin título";
             const author = info.authors ? info.authors.join(", ") : "Desconocido";
             const year   = info.publishedDate ? info.publishedDate.substring(0, 4) : "S.F.";
@@ -63,13 +63,13 @@ if (!results || results.length === 0) {
     } else {
         const info = selected.volumeInfo;
 
-        titulo    = info.title || query;
-        autor     = info.authors    ? info.authors.join(", ")         : "";
-        anio      = info.publishedDate ? info.publishedDate.substring(0, 4) : "";
-        paginas   = info.pageCount  ? String(info.pageCount)           : "";
-        editorial = info.publisher  ? info.publisher                   : "";
-        idioma    = info.language   ? info.language.toUpperCase()      : "";
-        temasExtras = info.categories ? info.categories                : [];
+        titulo    = info.title        || query;
+        autor     = info.authors      ? info.authors.join(", ")              : "";
+        anio      = info.publishedDate ? info.publishedDate.substring(0, 4)  : "";
+        paginas   = info.pageCount    ? String(info.pageCount)               : "";
+        editorial = info.publisher    || "";
+        idioma    = info.language     ? info.language.toUpperCase()          : "";
+        temasExtras = info.categories || [];
 
         // Sinopsis: limpia HTML y recorta a 500 caracteres
         if (info.description) {
@@ -88,7 +88,7 @@ if (!results || results.length === 0) {
             isbn = id13 ? id13.identifier : (id10 ? id10.identifier : "");
         }
 
-        // Portada en máxima resolución disponible
+        // Portada — fife=w400 funciona sin bloqueo de referrer
         if (info.imageLinks) {
             const base = info.imageLinks.extraLarge
                       || info.imageLinks.large
@@ -98,14 +98,18 @@ if (!results || results.length === 0) {
             portada = base
                 .replace("http:", "https:")
                 .replace("&edge=curl", "")
-                .replace("zoom=1", "zoom=2");
+                .replace(/zoom=\d/, "fife=w400");
+        }
+
+        // Fallback: Open Library por ISBN (no tiene bloqueo de referrer)
+        if (!portada && isbn) {
+            portada = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
         }
     }
 }
 
 // ── 4. RENOMBRAR ARCHIVO ──────────────────────────────────────────────────────
-const tituloActual = tp.file.title;
-if (titulosGenericos.some(t => tituloActual.startsWith(t) || tituloActual === t)) {
+if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
     const safeTitle = titulo.replace(/[\\/#^[\]|:]/g, "").trim();
     await tp.file.rename(safeTitle);
 }
@@ -128,7 +132,7 @@ fecha_inicio: <% fechaInicio %>
 fecha_fin: 
 ---
 
-<% portada ? `![Portada|200](${portada})` : "_Sin portada disponible_" %>
+<% portada ? `![${titulo}|200](${portada})` : "_Sin portada disponible_" %>
 
 # <% titulo %>
 **<% autor %>** · <% anio %><% editorial ? ` · ${editorial}` : "" %>
@@ -147,12 +151,12 @@ fecha_fin:
 
 
 ## Ideas clave
-```dataviewjsdv.list(
-dv.pages('"ideas"')
-.where(p => p.fuente && String(p.fuente).includes(dv.current().file.name))
-.sort(p => p.file.ctime, "asc")
-.map(p => p.file.link)
-)
+```dataview
+LIST
+FROM "ideas"
+WHERE contains(fuente, this.file.name)
+SORT file.ctime ASC
+```
 
 ## Resumen final
 
