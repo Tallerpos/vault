@@ -11,8 +11,7 @@ if (!query) return;
 const isISBN = /^(97(8|9))?\d{9}(\d|X)$/.test(query.replace(/-/g, ""));
 const searchType = isISBN ? `isbn:${query}` : query;
 
-// Eliminamos langRestrict=es para permitir encontrar clásicos internacionales
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchType)}&maxResults=10&orderBy=relevance`;
+const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchType)}&maxResults=10&langRestrict=es`;
 
 try {
   const response = await fetch(url);
