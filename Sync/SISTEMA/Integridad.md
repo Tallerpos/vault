@@ -17,8 +17,7 @@ const u_close = "\u005D\u005D";
 const brokenIdeas = ideas.filter(i => {
   const f = i.fuente;
   if (!f) return false;
-  // Buscamos si NO tiene corchetes (ni los literales ni los escapados en JS)
-  return !String(f).includes("[[");
+  return !String(f).includes(u_open);
 });
 
 if (brokenIdeas.length > 0) {
@@ -43,9 +42,7 @@ if (brokenIdeas.length > 0) {
       const file = app.vault.getAbstractFileByPath(idea.file.path);
       if (file) {
         await app.fileManager.processFrontMatter(file, (fm) => {
-          if (fm.fuente && !String(fm.fuente).includes("[[")) {
-            // Aplicamos el enlace real. Obsidian lo indexará al crearse la nota,
-            // pero el código de este script será invisible al grafo.
+          if (fm.fuente && !String(fm.fuente).includes(u_open)) {
             fm.fuente = u_open + fm.fuente + u_close;
             count++;
           }
