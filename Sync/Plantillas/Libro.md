@@ -7,7 +7,7 @@ if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === 
 }
 if (!query) { new Notice("Cancelado."); return; }
 
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&langRestrict=es&printType=books`;
+const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&printType=books&orderBy=relevance`;
 let results = null;
 try {
     const response = await fetch(url);
@@ -63,13 +63,13 @@ if (!results || results.length === 0) {
     } else {
         const info = selected.volumeInfo;
 
-        titulo    = info.title        || query;
-        autor     = info.authors      ? info.authors.join(", ")              : "";
-        anio      = info.publishedDate ? info.publishedDate.substring(0, 4)  : "";
-        paginas   = info.pageCount    ? String(info.pageCount)               : "";
-        editorial = info.publisher    || "";
-        idioma    = info.language     ? info.language.toUpperCase()          : "";
-        temasExtras = info.categories || [];
+        titulo      = info.title         || query;
+        autor       = info.authors       ? info.authors.join(", ")             : "";
+        anio        = info.publishedDate ? info.publishedDate.substring(0, 4)  : "";
+        paginas     = info.pageCount     ? String(info.pageCount)              : "";
+        editorial   = info.publisher     || "";
+        idioma      = info.language      ? info.language.toUpperCase()         : "";
+        temasExtras = info.categories    || [];
 
         // Sinopsis: limpia HTML y recorta a 500 caracteres
         if (info.description) {
@@ -101,7 +101,7 @@ if (!results || results.length === 0) {
                 .replace(/zoom=\d/, "fife=w400");
         }
 
-        // Fallback: Open Library por ISBN (no tiene bloqueo de referrer)
+        // Fallback: Open Library por ISBN (sin bloqueo de referrer)
         if (!portada && isbn) {
             portada = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
         }
