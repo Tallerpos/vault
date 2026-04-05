@@ -1,95 +1,152 @@
 <%*
-// ── 1. SELECCIONAR LIBRO ──────────────────────────────
+// ── 1. SELECCIONAR LIBRO ──────────────────────────────────────────────────────
 const libros = app.vault.getMarkdownFiles()
-  .filter(f => f.path.startsWith("Libros/"));
+    .filter(f => f.path.startsWith("Libros/"))
+    .sort((a, b) => b.stat.mtime - a.stat.mtime); // más recientes primero
 
 if (libros.length === 0) {
-  new Notice("Crea un libro primero para poder asociar esta idea.");
-  return;
+    new Notice("⚠ No hay libros en la carpeta Libros/. Crea uno primero.");
+    return;
 }
 
 const libro = await tp.system.suggester(
-  f => f.basename,
-  libros,
-  true,
-  "¿De qué libro viene esta idea?"
+    f => {
+        const cache = app.metadataCache.getFileCache(f);
+        const autor = cache?.frontmatter?.autor ? ` · ${cache.frontmatter.autor}` : "";
+        const estado = cache?.frontmatter?.estado ? ` [${cache.frontmatter.estado}]` : "";
+        return `${f.basename}${autor}${estado}`;
+    },
+    libros,
+    true,
+    "¿De qué libro viene esta idea? (ESC = sin libro)"
 );
 
-const nombre = libro ? libro.basename : "";
-const link = nombre ? "\u005B\u005B" + nombre + "\u005D\u005D" : "";
+const nombreLibro = libro ? libro.basename : "";
+const linkLibro   = nombreLibro ? `[[${nombreLibro}]]` : "";
 
-// ── 2. TEMAS INTELIGENTES (HERENCIA) ──────────────────
-const cacheLibro = libro ? app.metadataCache.getFileCache(libro) : null;
+// ── 2. PÁGINA / CAPÍTULO OPCIONAL ─────────────────────────────────────────────
+let ubicacion = "";
+if (libro) {
+    const pag = await tp.system.prompt("Página o capítulo (opcional, Enter para omitir)");
+    if (pag && pag.trim() !== "") {
+        ubicacion = pag.trim();
+    }
+}
+
+// ── 3. TEMAS INTELIGENTES (HERENCIA + POOL GLOBAL) ───────────────────────────
+const cacheLibro    = libro ? app.metadataCache.getFileCache(libro) : null;
 const temasLibroRaw = cacheLibro?.frontmatter?.temas || [];
-const temasLibro = Array.isArray(temasLibroRaw) ? temasLibroRaw : [temasLibroRaw];
+const temasLibro    = Array.isArray(temasLibroRaw)
+    ? temasLibroRaw.map(t => String(t))
+    : [String(temasLibroRaw)].filter(Boolean);
 
-// Leer temas existentes de otras ideas
+// Recopilar todos los temas existentes en ideas
 const todasIdeas = app.vault.getMarkdownFiles()
-  .filter(f => f.path.startsWith("ideas/"));
+    .filter(f => f.path.startsWith("ideas/"));
 
 const temasSet = new Set(temasLibro);
 for (const idea of todasIdeas) {
-  const cache = app.metadataCache.getFileCache(idea);
-  const t = cache?.frontmatter?.temas;
-  if (Array.isArray(t)) t.forEach(x => temasSet.add(x));
-  else if (typeof t === "string" && t) temasSet.add(t);
+    const cache = app.metadataCache.getFileCache(idea);
+    const t = cache?.frontmatter?.temas;
+    if (Array.isArray(t))          t.forEach(x => temasSet.add(String(x)));
+    else if (typeof t === "string" && t) temasSet.add(t);
 }
 
-const opciones = ["＋ Nuevo tema...", ...([...temasSet].sort())];
+// Loop de selección — marca los ya elegidos y los del libro
 const temasElegidos = new Set();
+let opcionesDisponibles = ["＋ Nuevo tema...", ...([...temasSet].sort())];
 let seguir = true;
 
 while (seguir) {
-  const sel = await tp.system.suggester(
-    x => (temasLibro.includes(x) ? "[Libro] " : "[General] ") + (x === "＋ Nuevo tema..." ? x : x),
-    opciones,
-    false,
-    `Tema #${temasElegidos.size + 1} (ESC para terminar)`
-  );
-  
-  if (!sel) {
-    seguir = false;
-  } else if (sel === "＋ Nuevo tema...") {
-    const nuevo = await tp.system.prompt("Escribe el nuevo tema:");
-    if (nuevo) { temasElegidos.add(nuevo); opciones.push(nuevo); }
-  } else {
-    const limpio = sel.replace(/^\[.*?\]\s/, "");
-    temasElegidos.add(limpio);
-  }
+    const label = (x) => {
+        if (x === "＋ Nuevo tema...") return x;
+        const yaElegido  = temasElegidos.has(x) ? "✓ " : "   ";
+        const esDelLibro = temasLibro.includes(x) ? "[Libro] " : "[General] ";
+        return `${yaElegido}${esDelLibro}${x}`;
+    };
+
+    const sel = await tp.system.suggester(
+        label,
+        opcionesDisponibles,
+        false,
+        `Temas seleccionados: ${temasElegidos.size} — (ESC para terminar)`
+    );
+
+    if (!sel) {
+        seguir = false;
+    } else if (sel === "＋ Nuevo tema...") {
+        const nuevo = await tp.system.prompt("Escribe el nuevo tema:");
+        if (nuevo && nuevo.trim()) {
+            const n = nuevo.trim();
+            temasElegidos.add(n);
+            opcionesDisponibles.push(n);
+        }
+    } else {
+        // Toggle: si ya está elegido, deseleccionarlo
+        if (temasElegidos.has(sel)) {
+            temasElegidos.delete(sel);
+        } else {
+            temasElegidos.add(sel);
+        }
+    }
 }
 
 const temasFinal = [...temasElegidos];
-const temasYaml = temasFinal.length
-  ? "\n" + temasFinal.map(t => "  - " + t).join("\n")
-  : " []";
+const temasYaml  = temasFinal.length
+    ? "\n" + temasFinal.map(t => `  - "${t}"`).join("\n")
+    : " []";
 
-// ── 3. AGREGAR LINK AL LIBRO AUTOMÁTICAMENTE ─────────
+// ── 4. FECHA HOY ──────────────────────────────────────────────────────────────
+const fechaHoy = tp.date.now("YYYY-MM-DD");
+
+// ── 5. MOVER A CARPETA CORRECTA ───────────────────────────────────────────────
+// Garantiza que la idea siempre esté en ideas/ para que la herencia funcione
+const rutaActual = tp.file.path(true);
+if (!rutaActual.startsWith("ideas/")) {
+    const safeTitle = tp.file.title.replace(/[\\/#^[\]|:]/g, "").trim();
+    await tp.file.move(`ideas/${safeTitle}`);
+}
+
+// ── 6. INSERTAR LINK EN EL LIBRO (patch robusto) ─────────────────────────────
 if (libro) {
-  const contenido = await app.vault.read(libro);
-  const ideaLink = "\n- \u005B\u005B" + tp.file.title + "\u005D\u005D";
-  const actualizado = contenido.includes("## Notas brutas")
-    ? contenido.replace("## Notas brutas", "## Notas brutas" + ideaLink)
-    : (contenido + "\n## Notas brutas" + ideaLink);
-  await app.vault.modify(libro, actualizado);
+    const contenido  = await app.vault.read(libro);
+    const ideaLink   = `\n- [[${tp.file.title}]]`;
+    const headingRx  = /(##\s*Notas brutas)/i;
+
+    let actualizado;
+    if (headingRx.test(contenido)) {
+        // Evitar duplicados: solo insertar si el link no existe ya
+        if (!contenido.includes(`[[${tp.file.title}]]`)) {
+            actualizado = contenido.replace(headingRx, `$1${ideaLink}`);
+        } else {
+            actualizado = contenido; // ya está vinculada, no tocar
+        }
+    } else {
+        actualizado = contenido + `\n\n## Notas brutas${ideaLink}`;
+    }
+
+    await app.vault.modify(libro, actualizado);
 }
 _%>
 ---
 tipo: idea
-fuente: "<% link %>"
+fuente: "<% linkLibro %>"
+<% ubicacion ? `ubicacion: "${ubicacion}"` : "ubicacion: " %>
+fecha: <% fechaHoy %>
 temas:<% temasYaml %>
 ---
 
-**Fuente:** <% link %>
+**Fuente:** <% linkLibro %><% ubicacion ? ` · p. ${ubicacion}` : "" %>
 
 # <% tp.file.title %>
 
-(Explica la idea en tus palabras — 3 a 8 líneas)
+*(Explica la idea en tus propias palabras — 3 a 8 líneas)*
 
-**Por qué me importa a mí:**
+**Por qué me importa:**
 
 **Aplica cuando:**
 
 **Falla cuando:**
 
-Conecta con: 
-Contrasta con:
+**Conecta con:** 
+**Contrasta con:**
