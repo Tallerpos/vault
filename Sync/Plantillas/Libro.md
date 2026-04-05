@@ -1,101 +1,71 @@
 <%*
-// ── 1. BÚSQUEDA EN GOOGLE BOOKS ──────────────────────
+// ── 1. BÚSQUEDA EN OPEN LIBRARY ──────────────────────
 let query = tp.file.title;
 if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
-    query = await tp.system.prompt("Título del libro o Autor");
+  query = await tp.system.prompt("Título del libro o Autor");
 }
 
 if (!query) return;
 
-// Usamos la API de Google Books (Mucho más inteligente para español)
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=15`;
+const headers = { "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)" };
+const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&language=spa&limit=20&sort=editions`;
 
-const response = await fetch(url);
+const response = await fetch(url, { headers });
 const data = await response.json();
-const results = data.items;
+const results = data.docs;
 
-var titulo = query;
-var autor = "";
-var anio = "";
-var isbn = "";
-var portada = "";
-var paginas = "";
-var temasExtras = [];
-
-if (!results || results.length === 0) {
-    new Notice("No se encontró el libro. Procediendo manualmente.");
-    autor = await tp.system.prompt("Autor (Manual)");
-    anio = await tp.system.prompt("Año (Manual)");
+if (results.length === 0) {
+  new Notice("No se encontró la edición en español. Procediendo manualmente.");
+  var autor = await tp.system.prompt("Autor (Manual)");
+  var anio = await tp.system.prompt("Año (Manual)");
+  var isbn = "";
+  var portada = "";
+  var temasExtras = [];
 } else {
-    const selected = await tp.system.suggester(
-        (item) => {
-            const info = item.volumeInfo;
-            const t = info.title;
-            const author = info.authors ? info.authors.join(", ") : "Desconocido";
-            const year = info.publishedDate ? info.publishedDate.substring(0, 4) : "S.F.";
-            return `${t} (${author}) - ${year}`;
-        },
-        results,
-        false,
-        "Selecciona el libro correcto"
-    );
+  const selected = await tp.system.suggester(
+    (item) => {
+        const t = item.title_suggest || item.title;
+        const orig = item.title !== t ? ` [${item.title}]` : "";
+        return `${t}${orig} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} [${item.edition_count || 1} ed.]`;
+    },
+    results,
+    false,
+    "Selecciona la edición correcta"
+  );
+  
+  if (!selected) return;
 
-    if (!selected) return;
-
-    const info = selected.volumeInfo;
-    
-    titulo = info.title;
-    autor = info.authors ? info.authors.join(", ") : "";
-    anio = info.publishedDate ? info.publishedDate.substring(0, 4) : "";
-    paginas = info.pageCount || "";
-    temasExtras = info.categories ? info.categories : [];
-
-    // Extraer ISBN (Prioriza ISBN-13 si existe)
-    if (info.industryIdentifiers) {
-        let id13 = info.industryIdentifiers.find(id => id.type === "ISBN_13");
-        let id10 = info.industryIdentifiers.find(id => id.type === "ISBN_10");
-        isbn = id13 ? id13.identifier : (id10 ? id10.identifier : "");
-    }
-
-    // Extraer Portada y mejorar resolución
-    if (info.imageLinks && info.imageLinks.thumbnail) {
-        portada = info.imageLinks.thumbnail.replace("http:", "https:").replace("&edge=curl", "");
-    }
-}
-
-// ── 2. RENOMBRAR EL ARCHIVO SI NO TENÍA TÍTULO ────────
-if (tp.file.title.startsWith("Untitled") || tp.file.title === "Sin título") {
-    // Limpia caracteres que Obsidian no permite en los nombres de archivo
-    let safeTitle = titulo.replace(/[\\/#^[\]|:]/g, "");
-    await tp.file.rename(safeTitle);
+  var autor = selected.author_name?.[0] || "";
+  var anio = selected.first_publish_year || "";
+  var isbn = selected.isbn ? selected.isbn[0] : "";
+  var portada = selected.cover_i ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-M.jpg` : "";
+  var temasExtras = selected.subject ? selected.subject.slice(0, 5) : [];
 }
 _%>
 ---
 tipo: libro
 autor: <% autor %>
 año: <% anio %>
-isbn: "<% isbn %>"
-paginas: <% paginas %>
+isbn: <% isbn %>
 portada: "<% portada %>"
 temas: <% JSON.stringify(temasExtras) %>
 rating: 
 estado: leyendo
 ---
-# <% titulo %>
+
+# <% tp.file.title %>
 
 ![Portada|<% portada %>]
 
 ## Por qué lo leí
 
-
 ## Tesis
-
 
 ## Notas brutas
 
+---
 
 ## Ideas generadas
-
 ```dataview
 LIST
 FROM "ideas"
