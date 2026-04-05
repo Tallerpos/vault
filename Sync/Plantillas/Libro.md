@@ -2,70 +2,79 @@
 // ── 1. BÚSQUEDA EN OPEN LIBRARY ──────────────────────
 let query = tp.file.title;
 if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
-  query = await tp.system.prompt("Título del libro o Autor");
+    query = await tp.system.prompt("Título del libro o Autor");
 }
 
 if (!query) return;
 
-const headers = { "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)" };
-const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&language=spa&limit=20&sort=editions`;
+const headers = { "User-Agent": "ObsidianKnowledgeVault/1.0" };
+
+// CORRECCIÓN CLAVE: Se eliminó '&sort=editions' para que ordene por relevancia exacta.
+// Ahora si buscas "El hombre en busca de sentido", priorizará esa frase exacta.
+const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=15`;
 
 const response = await fetch(url, { headers });
 const data = await response.json();
 const results = data.docs;
 
-if (results.length === 0) {
-  new Notice("No se encontró la edición en español. Procediendo manualmente.");
-  var autor = await tp.system.prompt("Autor (Manual)");
-  var anio = await tp.system.prompt("Año (Manual)");
-  var isbn = "";
-  var portada = "";
-  var temasExtras = [];
-} else {
-  const selected = await tp.system.suggester(
-    (item) => {
-        const t = item.title_suggest || item.title;
-        const orig = item.title !== t ? ` [${item.title}]` : "";
-        return `${t}${orig} (${item.author_name?.[0] || "Desconocido"}) - ${item.first_publish_year || "S.F."} [${item.edition_count || 1} ed.]`;
-    },
-    results,
-    false,
-    "Selecciona la edición correcta"
-  );
-  
-  if (!selected) return;
+var autor = "";
+var anio = "";
+var isbn = "";
+var portada = "";
+var temasExtras = [];
 
-  var autor = selected.author_name?.[0] || "";
-  var anio = selected.first_publish_year || "";
-  var isbn = selected.isbn ? selected.isbn[0] : "";
-  var portada = selected.cover_i ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-M.jpg` : "";
-  var temasExtras = selected.subject ? selected.subject.slice(0, 5) : [];
+if (results.length === 0) {
+    new Notice("No se encontró el libro. Procediendo manualmente.");
+    autor = await tp.system.prompt("Autor (Manual)");
+    anio = await tp.system.prompt("Año (Manual)");
+} else {
+    const selected = await tp.system.suggester(
+        (item) => {
+            const t = item.title;
+            const author = item.author_name ? item.author_name[0] : "Desconocido";
+            const year = item.first_publish_year || "S.F.";
+            const editions = item.edition_count || 1;
+            return `${t} (${author}) - ${year} [${editions} ed.]`;
+        },
+        results,
+        false,
+        "Selecciona el libro correcto"
+    );
+
+    if (!selected) return;
+
+    autor = selected.author_name ? selected.author_name[0] : "";
+    anio = selected.first_publish_year || "";
+    isbn = selected.isbn ? selected.isbn[0] : "";
+    portada = selected.cover_i ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-L.jpg` : "";
+    temasExtras = selected.subject ? selected.subject.slice(0, 5) : [];
 }
 _%>
 ---
 tipo: libro
 autor: <% autor %>
 año: <% anio %>
-isbn: <% isbn %>
+isbn: "<% isbn %>"
 portada: "<% portada %>"
 temas: <% JSON.stringify(temasExtras) %>
 rating: 
 estado: leyendo
 ---
-
-# <% tp.file.title %>
+# <% tp.file.title === "Untitled" || tp.file.title === "Sin título" ? query : tp.file.title %>
 
 ![Portada|<% portada %>]
 
 ## Por qué lo leí
 
+
 ## Tesis
+
 
 ## Notas brutas
 
----
 
 ## Ideas generadas
+
 ```dataview
 LIST
 FROM "ideas"
