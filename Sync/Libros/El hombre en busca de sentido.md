@@ -1,143 +1,27 @@
-<%*
-// ── 1. BÚSQUEDA EN GOOGLE BOOKS ──────────────────────────────────────────────
-let query = tp.file.title;
-const titulosGenericos = ["Untitled", "Sin título", "Libro", "New note", ""];
-if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
-    query = await tp.system.prompt("Título del libro (añade el autor si es muy famoso)");
-}
-if (!query) { new Notice("Cancelado."); return; }
-
-const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40&langRestrict=es&printType=books`;
-let results = null;
-try {
-    const response = await fetch(url);
-    const data = await response.json();
-    results = data.items || null;
-} catch(e) {
-    new Notice("Error de red. Continúa manualmente.");
-}
-
-// ── 2. VARIABLES BASE ─────────────────────────────────────────────────────────
-var titulo      = query;
-var autor       = "";
-var anio        = "";
-var isbn        = "";
-var portada     = "";
-var paginas     = "";
-var idioma      = "";
-var editorial   = "";
-var sinopsis    = "";
-var temasExtras = [];
-var fechaInicio = tp.date.now("YYYY-MM-DD");
-
-// ── 3. SELECCIÓN O MODO MANUAL ────────────────────────────────────────────────
-if (!results || results.length === 0) {
-    new Notice("Sin resultados. Rellena los datos manualmente.");
-    titulo    = await tp.system.prompt("Título") || query;
-    autor     = await tp.system.prompt("Autor") || "";
-    anio      = await tp.system.prompt("Año") || "";
-    editorial = await tp.system.prompt("Editorial") || "";
-    paginas   = await tp.system.prompt("Número de páginas") || "";
-} else {
-    const selected = await tp.system.suggester(
-        (item) => {
-            const info   = item.volumeInfo;
-            const t      = info.title || "Sin título";
-            const author = info.authors ? info.authors.join(", ") : "Desconocido";
-            const year   = info.publishedDate ? info.publishedDate.substring(0, 4) : "S.F.";
-            const lang   = info.language ? ` [${info.language.toUpperCase()}]` : "";
-            return `${t} · ${author} · ${year}${lang}`;
-        },
-        results,
-        false,
-        "Selecciona el libro correcto (ESC = manual)"
-    );
-
-    if (!selected) {
-        new Notice("Selección cancelada. Rellena los datos manualmente.");
-        titulo    = await tp.system.prompt("Título") || query;
-        autor     = await tp.system.prompt("Autor") || "";
-        anio      = await tp.system.prompt("Año") || "";
-        editorial = await tp.system.prompt("Editorial") || "";
-        paginas   = await tp.system.prompt("Número de páginas") || "";
-    } else {
-        const info = selected.volumeInfo;
-
-        titulo    = info.title        || query;
-        autor     = info.authors      ? info.authors.join(", ")              : "";
-        anio      = info.publishedDate ? info.publishedDate.substring(0, 4)  : "";
-        paginas   = info.pageCount    ? String(info.pageCount)               : "";
-        editorial = info.publisher    || "";
-        idioma    = info.language     ? info.language.toUpperCase()          : "";
-        temasExtras = info.categories || [];
-
-        // Sinopsis: limpia HTML y recorta a 500 caracteres
-        if (info.description) {
-            sinopsis = info.description
-                .replace(/(<([^>]+)>)/gi, "")
-                .replace(/\s+/g, " ")
-                .trim()
-                .substring(0, 500);
-            if (info.description.length > 500) sinopsis += "…";
-        }
-
-        // ISBN (preferir ISBN-13)
-        if (info.industryIdentifiers) {
-            const id13 = info.industryIdentifiers.find(id => id.type === "ISBN_13");
-            const id10 = info.industryIdentifiers.find(id => id.type === "ISBN_10");
-            isbn = id13 ? id13.identifier : (id10 ? id10.identifier : "");
-        }
-
-        // Portada — fife=w400 funciona sin bloqueo de referrer
-        if (info.imageLinks) {
-            const base = info.imageLinks.extraLarge
-                      || info.imageLinks.large
-                      || info.imageLinks.medium
-                      || info.imageLinks.thumbnail
-                      || "";
-            portada = base
-                .replace("http:", "https:")
-                .replace("&edge=curl", "")
-                .replace(/zoom=\d/, "fife=w400");
-        }
-
-        // Fallback: Open Library por ISBN (no tiene bloqueo de referrer)
-        if (!portada && isbn) {
-            portada = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-        }
-    }
-}
-
-// ── 4. RENOMBRAR ARCHIVO ──────────────────────────────────────────────────────
-if (titulosGenericos.some(t => tp.file.title.startsWith(t) || tp.file.title === t)) {
-    const safeTitle = titulo.replace(/[\\/#^[\]|:]/g, "").trim();
-    await tp.file.rename(safeTitle);
-}
-_%>
 ---
 tipo: libro
-titulo: "<% titulo %>"
-autor: "<% autor %>"
-año: <% anio %>
-editorial: "<% editorial %>"
-idioma: "<% idioma %>"
-isbn: "<% isbn %>"
-paginas: <% paginas %>
+titulo: "El hombre en busca de sentido"
+autor: ""
+año: 
+editorial: ""
+idioma: ""
+isbn: ""
+paginas: 
 pagina_actual: 0
-portada: "<% portada %>"
-temas: <% JSON.stringify(temasExtras) %>
+portada: ""
+temas: []
 rating: 
 estado: leyendo
-fecha_inicio: <% fechaInicio %>
+fecha_inicio: 2026-04-05
 fecha_fin: 
 ---
 
-<% portada ? `![${titulo}|200](${portada})` : "_Sin portada disponible_" %>
+_Sin portada disponible_
 
-# <% titulo %>
-**<% autor %>** · <% anio %><% editorial ? ` · ${editorial}` : "" %>
+# El hombre en busca de sentido
+**** · 
 
-<% sinopsis ? `> ${sinopsis}` : "" %>
+
 
 ---
 
