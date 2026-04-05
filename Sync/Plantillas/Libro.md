@@ -18,6 +18,7 @@ if (results.length === 0) {
   new Notice("No se encontró la edición en español. Procediendo manualmente.");
   var autor = await tp.system.prompt("Autor (Manual)");
   var anio = await tp.system.prompt("Año (Manual)");
+  var isbn = "";
   var portada = "";
   var temasExtras = [];
 } else {
@@ -36,6 +37,7 @@ if (results.length === 0) {
 
   var autor = selected.author_name?.[0] || "";
   var anio = selected.first_publish_year || "";
+  var isbn = selected.isbn ? selected.isbn[0] : "";
   var portada = selected.cover_i ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-M.jpg` : "";
   var temasExtras = selected.subject ? selected.subject.slice(0, 5) : [];
 }
@@ -44,6 +46,7 @@ _%>
 tipo: libro
 autor: <% autor %>
 año: <% anio %>
+isbn: <% isbn %>
 portada: "<% portada %>"
 temas: <% JSON.stringify(temasExtras) %>
 rating: 
