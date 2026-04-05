@@ -1,5 +1,5 @@
 <%*
-// ── 1. PREPARACIÓN DE BÚSQUEDA ──────────────────────
+// ── 1. BÚSQUEDA EN OPEN LIBRARY ──────────────────────
 let query = tp.file.title;
 if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro" || query === "") {
   query = await tp.system.prompt("Título del libro o Autor");
@@ -8,8 +8,6 @@ if (query.startsWith("Untitled") || query === "Sin título" || query === "Libro"
 if (!query) return;
 
 const headers = { "User-Agent": "ObsidianKnowledgeVault/1.0 (contact@example.org)" };
-
-// q: búsqueda general con filtro de idioma español
 const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&language=spa&limit=20&sort=editions`;
 
 const response = await fetch(url, { headers });
@@ -31,7 +29,7 @@ if (results.length === 0) {
     },
     results,
     false,
-    "Elige la edición (en español si es posible)"
+    "Selecciona la edición correcta"
   );
   
   if (!selected) return;
@@ -41,8 +39,6 @@ if (results.length === 0) {
   var portada = selected.cover_i ? `https://covers.openlibrary.org/b/id/${selected.cover_i}-M.jpg` : "";
   var temasExtras = selected.subject ? selected.subject.slice(0, 5) : [];
 }
-
-// ── 2. PREPARACIÓN DE FRONTMATTER ───────────────────
 _%>
 ---
 tipo: libro
