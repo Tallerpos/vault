@@ -8,7 +8,7 @@ Tu conocimiento está organizado de forma clara:
 
 ### [CAPTURA](file:///opt/vault/Sync/CAPTURA)
 Tu punto de entrada. Notas rápidas y tu diario.
-- [[CAPTURA/Diario/2026/04/2026-04-05|Diario de Hoy]]
+- CAPTURA/Diario/2026/04/2026-04-05 - Diario de Hoy
 
 ### [TEMAS](file:///opt/vault/Sync/TEMAS)
 Centro de control y grandes temas de tu vida.

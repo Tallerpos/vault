@@ -130,7 +130,7 @@ if (libro) {
 _%>
 ---
 tipo: idea
-fuente: "<% linkLibro %>"
+fuente: ""
 <% ubicacion ? `ubicacion: "${ubicacion}"` : "ubicacion: " %>
 fecha: <% fechaHoy %>
 revisar: <% tp.date.now("YYYY-MM-DD", 30) %>
