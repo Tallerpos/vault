@@ -33,6 +33,7 @@ fecha_fin:
 
 
 ## Notas brutas
+-  MAPA 
 
 
 ## Ideas clave
