@@ -1,4 +1,4 @@
-# 🗺️ Mapa de Conexiones (Tu Inteligencia Viva)
+3# 🗺️ Mapa de Conexiones (Tu Inteligencia Viva)
 
 Este archivo es el "GPS" de tu Segundo Cerebro. Se actualiza solo y te dice dónde hay huecos en tu conocimiento.
 
