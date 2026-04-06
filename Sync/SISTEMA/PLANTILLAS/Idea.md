@@ -22,7 +22,7 @@ const libro = await tp.system.suggester(
 );
 
 const nombreLibro = libro ? libro.basename : "";
-const linkLibro   = nombreLibro ? `[[${nombreLibro}]]` : "";
+const linkLibro   = nombreLibro ? ` ${nombreLibro} ` : "";
 
 // ── 2. PÁGINA / CAPÍTULO OPCIONAL ─────────────────────────────────────────────
 let ubicacion = "";
@@ -110,13 +110,13 @@ if (!rutaActual.startsWith("NOTAS/")) {
 // ── 6. INSERTAR LINK EN EL LIBRO (patch robusto) ─────────────────────────────
 if (libro) {
     const contenido  = await app.vault.read(libro);
-    const ideaLink   = `\n- [[${tp.file.title}]]`;
+    const ideaLink   = `\n-  ${tp.file.title} `;
     const headingRx  = /(##\s*Notas brutas)/i;
 
     let actualizado;
     if (headingRx.test(contenido)) {
         // Evitar duplicados: solo insertar si el link no existe ya
-        if (!contenido.includes(`[[${tp.file.title}]]`)) {
+        if (!contenido.includes(` ${tp.file.title} `)) {
             actualizado = contenido.replace(headingRx, `$1${ideaLink}`);
         } else {
             actualizado = contenido; // ya está vinculada, no tocar
@@ -141,7 +141,7 @@ estado: semilla
 ---
 
 **Fuente:** <% linkLibro %><% ubicacion ? ` · p. ${ubicacion}` : "" %>
-**Tema Padre:** [[<% nombreLibro %>]]
+**Tema Padre:** <% nombreLibro %>
 **Estado:** 🌱 Semilla
 **Próxima Revisión:** <% tp.date.now("YYYY-MM-DD", 30) %>
 

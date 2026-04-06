@@ -139,7 +139,7 @@ temas: <% JSON.stringify(temasExtras) %>
 rating: 
 estado: leyendo
 fecha_inicio: <% fechaInicio %>
-nexo: [[Psicologia]]
+nexo: Psicologia
 ---
 
 <% portada ? `![${titulo}|200](${portada})` : "_Sin portada disponible_" %>
