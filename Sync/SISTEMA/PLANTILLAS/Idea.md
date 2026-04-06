@@ -102,7 +102,7 @@ const fechaHoy = tp.date.now("YYYY-MM-DD");
 // ── 5. MOVER A CARPETA CORRECTA ───────────────────────────────────────────────
 // Garantiza que la idea siempre esté en ideas/ para que la herencia funcione
 const rutaActual = tp.file.path(true);
-if (!rutaActual.startsWith("NOTAS/")) {
+if (!rutaActual.startsWith("NOTAS/") && !tp.file.title.includes("MAPA")) {
     const safeTitle = tp.file.title.replace(/[\\/#^[\]|:]/g, "").trim();
     await tp.file.move(`NOTAS/${safeTitle}`);
 }
