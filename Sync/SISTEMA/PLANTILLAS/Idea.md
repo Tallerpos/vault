@@ -104,7 +104,7 @@ const fechaHoy = tp.date.now("YYYY-MM-DD");
 const rutaActual = tp.file.path(true);
 if (!rutaActual.startsWith("NOTAS/") && !tp.file.title.includes("MAPA")) {
     const safeTitle = tp.file.title.replace(/[\\/#^[\]|:]/g, "").trim();
-    await tp.file.move(`NOTAS/${safeTitle}`);
+    try { await tp.file.move(`NOTAS/${safeTitle}`); } catch(e) { console.log(e); }
 }
 
 // ── 6. INSERTAR LINK EN EL LIBRO (patch robusto) ─────────────────────────────
@@ -134,7 +134,7 @@ fuente: ""
 <% ubicacion ? `ubicacion: "${ubicacion}"` : "ubicacion: " %>
 fecha: <% fechaHoy %>
 revisar: <% tp.date.now("YYYY-MM-DD", 30) %>
-up: "<% linkLibro %>"
+up: [[Psicologia]]
 relacionado: []
 temas:<% temasYaml %>
 estado: semilla
