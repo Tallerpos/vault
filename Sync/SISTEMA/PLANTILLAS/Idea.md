@@ -96,6 +96,22 @@ const temasYaml  = temasFinal.length
     ? "\n" + temasFinal.map(t => `  - "${t}"`).join("\n")
     : " []";
 
+// ── 3.5. CREACIÓN PROACTIVA DE TEMAS (MOCs) ──────────────────────────────────
+for (const tema of temasFinal) {
+    const pathTema = `TEMAS/${tema}.md`;
+    const existe   = app.vault.getAbstractFileByPath(pathTema);
+    
+    if (!existe) {
+        const contenidoMOC = `# 🧭 Tema: ${tema}\n\nEste es tu centro de control para todo lo relacionado con **${tema}**.\n\n---\n\n## 🏗️ Estructura del Conocimiento\n\n### Conceptos y Notas\n\n\`\`\`dataview\nLIST FROM "NOTAS" WHERE contains(temas, "${tema}") OR up = [[${tema}]]\n\`\`\`\n\n---\n\n## 📖 Fuentes y Biblioteca\n\n\`\`\`dataview\nTABLE autor as "Autor", estado as "Progreso"\nFROM "BIBLIOTECA/Libros"\nWHERE contains(temas, "${tema}") OR nexo = [[${tema}]]\n\`\`\`\n`;
+        try {
+            await app.vault.create(pathTema, contenidoMOC);
+            new Notice(`✨ Se ha creado el Tema Maestro: ${tema}`);
+        } catch(e) {
+            console.error(`Error creando MOC para ${tema}:`, e);
+        }
+    }
+}
+
 // ── 4. FECHA HOY ──────────────────────────────────────────────────────────────
 const fechaHoy = tp.date.now("YYYY-MM-DD");
 
