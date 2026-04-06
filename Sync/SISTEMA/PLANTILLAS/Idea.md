@@ -133,10 +133,17 @@ tipo: idea
 fuente: "<% linkLibro %>"
 <% ubicacion ? `ubicacion: "${ubicacion}"` : "ubicacion: " %>
 fecha: <% fechaHoy %>
+revisar: <% tp.date.now("YYYY-MM-DD", 30) %>
+up: "<% linkLibro %>"
+relacionado: []
 temas:<% temasYaml %>
+estado: semilla
 ---
 
 **Fuente:** <% linkLibro %><% ubicacion ? ` · p. ${ubicacion}` : "" %>
+**Tema Padre:** [[<% nombreLibro %>]]
+**Estado:** 🌱 Semilla
+**Próxima Revisión:** <% tp.date.now("YYYY-MM-DD", 30) %>
 
 # <% tp.file.title %>
 
