@@ -1,8 +1,8 @@
 # 📊 Dashboard de Control
-Última actualización: `2026-04-14 13:05`
+Última actualización: `2026-04-14 13:20`
 
 ## 📈 Estadísticas de la Bóveda
-- **Tamaño Total:** 30M
+- **Tamaño Total:** 2.1M
 - **Archivos Totales:** 23
 
 ## ⚡ Estado del Servidor
