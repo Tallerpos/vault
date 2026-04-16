@@ -1,29 +1,29 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-16 07:06
+Último análisis: 2026-04-16 07:21
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
 | obsidian-webdav | 13.8MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 22MiB / 512MiB | 2.67% |
+| obsidian-silverbullet | 21.91MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
 | firefly_sentinel | 70.42MiB / 15.61GiB | 0.00% |
-| paisa | 23.52MiB / 15.61GiB | 0.00% |
+| paisa | 23.55MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 388KiB / 32MiB | 0.00% |
-| firefly_iii_core | 85.8MiB / 256MiB | 0.01% |
+| firefly_iii_core | 85.8MiB / 256MiB | 2.87% |
 | firefly_iii_db | 28.52MiB / 128MiB | 0.00% |
 | fava | 51.35MiB / 256MiB | 0.03% |
-| paperless_app | 476.1MiB / 768MiB | 0.29% |
-| paperless-ngx-db-1 | 54.68MiB / 1GiB | 0.00% |
-| paperless-ngx-broker-1 | 9.727MiB / 768MiB | 0.58% |
-| actual_budget | 88.54MiB / 512MiB | 0.01% |
+| paperless_app | 476.2MiB / 768MiB | 0.12% |
+| paperless-ngx-db-1 | 54.69MiB / 1GiB | 0.01% |
+| paperless-ngx-broker-1 | 9.719MiB / 768MiB | 0.54% |
+| actual_budget | 88.54MiB / 512MiB | 0.00% |
 | tallerpos_api | 100.7MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.55MiB / 1GiB | 0.73% |
-| tallerpos_db_dev | 39.15MiB / 1GiB | 3.87% |
-| tallerpos_cache_dev | 6.047MiB / 512MiB | 0.46% |
+| siyuan-main-1 | 58.55MiB / 1GiB | 0.85% |
+| tallerpos_db_dev | 39.15MiB / 1GiB | 0.58% |
+| tallerpos_cache_dev | 6.055MiB / 512MiB | 2.92% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.69MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 119.5MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 119.6MiB / 15.61GiB | 0.01% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
@@ -32,7 +32,7 @@
 | /opt/faceguard | 1.4G |
 | /opt/tallerpos | 1.2G |
 | /opt/paperless-ngx | 224M |
-| /var/log | 102M |
+| /var/log | 100M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
 | /opt/sentinel-hub | 9.8M |
