@@ -1,29 +1,29 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-17 12:36
+Último análisis: 2026-04-17 12:51
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
 | obsidian-webdav | 13.8MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 22.04MiB / 512MiB | 0.01% |
+| obsidian-silverbullet | 22.02MiB / 512MiB | 0.01% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
 | firefly_sentinel | 70.43MiB / 15.61GiB | 0.00% |
-| paisa | 23.51MiB / 15.61GiB | 0.00% |
+| paisa | 23.48MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 388KiB / 32MiB | 0.00% |
-| firefly_iii_core | 85.81MiB / 256MiB | 0.01% |
-| firefly_iii_db | 27.22MiB / 128MiB | 0.01% |
+| firefly_iii_core | 85.81MiB / 256MiB | 0.00% |
+| firefly_iii_db | 27.22MiB / 128MiB | 0.00% |
 | fava | 51.35MiB / 256MiB | 0.03% |
-| paperless_app | 477.2MiB / 768MiB | 0.09% |
-| paperless-ngx-db-1 | 56.09MiB / 1GiB | 0.01% |
-| paperless-ngx-broker-1 | 9.969MiB / 768MiB | 0.53% |
-| actual_budget | 88.54MiB / 512MiB | 0.01% |
+| paperless_app | 477.3MiB / 768MiB | 0.23% |
+| paperless-ngx-db-1 | 56.1MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 9.719MiB / 768MiB | 0.55% |
+| actual_budget | 88.54MiB / 512MiB | 0.00% |
 | tallerpos_api | 100.9MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.57MiB / 1GiB | 0.71% |
-| tallerpos_db_dev | 37.44MiB / 1GiB | 2.65% |
-| tallerpos_cache_dev | 6.004MiB / 512MiB | 2.99% |
+| siyuan-main-1 | 58.57MiB / 1GiB | 0.57% |
+| tallerpos_db_dev | 37.38MiB / 1GiB | 0.00% |
+| tallerpos_cache_dev | 6.168MiB / 512MiB | 0.42% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.69MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 123MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 123MiB / 15.61GiB | 0.02% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
@@ -31,8 +31,8 @@
 | /var/lib/docker | 7.6G |
 | /opt/faceguard | 1.4G |
 | /opt/tallerpos | 1.2G |
-| /opt/paperless-ngx | 224M |
-| /var/log | 128M |
+| /opt/paperless-ngx | 225M |
+| /var/log | 126M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
 | /opt/vault | 10M |
