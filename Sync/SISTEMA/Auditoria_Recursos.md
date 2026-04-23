@@ -1,34 +1,34 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-23 02:08
+Último análisis: 2026-04-23 02:23
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
-| postiz | 2.206GiB / 15.61GiB | 6.54% |
+| postiz | 2.207GiB / 15.61GiB | 6.36% |
 | temporal-admin-tools | 496KiB / 15.61GiB | 0.01% |
-| temporal | 203.6MiB / 15.61GiB | 3.05% |
-| temporal-postgresql | 74.19MiB / 15.61GiB | 0.87% |
-| postiz-postgres | 55.93MiB / 15.61GiB | 2.56% |
-| postiz-redis | 4.453MiB / 15.61GiB | 2.41% |
-| temporal-elasticsearch | 551.7MiB / 15.61GiB | 0.36% |
+| temporal | 200.2MiB / 15.61GiB | 3.14% |
+| temporal-postgresql | 74.16MiB / 15.61GiB | 0.38% |
+| postiz-postgres | 55.93MiB / 15.61GiB | 0.00% |
+| postiz-redis | 4.453MiB / 15.61GiB | 0.15% |
+| temporal-elasticsearch | 551.7MiB / 15.61GiB | 0.37% |
 | temporal-ui | 11.75MiB / 15.61GiB | 0.00% |
 | obsidian-webdav | 13.82MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 22.07MiB / 512MiB | 0.00% |
+| obsidian-silverbullet | 22.01MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
 | firefly_sentinel | 71.21MiB / 15.61GiB | 0.00% |
-| paisa | 23.58MiB / 15.61GiB | 0.00% |
+| paisa | 23.61MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 648KiB / 32MiB | 0.00% |
-| firefly_iii_core | 91.15MiB / 256MiB | 2.91% |
+| firefly_iii_core | 91.15MiB / 256MiB | 2.63% |
 | firefly_iii_db | 27.22MiB / 128MiB | 0.00% |
 | fava | 51.86MiB / 256MiB | 0.03% |
-| paperless_app | 474.8MiB / 768MiB | 0.18% |
+| paperless_app | 473.8MiB / 768MiB | 0.05% |
 | paperless-ngx-db-1 | 56.78MiB / 1GiB | 0.01% |
-| paperless-ngx-broker-1 | 9.805MiB / 768MiB | 0.55% |
-| actual_budget | 88.69MiB / 512MiB | 0.00% |
+| paperless-ngx-broker-1 | 9.801MiB / 768MiB | 0.52% |
+| actual_budget | 88.69MiB / 512MiB | 0.01% |
 | tallerpos_api | 102.3MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.75MiB / 1GiB | 0.65% |
+| siyuan-main-1 | 58.75MiB / 1GiB | 0.64% |
 | tallerpos_db_dev | 37.58MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.93MiB / 512MiB | 0.39% |
+| tallerpos_cache_dev | 5.93MiB / 512MiB | 0.40% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.77MiB / 15.61GiB | 0.00% |
 | infra-api-1 | 122.6MiB / 15.61GiB | 0.02% |
@@ -40,9 +40,9 @@
 | /opt/faceguard | 1.4G |
 | /opt/tallerpos | 1.2G |
 | /opt/paperless-ngx | 225M |
-| /var/log | 158M |
+| /var/log | 157M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
-| /opt/vault | 23M |
+| /opt/vault | 24M |
 | /opt/sentinel-hub | 9.8M |
 | /opt/firefly | 1.8M |
