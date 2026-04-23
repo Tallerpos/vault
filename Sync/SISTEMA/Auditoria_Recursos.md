@@ -36,3 +36,13 @@
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
 | :--- | :--- |
+| /var/lib/docker | 15G |
+| /opt/faceguard | 1.4G |
+| /opt/tallerpos | 1.2G |
+| /opt/paperless-ngx | 225M |
+| /var/log | 109M |
+| /opt/tallerpos_prod | 67M |
+| /opt/siyuan | 27M |
+| /opt/vault | 24M |
+| /opt/sentinel-hub | 9.8M |
+| /opt/firefly | 1.8M |
