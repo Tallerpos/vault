@@ -1,12 +1,12 @@
 # 📊 Dashboard de Control
-Última actualización: `2026-04-23 21:39`
+Última actualización: `2026-04-23 21:54`
 
 ## 📈 Estadísticas de la Bóveda
 - **Tamaño Total:** 25M
 - **Archivos Totales:** 24
 
 ## ⚡ Estado del Servidor
-- **RAM Real Disponible:** 9.1Gi (Total: 16GB)
+- **RAM Real Disponible:** 9.0Gi (Total: 16GB)
 - **Disco Disponible:** 928G
 
 ---
