@@ -1,40 +1,40 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-24 12:09
+Último análisis: 2026-04-24 12:24
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
-| vida-app-1 | 39.96MiB / 15.61GiB | 0.00% |
+| vida-app-1 | 39.97MiB / 15.61GiB | 0.00% |
 | vida-backup-1 | 496KiB / 15.61GiB | 0.00% |
 | vida-db-1 | 21.4MiB / 15.61GiB | 0.00% |
-| postiz | 2.249GiB / 15.61GiB | 5.95% |
+| postiz | 2.25GiB / 15.61GiB | 5.75% |
 | temporal-admin-tools | 460KiB / 15.61GiB | 0.00% |
-| temporal | 193.3MiB / 15.61GiB | 2.48% |
-| temporal-postgresql | 73.2MiB / 15.61GiB | 0.35% |
-| postiz-postgres | 50.1MiB / 15.61GiB | 0.01% |
-| postiz-redis | 6.305MiB / 15.61GiB | 0.22% |
-| temporal-elasticsearch | 575MiB / 15.61GiB | 0.30% |
-| temporal-ui | 12.42MiB / 15.61GiB | 0.00% |
+| temporal | 193.3MiB / 15.61GiB | 2.14% |
+| temporal-postgresql | 75.5MiB / 15.61GiB | 0.33% |
+| postiz-postgres | 50.11MiB / 15.61GiB | 2.47% |
+| postiz-redis | 6.305MiB / 15.61GiB | 0.14% |
+| temporal-elasticsearch | 575MiB / 15.61GiB | 0.24% |
+| temporal-ui | 12.43MiB / 15.61GiB | 0.00% |
 | obsidian-webdav | 13.8MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 22.05MiB / 512MiB | 0.01% |
+| obsidian-silverbullet | 22.07MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
-| firefly_sentinel | 71.22MiB / 15.61GiB | 0.28% |
+| firefly_sentinel | 71.22MiB / 15.61GiB | 0.00% |
 | paisa | 22.96MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 452KiB / 32MiB | 0.00% |
-| firefly_iii_core | 86.15MiB / 256MiB | 2.99% |
+| firefly_iii_core | 86.84MiB / 256MiB | 0.00% |
 | firefly_iii_db | 26.75MiB / 128MiB | 0.00% |
 | fava | 51.86MiB / 256MiB | 0.03% |
-| paperless_app | 475.5MiB / 768MiB | 0.13% |
-| paperless-ngx-db-1 | 56.63MiB / 1GiB | 0.00% |
-| paperless-ngx-broker-1 | 9.805MiB / 768MiB | 0.50% |
+| paperless_app | 474.5MiB / 768MiB | 0.18% |
+| paperless-ngx-db-1 | 56.64MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 9.801MiB / 768MiB | 0.43% |
 | actual_budget | 88.69MiB / 512MiB | 0.00% |
 | tallerpos_api | 102.5MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.76MiB / 1GiB | 0.65% |
+| siyuan-main-1 | 58.76MiB / 1GiB | 0.50% |
 | tallerpos_db_dev | 37.28MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.945MiB / 512MiB | 0.46% |
+| tallerpos_cache_dev | 5.945MiB / 512MiB | 2.47% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.77MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 123.2MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 123.2MiB / 15.61GiB | 0.07% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
