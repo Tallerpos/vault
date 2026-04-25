@@ -1,40 +1,40 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-25 03:54
+Último análisis: 2026-04-25 04:09
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
 | vida-app-1 | 39.7MiB / 15.61GiB | 0.00% |
-| vida-backup-1 | 800KiB / 15.61GiB | 0.00% |
-| vida-db-1 | 24.25MiB / 15.61GiB | 0.00% |
-| postiz | 2.251GiB / 15.61GiB | 5.77% |
+| vida-backup-1 | 496KiB / 15.61GiB | 0.00% |
+| vida-db-1 | 25.8MiB / 15.61GiB | 0.00% |
+| postiz | 2.253GiB / 15.61GiB | 6.52% |
 | temporal-admin-tools | 460KiB / 15.61GiB | 0.00% |
-| temporal | 192.9MiB / 15.61GiB | 2.62% |
-| temporal-postgresql | 69.75MiB / 15.61GiB | 0.32% |
-| postiz-postgres | 50.25MiB / 15.61GiB | 0.00% |
-| postiz-redis | 6.305MiB / 15.61GiB | 0.19% |
-| temporal-elasticsearch | 584.8MiB / 15.61GiB | 0.31% |
-| temporal-ui | 12.46MiB / 15.61GiB | 0.00% |
+| temporal | 194.3MiB / 15.61GiB | 2.34% |
+| temporal-postgresql | 72.08MiB / 15.61GiB | 0.18% |
+| postiz-postgres | 50.1MiB / 15.61GiB | 0.00% |
+| postiz-redis | 6.16MiB / 15.61GiB | 0.23% |
+| temporal-elasticsearch | 584.7MiB / 15.61GiB | 0.32% |
+| temporal-ui | 12.43MiB / 15.61GiB | 0.00% |
 | obsidian-webdav | 13.8MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 22.05MiB / 512MiB | 0.00% |
+| obsidian-silverbullet | 22.08MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
-| firefly_sentinel | 71.22MiB / 15.61GiB | 0.26% |
+| firefly_sentinel | 71.21MiB / 15.61GiB | 0.00% |
 | paisa | 22.96MiB / 15.61GiB | 0.00% |
-| firefly_iii_cron | 580KiB / 32MiB | 0.00% |
-| firefly_iii_core | 88.88MiB / 256MiB | 0.01% |
-| firefly_iii_db | 26.76MiB / 128MiB | 0.00% |
-| fava | 51.86MiB / 256MiB | 0.03% |
-| paperless_app | 474.6MiB / 768MiB | 0.20% |
-| paperless-ngx-db-1 | 57.12MiB / 1GiB | 0.01% |
-| paperless-ngx-broker-1 | 9.801MiB / 768MiB | 0.44% |
-| actual_budget | 88.69MiB / 512MiB | 0.01% |
+| firefly_iii_cron | 444KiB / 32MiB | 0.00% |
+| firefly_iii_core | 85MiB / 256MiB | 0.01% |
+| firefly_iii_db | 26.18MiB / 128MiB | 0.00% |
+| fava | 51.86MiB / 256MiB | 0.02% |
+| paperless_app | 474.4MiB / 768MiB | 0.05% |
+| paperless-ngx-db-1 | 55.16MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 9.805MiB / 768MiB | 0.40% |
+| actual_budget | 88.69MiB / 512MiB | 0.00% |
 | tallerpos_api | 102.7MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.77MiB / 1GiB | 0.60% |
-| tallerpos_db_dev | 37.27MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.945MiB / 512MiB | 0.39% |
+| siyuan-main-1 | 58.77MiB / 1GiB | 0.52% |
+| tallerpos_db_dev | 36.86MiB / 1GiB | 0.00% |
+| tallerpos_cache_dev | 5.949MiB / 512MiB | 0.37% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.77MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 122.6MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 122.6MiB / 15.61GiB | 0.02% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
@@ -43,7 +43,7 @@
 | /opt/faceguard | 1.4G |
 | /opt/tallerpos | 1.2G |
 | /opt/paperless-ngx | 224M |
-| /var/log | 157M |
+| /var/log | 110M |
 | /opt/tallerpos_prod | 67M |
 | /opt/vault | 28M |
 | /opt/siyuan | 27M |
