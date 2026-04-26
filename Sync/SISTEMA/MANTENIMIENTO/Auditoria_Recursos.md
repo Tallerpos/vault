@@ -1,40 +1,37 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-05 16:16
+Último análisis: 2026-04-26 16:02
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
-| obsidian-webdav | 15.24MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 27.62MiB / 512MiB | 0.00% |
+| actual_budget | 94.09MiB / 512MiB | 0.00% |
+| obsidian-webdav | 11.18MiB / 256MiB | 0.00% |
+| obsidian-silverbullet | 10.97MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
-| firefly_sentinel | 68.66MiB / 15.61GiB | 0.00% |
-| paisa | 22.1MiB / 15.61GiB | 0.00% |
-| firefly_iii_cron | 384KiB / 32MiB | 0.00% |
-| firefly_iii_core | 82.25MiB / 256MiB | 0.01% |
-| firefly_iii_db | 27.21MiB / 128MiB | 0.00% |
-| fava | 51.35MiB / 256MiB | 0.03% |
-| paperless_app | 471.2MiB / 768MiB | 0.23% |
-| paperless-ngx-db-1 | 55.9MiB / 1GiB | 0.00% |
-| paperless-ngx-broker-1 | 9.711MiB / 768MiB | 0.45% |
-| actual_budget | 88.36MiB / 512MiB | 0.00% |
-| tallerpos_api | 94.74MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 57.87MiB / 1GiB | 0.63% |
-| tallerpos_db_dev | 37.33MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.918MiB / 512MiB | 0.45% |
-| infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
-| infra-pwa-1 | 11.69MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 82.08MiB / 15.61GiB | 0.01% |
+| firefly_iii_cron | 412KiB / 32MiB | 0.00% |
+| firefly_iii_core | 72.3MiB / 256MiB | 0.00% |
+| firefly_iii_db | 26.09MiB / 128MiB | 0.00% |
+| paperless_app | 527.1MiB / 768MiB | 0.05% |
+| paperless-ngx-db-1 | 53.1MiB / 1GiB | 0.01% |
+| paperless-ngx-broker-1 | 5.027MiB / 768MiB | 0.48% |
+| tallerpos_api | 52.37MiB / 1.5GiB | 0.00% |
+| siyuan-main-1 | 35.66MiB / 1GiB | 0.37% |
+| tallerpos_db_dev | 21.79MiB / 1GiB | 0.00% |
+| tallerpos_cache_dev | 3.324MiB / 512MiB | 0.38% |
+| infra-admin-1 | 7.324MiB / 15.61GiB | 0.00% |
+| infra-pwa-1 | 11.52MiB / 15.61GiB | 0.00% |
+| infra-api-1 | 86.36MiB / 15.61GiB | 0.04% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
 | :--- | :--- |
-| /var/lib/docker | 7.5G |
-| /opt/faceguard | 1.4G |
-| /opt/tallerpos | 1.2G |
-| /opt/paperless-ngx | 224M |
-| /var/log | 132M |
+| /var/lib/docker | 4.5G |
+| /opt/tallerpos | 1.3G |
+| /opt/paperless-ngx | 225M |
+| /var/log | 130M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
-| /opt/sentinel-hub | 9.8M |
-| /opt/vault | 8.0M |
-| /opt/firefly | 880K |
+| /opt/vault | 5.1M |
+| /opt/firefly | 2.0M |
+| /opt/actual | 236K |
+| /opt/SENTINEL_MANIFESTO.md | 12K |
