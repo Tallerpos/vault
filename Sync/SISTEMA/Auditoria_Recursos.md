@@ -1,20 +1,20 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-26 07:55
+Último análisis: 2026-04-26 08:10
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
 | vida-app-1 | 39.7MiB / 15.61GiB | 0.00% |
 | vida-backup-1 | 496KiB / 15.61GiB | 0.00% |
-| vida-db-1 | 25.32MiB / 15.61GiB | 0.00% |
-| postiz | 2.241GiB / 15.61GiB | 4.71% |
+| vida-db-1 | 25.32MiB / 15.61GiB | 0.01% |
+| postiz | 2.241GiB / 15.61GiB | 5.24% |
 | temporal-admin-tools | 460KiB / 15.61GiB | 0.00% |
-| temporal | 193.3MiB / 15.61GiB | 2.28% |
-| temporal-postgresql | 71.95MiB / 15.61GiB | 0.58% |
-| postiz-postgres | 50.18MiB / 15.61GiB | 0.00% |
-| postiz-redis | 6.301MiB / 15.61GiB | 0.12% |
-| temporal-elasticsearch | 619.4MiB / 15.61GiB | 0.27% |
-| temporal-ui | 12.09MiB / 15.61GiB | 0.00% |
+| temporal | 195MiB / 15.61GiB | 2.34% |
+| temporal-postgresql | 72.93MiB / 15.61GiB | 0.37% |
+| postiz-postgres | 50.18MiB / 15.61GiB | 0.01% |
+| postiz-redis | 6.301MiB / 15.61GiB | 0.11% |
+| temporal-elasticsearch | 619.4MiB / 15.61GiB | 0.31% |
+| temporal-ui | 12.05MiB / 15.61GiB | 0.00% |
 | obsidian-webdav | 13.8MiB / 256MiB | 0.00% |
 | obsidian-silverbullet | 22.59MiB / 512MiB | 0.00% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
@@ -24,17 +24,17 @@
 | firefly_iii_core | 86.17MiB / 256MiB | 0.01% |
 | firefly_iii_db | 26.74MiB / 128MiB | 0.00% |
 | fava | 51.86MiB / 256MiB | 0.03% |
-| paperless_app | 471.7MiB / 768MiB | 0.18% |
-| paperless-ngx-db-1 | 55.19MiB / 1GiB | 0.00% |
-| paperless-ngx-broker-1 | 9.801MiB / 768MiB | 0.40% |
+| paperless_app | 471.5MiB / 768MiB | 0.13% |
+| paperless-ngx-db-1 | 55.2MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 9.809MiB / 768MiB | 0.45% |
 | actual_budget | 88.69MiB / 512MiB | 0.00% |
 | tallerpos_api | 102.9MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 58.78MiB / 1GiB | 0.37% |
+| siyuan-main-1 | 58.78MiB / 1GiB | 0.40% |
 | tallerpos_db_dev | 37.1MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.934MiB / 512MiB | 2.23% |
+| tallerpos_cache_dev | 5.934MiB / 512MiB | 0.43% |
 | infra-admin-1 | 7.293MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 11.77MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 122.6MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 123.2MiB / 15.61GiB | 0.01% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
@@ -47,5 +47,5 @@
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
 | /opt/sentinel-hub | 9.8M |
-| /opt/vault | 3.7M |
+| /opt/vault | 3.8M |
 | /opt/firefly | 2.0M |
