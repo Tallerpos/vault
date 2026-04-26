@@ -51,71 +51,69 @@ dv.el("span", randomIdea.file.link, { container: titleLinkCont });
 ```dataviewjs
 
 // 1. Obtener Libros Ordenados
-
 const books = dv.pages('"BIBLIOTECA/Libros"')
-
 .where(p => p.tipo === "libro")
-
 .sort(p => p.rating, "desc")
-
 .sort(p => p.file.mtime, "desc");
 
-  
-
 if (books.length === 0) {
-
-dv.paragraph("No se detectaron libros en la carpeta 'BIBLIOTECA/Libros'.");
-
+    dv.paragraph("> [!INFO] No se detectaron libros en la carpeta 'BIBLIOTECA/Libros'.");
 } else {
+    // 2. Definición Estética Premium
+    const containerStyle = `
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 24px;
+        padding: 20px 0;
+    `;
+    
+    const cardStyle = `
+        background: var(--background-secondary);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--divider-color);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        text-decoration: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    `;
 
-// 2. Definición Estética (Flexbox Inline - Máxima compatibilidad)
+    let html = `<div style="${containerStyle}">`;
 
-const cardStyle = "background: var(--background-secondary-alt); border-radius: 12px; overflow: hidden; border: 1px solid var(--divider-color); display: flex; flex-direction: column; width: 190px; text-decoration: none; transition: transform 0.2s;";
+    for (const book of books) {
+        const cover = book.portada || "https://via.placeholder.com/180x270?text=Sin+Portada";
+        const rating = book.rating ? "⭐".repeat(book.rating) : "Sin calificar";
+        const status = book.estado || "Pendiente";
+        const statusColor = status === "leyendo" ? "#4caf50" : (status === "terminado" ? "#2196f3" : "#ff9800");
 
-const containerStyle = "display: flex; flex-wrap: wrap; gap: 20px; padding: 20px 0; width: 100%;";
+        html += `
+        <a href="${book.file.path}" class="internal-link" style="${cardStyle}">
+            <div style="position: relative; width: 100%; aspect-ratio: 2/3; overflow: hidden; background: #121212;">
+                <img src="${cover}" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; top: 8px; right: 8px; background: ${statusColor}; color: white; font-size: 0.65em; padding: 2px 8px; border-radius: 10px; font-weight: bold; text-transform: uppercase;">
+                    ${status}
+                </div>
+            </div>
+            <div style="padding: 14px; flex-grow: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div style="font-weight: 800; font-size: 0.95em; color: var(--text-normal); line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    ${book.file.name}
+                </div>
+                <div style="font-size: 0.8em; color: var(--text-muted); font-weight: 500;">
+                    ${book.autor || "Autor Desconocido"}
+                </div>
+                <div style="margin-top: auto; padding-top: 8px; font-size: 0.75em; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: var(--interactive-accent); font-weight: 700;">${rating}</span>
+                </div>
+            </div>
+        </a>
+        `;
+    }
 
-  
-
-// 3. Generación del HTML
-
-let html = `<div style="${containerStyle}">`;
-
-for (const book of books) {
-
-const cover = book.portada || "https://via.placeholder.com/180x270?text=Sin+Portada";
-
-const ratingText = book.rating ? "Puntuación: " + book.rating + "/5" : "Sin calificar";
-
-html += `
-
-<a href="${book.file.path}" class="internal-link" style="${cardStyle}">
-
-<div style="width: 100%; aspect-ratio: 2/3; background: #1a1a1a; overflow: hidden;">
-
-<img src="${cover}" style="width: 100%; height: 100%; object-fit: cover;">
-
-</div>
-
-<div style="padding: 12px; background: var(--background-secondary); flex-grow: 1;">
-
-<div style="font-weight: 700; font-size: 0.9em; color: var(--text-normal); margin-bottom: 4px;">${book.file.name}</div>
-
-<div style="font-size: 0.8em; color: var(--text-muted);">${book.autor || "Desconocido"}</div>
-
-<div style="margin-top: 8px; font-size: 0.75em; color: var(--interactive-accent); font-weight: 600;">${ratingText}</div>
-
-</div>
-
-</a>
-
-`;
-
-}
-
-html += '</div>';
-
-dv.el("div", html);
-
+    html += '</div>';
+    dv.el("div", html);
 }
 
 ```
