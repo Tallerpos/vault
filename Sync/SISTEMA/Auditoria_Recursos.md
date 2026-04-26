@@ -1,51 +1,39 @@
 # 🕵️ Auditoría Profunda de Recursos
-Último análisis: 2026-04-26 14:55
+Último análisis: 2026-04-26 15:10
 
 ## 📦 Uso de RAM por Contenedor
 | Contenedor | RAM Usada | % CPU |
 | :--- | :--- | :--- |
-| vida-app-1 | 26.89MiB / 15.61GiB | 0.00% |
-| vida-backup-1 | 496KiB / 15.61GiB | 0.00% |
-| vida-db-1 | 16.62MiB / 15.61GiB | 0.01% |
-| postiz | 1.568GiB / 15.61GiB | 5.04% |
-| temporal-admin-tools | 460KiB / 15.61GiB | 0.00% |
-| temporal | 196.4MiB / 15.61GiB | 2.53% |
-| temporal-postgresql | 66.99MiB / 15.61GiB | 0.53% |
-| postiz-postgres | 41.3MiB / 15.61GiB | 0.01% |
-| postiz-redis | 3.398MiB / 15.61GiB | 0.17% |
-| temporal-elasticsearch | 623MiB / 15.61GiB | 0.29% |
-| temporal-ui | 9.277MiB / 15.61GiB | 0.00% |
-| obsidian-webdav | 10.58MiB / 256MiB | 0.00% |
-| obsidian-silverbullet | 7.641MiB / 512MiB | 0.00% |
+| obsidian-webdav | 11.07MiB / 256MiB | 0.00% |
+| obsidian-silverbullet | 9.668MiB / 512MiB | 0.01% |
 | obsidian-watchtower | 0B / 0B | 0.00% |
-| firefly_sentinel | 54.24MiB / 15.61GiB | 0.00% |
-| paisa | 8.875MiB / 15.61GiB | 0.00% |
+| paisa | 7.559MiB / 15.61GiB | 0.00% |
 | firefly_iii_cron | 412KiB / 32MiB | 0.00% |
-| firefly_iii_core | 34.72MiB / 256MiB | 2.36% |
-| firefly_iii_db | 16.47MiB / 128MiB | 0.00% |
-| fava | 16.13MiB / 256MiB | 0.03% |
-| paperless_app | 286.7MiB / 768MiB | 0.13% |
-| paperless-ngx-db-1 | 33.21MiB / 1GiB | 0.00% |
-| paperless-ngx-broker-1 | 7.859MiB / 768MiB | 0.38% |
-| actual_budget | 19.79MiB / 512MiB | 0.00% |
-| tallerpos_api | 24.67MiB / 1.5GiB | 0.00% |
-| siyuan-main-1 | 17.4MiB / 1GiB | 0.44% |
-| tallerpos_db_dev | 13.09MiB / 1GiB | 0.00% |
-| tallerpos_cache_dev | 5.953MiB / 512MiB | 0.38% |
-| infra-admin-1 | 5.574MiB / 15.61GiB | 0.00% |
+| firefly_iii_core | 38.89MiB / 256MiB | 2.54% |
+| firefly_iii_db | 14.98MiB / 128MiB | 0.00% |
+| fava | 12.11MiB / 256MiB | 0.02% |
+| paperless_app | 257.4MiB / 768MiB | 0.04% |
+| paperless-ngx-db-1 | 22.2MiB / 1GiB | 0.00% |
+| paperless-ngx-broker-1 | 3.297MiB / 768MiB | 0.41% |
+| actual_budget | 12.29MiB / 512MiB | 0.00% |
+| tallerpos_api | 20.73MiB / 1.5GiB | 0.00% |
+| siyuan-main-1 | 16.87MiB / 1GiB | 0.40% |
+| tallerpos_db_dev | 9.715MiB / 1GiB | 0.00% |
+| tallerpos_cache_dev | 2.094MiB / 512MiB | 2.57% |
+| infra-admin-1 | 1.824MiB / 15.61GiB | 0.00% |
 | infra-pwa-1 | 9.52MiB / 15.61GiB | 0.00% |
-| infra-api-1 | 71.28MiB / 15.61GiB | 0.01% |
+| infra-api-1 | 53.49MiB / 15.61GiB | 0.11% |
 
 ## 📂 Uso de Disco por Carpeta
 | Carpeta | Tamaño |
 | :--- | :--- |
-| /var/lib/docker | 16G |
-| /opt/faceguard | 1.4G |
-| /opt/tallerpos | 1.2G |
+| /var/lib/docker | 7.4G |
+| /opt/tallerpos | 1.3G |
 | /opt/paperless-ngx | 225M |
-| /var/log | 123M |
+| /var/log | 127M |
 | /opt/tallerpos_prod | 67M |
 | /opt/siyuan | 27M |
 | /opt/sentinel-hub | 9.8M |
-| /opt/vault | 4.9M |
+| /opt/vault | 5.0M |
 | /opt/firefly | 2.0M |
+| /opt/paisa | 380K |
