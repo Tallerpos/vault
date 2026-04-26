@@ -124,7 +124,41 @@ for (const tema of temasExtras) {
     const existe   = app.vault.getAbstractFileByPath(pathTema);
     
     if (!existe) {
-        const contenidoMOC = `# 🧭 Tema: ${tema}\n\nEste es tu centro de control para todo lo relacionado con **${tema}**.\n\n---\n\n## 🏗️ Estructura del Conocimiento\n\n### Conceptos y Notas\n\n\`\`\`dataview\nLIST FROM "NOTAS" WHERE contains(temas, "${tema}") OR up = [[${tema}]]\n\`\`\`\n\n---\n\n## 📖 Fuentes y Biblioteca\n\n\`\`\`dataview\nTABLE autor as "Autor", estado as "Progreso"\nFROM "BIBLIOTECA/Libros"\nWHERE contains(temas, "${tema}") OR nexo = [[${tema}]]\n\`\`\`\n`;
+        const contenidoMOC = `---
+tipo: tema
+icon: 🧭
+---
+
+# 🧭 Tema: ${tema}
+
+Este es tu centro de control para todo lo relacionado con **${tema}**.
+
+---
+
+## 🏗️ Estructura del Conocimiento
+
+### Conceptos y Notas
+\`\`\`dataview
+LIST FROM "NOTAS" WHERE contains(temas, "${tema}") OR up = [[${tema}]]
+\`\`\`
+
+---
+
+## 📖 Fuentes y Biblioteca
+
+\`\`\`dataview
+TABLE autor as "Autor", estado as "Progreso", rating as "⭐"
+FROM "BIBLIOTECA/Libros"
+WHERE contains(temas, "${tema}") OR nexo = [[${tema}]]
+SORT rating DESC
+\`\`\`
+
+---
+
+## 🔗 Conexiones
+- [[MAPA|🗺️ Volver al Mapa]]
+- [[index|🧠 Home]]
+`;
         try {
             await app.vault.create(pathTema, contenidoMOC);
             new Notice(`✨ Se ha creado el Tema Maestro: ${tema}`);
