@@ -19,3 +19,6 @@
 [2026-07-04 17:20:42]   {"status": "skipped", "reason": "already classified"}
 [2026-07-04 17:20:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
 [2026-07-04 17:21:44] AI Watcher started...
+[2026-07-04 17:24:08] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
+[2026-07-04 17:24:08]   {"status": "skipped", "reason": "already classified"}
+[2026-07-04 17:24:08] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
