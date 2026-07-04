@@ -1,7 +1,7 @@
 <%*
 // ============================================
-// PLANTILLA: Nota Minimalista
-// Filosofía: 1 carpeta, fecha en nombre, tipo fijo, cero decisiones
+// PLANTILLA: Nota Minimalista v2
+// Incluye selección de carpeta automática
 // ============================================
 
 // 1. Seleccionar tipo (lista cerrada, sin expandir nunca)
@@ -14,20 +14,30 @@ const tipo = await tp.system.suggester(
   "idea"
 );
 
-// 2. Título de la nota (opcional, se puede dejar vacío)
+// 2. Seleccionar carpeta destino
+const carpeta = await tp.system.suggester(
+  ["Notas", "Diario"],
+  ["Notas", "Diario"],
+  false,
+  "¿Dónde guardar?",
+  undefined,
+  "Notas"
+);
+
+// 3. Título de la nota (opcional, se puede dejar vacío)
 const titulo = await tp.system.prompt("Título (opcional)", "");
 
-// 3. Fecha de hoy
+// 4. Fecha de hoy
 const fecha = tp.date.now("YYYY-MM-DD");
 
-// 4. Construir nombre: AAAA-MM-DD - tipo - título
+// 5. Construir nombre: AAAA-MM-DD - tipo - título
 const cleanTitulo = titulo.replace(/[\/\\:*?"<>|]/g, "").trim();
 const filename = cleanTitulo
   ? `${fecha} - ${tipo} - ${cleanTitulo}`
   : `${fecha} - ${tipo}`;
 
-// 5. Renombrar archivo
-await tp.file.rename(filename);
+// 6. Mover archivo a la carpeta seleccionada
+await tp.file.move(`${carpeta}/${filename}`);
 -%>
 ---
 fecha: <% tp.date.now("YYYY-MM-DD") -%>
