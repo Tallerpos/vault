@@ -15,3 +15,6 @@
 [2026-07-04 17:19:42]   "classified_at": datetime.utcnow().isoformat() + "Z"
 [2026-07-04 17:19:42]   {"status": "success", "tags": ["automatización", "inteligencia-artificial", "clasificación", "deepseek api"]}
 [2026-07-04 17:19:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:20:42] PROCESSING: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:20:42]   {"status": "skipped", "reason": "already classified"}
+[2026-07-04 17:20:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
