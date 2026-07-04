@@ -5,18 +5,23 @@ autor: Viktor Frankl
 año: 2015
 editorial: Herder Editorial
 idioma: ES
-isbn: "9788425432033"
+isbn: 9788425432033
 paginas: 125
 pagina_actual: 0
 portada: https://books.google.com/books/content?id=eAOIDwAAQBAJ&printsec=frontcover&img=1&fife=w400&source=gbs_api
-temas:
-  - Psychology
-rating:
+temas: 
+Psychology
+rating: 
 estado: leyendo
 fecha_inicio: 2026-04-05
-fecha_fin:
+fecha_fin: 
+ai_tags: []
+ai_category: miscelanea
+ai_summary: 
+ai_importance: 3
+ai_key_topics: []
+ai_classified_at: 2026-07-04T23:09:57.838599Z
 ---
-
 ![El hombre en busca de sentido|200](https://books.google.com/books/content?id=eAOIDwAAQBAJ&printsec=frontcover&img=1&fife=w400&source=gbs_api)
 
 # El hombre en busca de sentido
