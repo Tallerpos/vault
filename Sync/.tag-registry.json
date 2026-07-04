@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-07-04T23:37:36.770342+00:00Z",
+  "last_updated": "2026-07-04T23:37:55.793174+00:00Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 3,
@@ -33,12 +33,12 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 1,
+      "count": 2,
       "first_seen": "2026-07-04T23:23:08.319491Z",
       "category": "uncategorized"
     },
     "comida": {
-      "count": 1,
+      "count": 2,
       "first_seen": "2026-07-04T23:23:08.319503Z",
       "category": "uncategorized"
     },
@@ -50,6 +50,11 @@
     "sistema": {
       "count": 1,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
+      "category": "uncategorized"
+    },
+    "planes": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:37:55.793160+00:00Z",
       "category": "uncategorized"
     }
   },
