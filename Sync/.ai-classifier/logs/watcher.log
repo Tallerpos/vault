@@ -36,3 +36,6 @@
 [2026-07-04 17:37:34] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
 [2026-07-04 17:37:36]   {"status": "success", "action": "classified", "tags": ["prueba", "sistema", "clasificación", "inteligencia-artificial", "automatización"]}
 [2026-07-04 17:37:36] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:38:36] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:38:39]   {"status": "success", "action": "reclassified", "tags": ["inversión", "bitcoin", "ethereum", "criptomonedas", "hodl"]}
+[2026-07-04 17:38:39] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md

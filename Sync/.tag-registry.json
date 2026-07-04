@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-07-04T23:37:55.793174+00:00Z",
+  "last_updated": "2026-07-04T23:38:39.481819+00:00Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 3,
@@ -55,6 +55,31 @@
     "planes": {
       "count": 1,
       "first_seen": "2026-07-04T23:37:55.793160+00:00Z",
+      "category": "uncategorized"
+    },
+    "inversión": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:38:39.481794+00:00Z",
+      "category": "uncategorized"
+    },
+    "bitcoin": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:38:39.481808+00:00Z",
+      "category": "uncategorized"
+    },
+    "ethereum": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:38:39.481811+00:00Z",
+      "category": "uncategorized"
+    },
+    "criptomonedas": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:38:39.481814+00:00Z",
+      "category": "uncategorized"
+    },
+    "hodl": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:38:39.481815+00:00Z",
       "category": "uncategorized"
     }
   },
