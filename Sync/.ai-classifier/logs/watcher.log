@@ -1,1 +1,6 @@
 [2026-07-04 17:11:38] AI Watcher started...
+[2026-07-04 17:16:36] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:16:38]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:16:38]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:16:38]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Diario/2026-07-04.md'"}
+[2026-07-04 17:16:38] ERROR: /opt/vault/Sync/Diario/2026-07-04.md
