@@ -42,6 +42,7 @@ while read -r file; do
     while read -r -t 0.1 additional; do
         file="$additional"
     done
+    sudo chown abner:abner "$file" 2>/dev/null
     if ! file_changed "$file"; then
         log "SKIPPED (no change): $file"
         continue
