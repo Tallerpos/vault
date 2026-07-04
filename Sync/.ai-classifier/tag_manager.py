@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 class TagManager:
     def __init__(self, registry_path: str, aliases: dict):
@@ -16,7 +16,7 @@ class TagManager:
         return {"version": "1.0", "last_updated": "", "tags": {}, "categories": {}}
 
     def _save_registry(self):
-        self.registry["last_updated"] = datetime.utcnow().isoformat() + "Z"
+        self.registry["last_updated"] = datetime.now(timezone.utc).isoformat() + "Z"
         with open(self.registry_path, 'w') as f:
             json.dump(self.registry, f, indent=2, ensure_ascii=False)
 
@@ -30,7 +30,7 @@ class TagManager:
         updated = False
         for tag in tags:
             if tag not in self.registry["tags"]:
-                self.registry["tags"][tag] = {"count": 0, "first_seen": datetime.utcnow().isoformat() + "Z", "category": category or "uncategorized"}
+                self.registry["tags"][tag] = {"count": 0, "first_seen": datetime.now(timezone.utc).isoformat() + "Z", "category": category or "uncategorized"}
                 updated = True
             self.registry["tags"][tag]["count"] += 1
         if updated:
