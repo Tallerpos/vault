@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-07-04T23:19:42.379928Z",
+  "last_updated": "2026-07-04T23:23:08.319508Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 2,
@@ -30,6 +30,16 @@
     "deepseek api": {
       "count": 1,
       "first_seen": "2026-07-04T23:19:42.379911Z",
+      "category": "uncategorized"
+    },
+    "familia": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:23:08.319491Z",
+      "category": "uncategorized"
+    },
+    "comida": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:23:08.319503Z",
       "category": "uncategorized"
     }
   },
