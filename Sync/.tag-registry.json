@@ -1,1 +1,32 @@
-{"version": "1.0", "last_updated": "", "tags": {}, "categories": {}}
+{
+  "version": "1.0",
+  "last_updated": "2026-07-04T23:10:50.716246Z",
+  "tags": {
+    "inteligencia-artificial": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:10:50.716223Z",
+      "category": "uncategorized"
+    },
+    "automatización": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:10:50.716236Z",
+      "category": "uncategorized"
+    },
+    "clasificación": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:10:50.716239Z",
+      "category": "uncategorized"
+    },
+    "deepseek": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:10:50.716241Z",
+      "category": "uncategorized"
+    },
+    "python": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:10:50.716243Z",
+      "category": "uncategorized"
+    }
+  },
+  "categories": {}
+}
