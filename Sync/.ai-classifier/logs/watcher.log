@@ -10,3 +10,8 @@
 [2026-07-04 17:18:16]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md'"}
 [2026-07-04 17:18:16] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
 [2026-07-04 17:18:34] AI Watcher started...
+[2026-07-04 17:19:41] PROCESSING: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:19:42]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:19:42]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:19:42]   {"status": "success", "tags": ["automatización", "inteligencia-artificial", "clasificación", "deepseek api"]}
+[2026-07-04 17:19:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
