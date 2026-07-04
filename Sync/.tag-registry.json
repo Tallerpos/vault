@@ -1,19 +1,19 @@
 {
   "version": "1.0",
-  "last_updated": "2026-07-04T23:23:08.319508Z",
+  "last_updated": "2026-07-04T23:37:36.770342+00:00Z",
   "tags": {
     "inteligencia-artificial": {
-      "count": 2,
+      "count": 3,
       "first_seen": "2026-07-04T23:10:50.716223Z",
       "category": "uncategorized"
     },
     "automatización": {
-      "count": 2,
+      "count": 3,
       "first_seen": "2026-07-04T23:10:50.716236Z",
       "category": "uncategorized"
     },
     "clasificación": {
-      "count": 2,
+      "count": 3,
       "first_seen": "2026-07-04T23:10:50.716239Z",
       "category": "uncategorized"
     },
@@ -40,6 +40,16 @@
     "comida": {
       "count": 1,
       "first_seen": "2026-07-04T23:23:08.319503Z",
+      "category": "uncategorized"
+    },
+    "prueba": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:37:36.770318+00:00Z",
+      "category": "uncategorized"
+    },
+    "sistema": {
+      "count": 1,
+      "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
       "category": "uncategorized"
     }
   },

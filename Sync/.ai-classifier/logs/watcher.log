@@ -33,3 +33,6 @@
 [2026-07-04 17:26:15]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Diario/2026-07-04.md'"}
 [2026-07-04 17:26:15] ERROR: /opt/vault/Sync/Diario/2026-07-04.md
 [2026-07-04 17:36:20] AI Watcher started...
+[2026-07-04 17:37:34] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:37:36]   {"status": "success", "action": "classified", "tags": ["prueba", "sistema", "clasificación", "inteligencia-artificial", "automatización"]}
+[2026-07-04 17:37:36] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
