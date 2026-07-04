@@ -47,7 +47,7 @@ while read -r file; do
         continue
     fi
     log "PROCESSING: $file"
-    sudo python3 "$CLASSIFIER" "$file" 2>&1 | while read -r line; do
+    python3 "$CLASSIFIER" "$file" 2>&1 | while read -r line; do
         log "  $line"
     done
     if [ ${PIPESTATUS[0]} -eq 0 ]; then
