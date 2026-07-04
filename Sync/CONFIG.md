@@ -1,6 +1,6 @@
 space-config
 journal:
-  prefix: Journal/
+  prefix: Diario/
   dateformat: YYYY-MM-DD
 libraries:
   - import: "[[!silverbullet.md/Library/Core/*]]"
