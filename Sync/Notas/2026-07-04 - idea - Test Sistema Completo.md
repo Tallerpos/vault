@@ -1,0 +1,27 @@
+---
+fecha: 2026-07-04
+tipo: idea
+tags: []
+relacionado: []
+---
+
+# Test: Sistema de Clasificación Automática
+
+Hoy probé el sistema completo de clasificación con IA. El flujo es:
+
+1. Crear nota con Templater
+2. Escribir contenido
+3. Guardar
+4. ai-watcher detecta el cambio
+5. Espera 60 segundos (debounce)
+6. Clasifica con DeepSeek API
+7. Actualiza YAML con ai_ fields
+8. vault-watcher sube a GitHub
+
+## Resultados esperados
+- Tags automáticos basados en contenido
+- Categoría asignada por IA
+- Importancia calculada (1-5)
+- Resumen generado
+- Sin duplicación de tags
+- Costo mínimo (~/usr/bin/bash.30/mes)
