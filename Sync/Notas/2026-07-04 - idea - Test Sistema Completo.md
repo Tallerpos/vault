@@ -10,23 +10,18 @@ ai_importance: 3
 ai_key_topics: []
 ai_classified_at: 2026-07-04T23:37:36.768942+00:00
 ---
-# Test: Sistema de Clasificación Automática
 
-Hoy probé el sistema completo de clasificación con IA. El flujo es:
+# Inversión en Bitcoin y Ethereum
 
-1. Crear nota con Templater
-2. Escribir contenido
-3. Guardar
-4. ai-watcher detecta el cambio
-5. Espera 60 segundos (debounce)
-6. Clasifica con DeepSeek API
-7. Actualiza YAML con ai_ fields
-8. vault-watcher sube a GitHub
+Hoy compré 0.01 BTC a 0,000 y 0.1 ETH a ,500. Mi estrategia es mantener a largo plazo (HODL) y no vender hasta que Bitcoin llegue a 00,000.
 
-## Resultados esperados
-- Tags automáticos basados en contenido
-- Categoría asignada por IA
-- Importancia calculada (1-5)
-- Resumen generado
-- Sin duplicación de tags
-- Costo mínimo (~/usr/bin/bash.30/mes)
+## Análisis técnico
+- Bitcoin está formando un patrón de cuña ascendente
+- El RSI está en 65 (sobrecomprado pero no extremo)
+- El volumen de交易 está aumentando
+
+## Plan de acción
+1. Configurar alerts de precio en TradingView
+2. DCA: comprar 00 cada lunes
+3. Staking de ETH en Lido Finance (APY ~4%)
+4. Revisar portafolio mensualmente
