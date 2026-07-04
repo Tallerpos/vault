@@ -1,47 +1,40 @@
 <%*
 // ============================================
-// PLANTILLA: Nota Minimalista v2
-// Incluye selección de carpeta automática
+// PLANTILLA: Nota Minimalista v3
+// Completamente automática, cero fricción
 // ============================================
 
-// 1. Seleccionar tipo (lista cerrada, sin expandir nunca)
+// 1. Seleccionar tipo
 const tipo = await tp.system.suggester(
   ["idea", "reunión", "aprendizaje", "persona", "proyecto", "diario"],
-  ["idea", "reunion", "aprendizaje", "persona", "proyecto", "diario"],
-  false,
-  "Tipo de nota",
-  undefined,
-  "idea"
+  ["idea", "reunion", "aprendizaje", "persona", "proyecto", "diario"]
 );
 
-// 2. Seleccionar carpeta destino
-const carpeta = await tp.system.suggester(
-  ["Notas", "Diario"],
-  ["Notas", "Diario"],
-  false,
-  "¿Dónde guardar?",
-  undefined,
-  "Notas"
-);
-
-// 3. Título de la nota (opcional, se puede dejar vacío)
-const titulo = await tp.system.prompt("Título (opcional)", "");
-
-// 4. Fecha de hoy
+// 2. Determinar carpeta y nombre automáticamente
 const fecha = tp.date.now("YYYY-MM-DD");
+let carpeta, titulo, filename;
 
-// 5. Construir nombre: AAAA-MM-DD - tipo - título
-const cleanTitulo = titulo.replace(/[\/\\:*?"<>|]/g, "").trim();
-const filename = cleanTitulo
-  ? `${fecha} - ${tipo} - ${cleanTitulo}`
-  : `${fecha} - ${tipo}`;
+if (tipo === "diario") {
+  // Diario: sin título, solo fecha
+  carpeta = "Diario";
+  filename = fecha;
+  titulo = "";
+} else {
+  // Otros: pedir título
+  carpeta = "Notas";
+  titulo = await tp.system.prompt("Título");
+  const cleanTitulo = titulo.replace(/[\/\\:*?"<>|]/g, "").trim();
+  filename = cleanTitulo
+    ? `${fecha} - ${tipo} - ${cleanTitulo}`
+    : `${fecha} - ${tipo}`;
+}
 
-// 6. Mover archivo a la carpeta seleccionada
+// 3. Mover archivo
 await tp.file.move(`${carpeta}/${filename}`);
 -%>
 ---
-fecha: <% tp.date.now("YYYY-MM-DD") -%>
-tipo: <% tipo -%>
+fecha: <% tp.date.now("YYYY-MM-DD") %>
+tipo: <% tipo %>
 tags: []
 relacionado: []
 ---
