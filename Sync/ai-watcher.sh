@@ -1,5 +1,6 @@
 #!/bin/bash
 VAULT_DIR="/opt/vault/Sync"
+source /etc/environment
 CLASSIFIER="/opt/vault/Sync/.ai-classifier/classifier.py"
 HASH_DIR="/opt/vault/Sync/.ai-classifier/cache/hashes"
 LOG_FILE="/opt/vault/Sync/.ai-classifier/logs/watcher.log"
