@@ -9,7 +9,7 @@ let titulo = "";
 if (tipo !== "diario") {
   titulo = await tp.system.prompt("Título");
 }
-const cleanTitulo = titulo.replace(/[\/\\:*?"<>|]/g, "").trim();
+const cleanTitulo = titulo.replace(/[\\/:*?"<>|]/g, "").trim();
 const filename = tipo === "diario"
   ? fecha
   : (cleanTitulo ? `${fecha} - ${tipo} - ${cleanTitulo}` : `${fecha} - ${tipo}`);
@@ -22,4 +22,4 @@ tags: []
 relacionado: []
 ---
 
-<% tp.file.cursor() %>
+Escribe aquí tu nota.
