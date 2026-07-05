@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T07:00:11.691724+00:00",
+  "last_updated": "2026-07-05T07:01:00.347235+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -329,16 +329,6 @@
       "importance": 1,
       "score": 0.5,
       "user_verified": false,
-      "timestamp": "2026-07-05T06:44:49.669313+00:00"
-    },
-    {
-      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
-      "tags": [],
-      "category": "personal",
-      "summary": "Nota sin contenido suficiente para clasificar.",
-      "importance": 1,
-      "score": 0.5,
-      "user_verified": false,
       "timestamp": "2026-07-05T06:45:38.256693+00:00"
     },
     {
@@ -520,6 +510,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T07:00:11.691699+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T07:01:00.347213+00:00"
     }
   ]
 }
