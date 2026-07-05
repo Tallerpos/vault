@@ -45,3 +45,6 @@
 [2026-07-04 18:01:35] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
 [2026-07-04 18:01:35]   {"status": "skipped", "reason": "already classified, no significant change"}
 [2026-07-04 18:01:35] SUCCESS: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 18:02:38] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:02:39]   {"status": "success", "action": "classified", "tags": []}
+[2026-07-04 18:02:39] SUCCESS: /opt/vault/Sync/Sin título.md
