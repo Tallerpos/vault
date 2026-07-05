@@ -141,8 +141,7 @@ class NoteClassifier:
                 'key_topics': validated['key_topics'],
                 'classified_at': datetime.now(timezone.utc).isoformat(),
             }
-            fields["related"] = related_links
-                fields['related'] = related_links
+            fields['related'] = related_links
             updated_content = self.yaml_updater.update_frontmatter(content, fields)
             if related:
                 updated_content = self.link_finder.inject_body_links(updated_content, related)
