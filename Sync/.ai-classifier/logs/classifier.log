@@ -6,3 +6,20 @@
 2026-07-04 18:17:40,422 - ERROR - Classification failed for /opt/vault/Sync/Sin título.md: [Errno 13] Permission denied: '/opt/vault/Sync/Sin título.md'
 2026-07-04 18:36:28,306 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md: [Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md'
 2026-07-04 18:37:45,779 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md: [Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md'
+2026-07-04 21:12:15,433 - INFO - Skipped (placeholder): /opt/vault/Sync/Notas/2026-07-04 - aprendizaje - SAA.md
+2026-07-04 21:12:15,565 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+2026-07-04 21:12:15,565 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
+2026-07-04 21:12:15,570 - INFO - Added to retry queue: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+2026-07-04 21:12:15,709 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+2026-07-04 21:12:15,710 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
+2026-07-04 21:12:15,713 - INFO - Added to retry queue: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+2026-07-04 21:12:15,850 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+2026-07-04 21:12:15,850 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
+2026-07-04 21:12:15,854 - INFO - Added to retry queue: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+2026-07-04 21:12:15,999 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+2026-07-04 21:12:16,000 - ERROR - Classification failed for /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
+2026-07-04 21:12:16,006 - INFO - Added to retry queue: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+2026-07-04 21:12:16,143 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04.md
+2026-07-04 21:12:16,144 - ERROR - Classification failed for /opt/vault/Sync/Diario/2026-07-04.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
+2026-07-04 21:12:16,147 - INFO - Added to retry queue: /opt/vault/Sync/Diario/2026-07-04.md
+2026-07-04 21:12:16,278 - INFO - Skipped (outside valid dirs and no valid frontmatter): /opt/vault/Sync/El hombre en busca de sentido.md
