@@ -3826,3 +3826,8 @@
 [2026-07-05 11:39:36] PROCESSING: /opt/vault/Sync/Diario/2026-07-04_1.md
 [2026-07-05 11:39:38]   {"status": "success", "action": "classified", "tags": [], "category": "personal", "summary_length": 46, "key_topics_count": 0, "related_count": 0, "user_correction_detected": false}
 [2026-07-05 11:39:38] ✅ SUCCESS [] related=0
+[2026-07-05 11:40:25] PROCESSING: /opt/vault/Sync/Diario/2026-07-04_1.md
+[2026-07-05 11:40:26]   {"status": "success", "action": "classified", "tags": [], "category": "personal", "summary_length": 46, "key_topics_count": 0, "related_count": 0, "user_correction_detected": false}
+[2026-07-05 11:40:26] ✅ SUCCESS [] related=0
+[2026-07-05 11:40:26] Processing retry queue...
+[2026-07-05 11:40:26]   RETRY: {"status": "empty", "message": "No items in retry queue"}
