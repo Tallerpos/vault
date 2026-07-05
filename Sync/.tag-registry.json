@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T02:55:41.207118+00:00",
+  "last_updated": "2026-07-05T02:56:42.667260+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 20,
@@ -27,19 +27,19 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 5,
-      "successes": 5,
+      "count": 6,
+      "successes": 6,
       "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-05T02:55:41.206486+00:00",
+      "last_seen": "2026-07-05T02:56:42.665477+00:00",
       "category": "personal"
     },
     "comida": {
-      "count": 5,
-      "successes": 5,
+      "count": 6,
+      "successes": 6,
       "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-05T02:55:41.206486+00:00",
+      "last_seen": "2026-07-05T02:56:42.665477+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -170,7 +170,7 @@
     "clasificacion__deepseek": 1,
     "automatizacion__inteligencia-artificial": 7,
     "deepseek-api__inteligencia-artificial": 2,
-    "comida__familia": 3
+    "comida__familia": 4
   },
   "corrections": [
     {
@@ -508,7 +508,7 @@
       "timestamp": "2026-07-05T02:03:08.959189+00:00"
     },
     {
-      "file": "Notas/2026-07-04 - idea - Sali a comer con rosa.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
       "tags": [
         "comida",
         "familia"
@@ -516,9 +516,9 @@
       "category": "personal",
       "summary": "Nota sobre salir a comer con Rosa y mencionar a Josselin, aclarando que Rosa no es pareja.",
       "importance": 1,
-      "score": 1.333,
+      "score": 1.357,
       "user_verified": false,
-      "timestamp": "2026-07-05T02:55:41.207108+00:00"
+      "timestamp": "2026-07-05T02:56:42.667243+00:00"
     }
   ]
 }
