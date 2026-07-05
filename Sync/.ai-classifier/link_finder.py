@@ -90,7 +90,7 @@ class LinkFinder:
         candidates = []
 
         for rel, note in self.notes_index.items():
-            note_path = note['path']
+            note_path = note['path'].resolve()
             if note_path == current:
                 continue
             if not note_path.exists():
@@ -140,34 +140,19 @@ class LinkFinder:
             links.append(self.build_wikilink(r['path'], all_names))
         return '\n\n---\n\n**Notas relacionadas:** ' + ' · '.join(links) + '\n'
 
-    def inject_related(self, content, related):
+    def inject_body_links(self, content, related):
         if not related:
             return content
-        links = []
-        all_names = {}
-        for r in related:
-            n = r['path'].stem
-            all_names.setdefault(n, []).append(r['path'])
-        for r in related:
-            links.append(self.build_wikilink(r['path'], all_names))
-
-        existing = self._parse_frontmatter(content)
-        existing_related = existing.get('ai_related', [])
-        existing_set = set(existing_related)
-        new_links = [l for l in links if l not in existing_set]
-        if not new_links:
-            return content
-        all_related = existing_related + new_links
-
         body_links = self.build_body_links(related)
+        if not body_links:
+            return content
+        if body_links.strip() in content:
+            return content
 
         m = re.search(r'^---\s*\n.*?\n---\s*\n', content, re.DOTALL)
         if m:
-            fm_content = m.group(0)
+            fm = content[:m.end()]
             body = content[m.end():]
-            if body_links.strip() in body:
-                return content
-            return fm_content.rstrip('\n') + f'\nai_related: {json.dumps(all_related, ensure_ascii=False)}\n' + body.rstrip('\n') + '\n' + body_links
+            return fm.rstrip('\n') + '\n' + body.rstrip('\n') + '\n' + body_links
         else:
-            fm = f'---\nai_related: {json.dumps(all_related, ensure_ascii=False)}\n---\n'
-            return fm + content.rstrip('\n') + '\n' + body_links
+            return content.rstrip('\n') + '\n' + body_links
