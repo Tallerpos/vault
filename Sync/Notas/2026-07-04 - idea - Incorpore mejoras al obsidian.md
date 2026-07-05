@@ -10,16 +10,11 @@ ai_summary: Nota sobre mejoras en Obsidian para integrar inteligencia artificial
 ai_importance: 3
 ai_key_topics: [obsidian, optimizacion, flujo-de-trabajo]
 ai_classified_at: '2026-07-05T01:09:24.937270+00:00'
-ai_related: ['[[Sin título]]', '[[2026-07-04 - idea - Incorpore Ai en Obsidian]]', '[[2026-07-04 - prueba - v2]]']
+ai_related: ['[[2026-07-04 - idea - Incorpore Ai en Obsidian]]']
 ---
-Incorpore algunas mejora a obsidian para que peuda funcionar de manera eficiente con la ai
-
-
----
-
-**Notas relacionadas:** [[Sin título]] · [[2026-07-04 - idea - Incorpore Ai en Obsidian]]
+Incorpore algunas mejoras a obsidian para que pueda funcionar de manera eficiente con la ai
 
 
 ---
 
-**Notas relacionadas:** [[Sin título]] · [[2026-07-04 - idea - Incorpore Ai en Obsidian]] · [[2026-07-04 - prueba - v2]]
+**Notas relacionadas:** [[2026-07-04 - idea - Incorpore Ai en Obsidian]]
