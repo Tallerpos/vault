@@ -146,3 +146,9 @@
 [2026-07-04 19:16:56]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 2, "related_count": 1, "user_correction_detected": false}
 [2026-07-04 19:16:57] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=1
 [2026-07-04 19:16:57] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:16:58]   {"status": "success", "action": "reclassified", "tags": ["automatizacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 122, "key_topics_count": 3, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:16:58] SUCCESS [automatizacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:16:58] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:16:58]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 19:16:58] SKIPPED (no changes detected)
+[2026-07-04 19:17:04] AI Watcher v4.0 started...
