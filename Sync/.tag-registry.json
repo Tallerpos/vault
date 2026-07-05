@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T01:04:40.845709+00:00",
+  "last_updated": "2026-07-05T01:05:22.675907+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 9,
-      "successes": 9,
+      "count": 10,
+      "successes": 10,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T01:04:19.393308+00:00",
+      "last_seen": "2026-07-05T01:05:21.011365+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 12,
-      "successes": 12,
+      "count": 14,
+      "successes": 14,
       "corrections": 2,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T01:04:40.845186+00:00",
+      "last_seen": "2026-07-05T01:05:22.675415+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -99,27 +99,27 @@
       "category": "uncategorized"
     },
     "deepseek-api": {
-      "count": 3,
-      "successes": 3,
+      "count": 4,
+      "successes": 4,
       "corrections": 0,
       "first_seen": "2026-07-04T23:19:42.379911Z",
-      "last_seen": "2026-07-05T01:04:40.845186+00:00",
+      "last_seen": "2026-07-05T01:05:22.675415+00:00",
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 8,
-      "successes": 8,
+      "count": 9,
+      "successes": 9,
       "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T01:04:40.845186+00:00",
+      "last_seen": "2026-07-05T01:05:22.675415+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 14,
-      "successes": 13,
+      "count": 16,
+      "successes": 15,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T01:04:40.845186+00:00",
+      "last_seen": "2026-07-05T01:05:22.675415+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -141,24 +141,17 @@
   },
   "categories": {},
   "co_occurrence": {
-    "clasificación__deepseek api": 1,
-    "automatización__clasificación": 4,
-    "clasificación__sistema": 6,
-    "automatización__deepseek api": 1,
-    "deepseek api__sistema": 1,
-    "automatización__sistema": 4,
-    "clasificación__inteligencia-artificial": 2,
-    "inteligencia-artificial__sistema": 6,
-    "automatización__deepseek": 1,
+    "clasificacion__deepseek-api": 3,
+    "automatizacion__clasificacion": 6,
+    "clasificacion__sistema": 13,
+    "automatizacion__deepseek-api": 3,
+    "deepseek-api__sistema": 3,
+    "automatizacion__sistema": 6,
+    "clasificacion__inteligencia-artificial": 7,
+    "inteligencia-artificial__sistema": 7,
+    "automatizacion__deepseek": 1,
     "deepseek__sistema": 1,
-    "clasificación__deepseek": 1,
-    "clasificacion__inteligencia-artificial": 4,
-    "clasificacion__sistema": 5,
-    "automatizacion__clasificacion": 1,
-    "automatizacion__deepseek-api": 1,
-    "automatizacion__sistema": 1,
-    "clasificacion__deepseek-api": 1,
-    "deepseek-api__sistema": 1
+    "clasificacion__deepseek": 1
   },
   "corrections": [
     {
@@ -235,6 +228,21 @@
       "timestamp": "2026-07-05T00:44:49.196575+00:00Z"
     },
     {
+      "file": "Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
+      "tags": [
+        "automatizacion",
+        "clasificacion",
+        "deepseek-api",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la automatización de clasificación de notas usando DeepSeek API, que detecta cambios en archivos .md, clasifica con IA, asigna tags y categorías, y enlaza notas relacionadas con costo mínimo.",
+      "importance": 4,
+      "score": 1.313,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:04:40.845701+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
       "tags": [
         "automatización",
@@ -247,6 +255,20 @@
       "score": 1.306,
       "user_verified": false,
       "timestamp": "2026-07-05T00:18:42.755550+00:00Z"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "tags": [
+        "clasificacion",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 3,
+      "score": 1.302,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:05:21.011869+00:00"
     },
     {
       "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
@@ -320,7 +342,7 @@
       "timestamp": "2026-07-05T01:01:33.513262+00:00"
     },
     {
-      "file": "Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
       "tags": [
         "automatizacion",
         "clasificacion",
@@ -328,11 +350,11 @@
         "sistema"
       ],
       "category": "tecnologia",
-      "summary": "Nota sobre la automatización de clasificación de notas usando DeepSeek API, que detecta cambios en archivos .md, clasifica con IA, asigna tags y categorías, y enlaza notas relacionadas con costo mínimo.",
+      "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
       "importance": 4,
-      "score": 1.313,
+      "score": 1.339,
       "user_verified": false,
-      "timestamp": "2026-07-05T01:04:40.845701+00:00"
+      "timestamp": "2026-07-05T01:05:22.675900+00:00"
     }
   ]
 }
