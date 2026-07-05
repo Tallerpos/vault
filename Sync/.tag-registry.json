@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T00:13:07.989929+00:00Z",
+  "last_updated": "2026-07-05T00:18:42.755558+00:00Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 3,
@@ -11,19 +11,19 @@
       "category": "uncategorized"
     },
     "automatización": {
-      "count": 4,
-      "successes": 4,
+      "count": 5,
+      "successes": 5,
       "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "last_seen": "2026-07-05T00:18:42.755469+00:00Z",
       "category": "tecnologia"
     },
     "clasificación": {
-      "count": 4,
-      "successes": 4,
+      "count": 5,
+      "successes": 5,
       "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "last_seen": "2026-07-05T00:18:42.755469+00:00Z",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -75,11 +75,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 2,
-      "successes": 2,
+      "count": 3,
+      "successes": 3,
       "corrections": 0,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "last_seen": "2026-07-05T00:18:42.755469+00:00Z",
       "category": "tecnologia"
     },
     "planes": {
@@ -134,11 +134,11 @@
   "categories": {},
   "co_occurrence": {
     "clasificación__deepseek api": 1,
-    "automatización__clasificación": 1,
-    "clasificación__sistema": 1,
+    "automatización__clasificación": 2,
+    "clasificación__sistema": 2,
     "automatización__deepseek api": 1,
     "deepseek api__sistema": 1,
-    "automatización__sistema": 1
+    "automatización__sistema": 2
   },
   "corrections": [],
   "successful_examples": [
@@ -156,6 +156,20 @@
       "score": 1.233,
       "user_verified": false,
       "timestamp": "2026-07-05T00:13:07.989923+00:00Z"
+    },
+    {
+      "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
+      "tags": [
+        "automatización",
+        "sistema",
+        "clasificación"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota de configuración del sistema de clasificación automática para vault de conocimiento personal, que define el prompt de clasificación y la estructura de respuesta JSON.",
+      "importance": 3,
+      "score": 1.306,
+      "user_verified": false,
+      "timestamp": "2026-07-05T00:18:42.755550+00:00Z"
     }
   ]
 }
