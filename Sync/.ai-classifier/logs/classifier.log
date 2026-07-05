@@ -61,3 +61,6 @@
 2026-07-04 21:17:58,304 - INFO - API call successful. Tags: ['cliente', 'diseno'], Category: trabajo
 2026-07-04 21:17:58,348 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md → tags=['cliente', 'diseno'], cat=trabajo, related=0
 2026-07-04 21:18:45,585 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md
+2026-07-04 21:21:59,719 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04_1.md
+2026-07-04 21:22:01,424 - INFO - API call successful. Tags: [], Category: personal
+2026-07-04 21:22:01,441 - INFO - Success: /opt/vault/Sync/Diario/2026-07-04_1.md → tags=[], cat=personal, related=0

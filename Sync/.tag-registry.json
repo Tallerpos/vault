@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:17:58.345145+00:00",
+  "last_updated": "2026-07-05T03:22:01.438222+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,20 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
-      "tags": [
-        "clasificacion",
-        "inteligencia-artificial",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
-      "importance": 3,
-      "score": 1.279,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:04:19.394158+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
       "tags": [
         "automatizacion",
@@ -547,6 +533,19 @@
       "timestamp": "2026-07-05T03:12:35.874267+00:00"
     },
     {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md",
+      "tags": [
+        "cliente",
+        "diseno"
+      ],
+      "category": "trabajo",
+      "summary": "Nota sobre un cliente que pidió arreglar un logo hace una semana, recordó hoy, y el usuario comenzará a trabajar en el logo para que el cliente lo tenga como propiedad.",
+      "importance": 2,
+      "score": 1.167,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:17:58.345126+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
       "tags": [
         "clasificacion",
@@ -588,17 +587,14 @@
       "timestamp": "2026-07-05T03:17:09.220573+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md",
-      "tags": [
-        "cliente",
-        "diseno"
-      ],
-      "category": "trabajo",
-      "summary": "Nota sobre un cliente que pidió arreglar un logo hace una semana, recordó hoy, y el usuario comenzará a trabajar en el logo para que el cliente lo tenga como propiedad.",
-      "importance": 2,
-      "score": 1.167,
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
       "user_verified": false,
-      "timestamp": "2026-07-05T03:17:58.345126+00:00"
+      "timestamp": "2026-07-05T03:22:01.438199+00:00"
     }
   ]
 }
