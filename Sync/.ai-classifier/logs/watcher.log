@@ -64,3 +64,4 @@
 [2026-07-04 18:18:40] PROCESSING: /opt/vault/Sync/Templates/Nota Minimalista.md
 [2026-07-04 18:18:42]   {"status": "success", "action": "classified", "tags": ["automatización", "sistema", "clasificación"], "category": "tecnologia", "summary_length": 171, "key_topics_count": 3, "user_correction_detected": false}
 [2026-07-04 18:18:42] SUCCESS [automatización, sistema, clasificación]
+[2026-07-04 18:19:42] SKIPPED (no change): /opt/vault/Sync/Templates/Nota Minimalista.md
