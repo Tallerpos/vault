@@ -77,3 +77,6 @@
 [2026-07-04 18:36:27] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
 [2026-07-04 18:36:28]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md'"}
 [2026-07-04 18:36:28] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
+[2026-07-04 18:37:44] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md
+[2026-07-04 18:37:45]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md'"}
+[2026-07-04 18:37:45] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md
