@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T00:43:47.498819+00:00Z",
+  "last_updated": "2026-07-05T00:44:49.196581+00:00Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 4,
@@ -11,28 +11,28 @@
       "category": "tecnologia"
     },
     "automatización": {
-      "count": 6,
-      "successes": 6,
-      "corrections": 0,
-      "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T00:21:26.728887+00:00Z",
-      "category": "tecnologia"
-    },
-    "clasificación": {
       "count": 7,
       "successes": 7,
       "corrections": 0,
+      "first_seen": "2026-07-04T23:10:50.716236Z",
+      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
+      "category": "tecnologia"
+    },
+    "clasificación": {
+      "count": 8,
+      "successes": 8,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T00:43:47.498756+00:00Z",
+      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
       "category": "tecnologia"
     },
     "deepseek": {
-      "count": 1,
-      "successes": 1,
+      "count": 2,
+      "successes": 2,
       "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716241Z",
-      "last_seen": "2026-07-04T23:10:50.716241Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
+      "category": "tecnologia"
     },
     "python": {
       "count": 1,
@@ -75,11 +75,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 5,
-      "successes": 5,
+      "count": 6,
+      "successes": 6,
       "corrections": 0,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T00:43:47.498756+00:00Z",
+      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
       "category": "tecnologia"
     },
     "planes": {
@@ -134,13 +134,16 @@
   "categories": {},
   "co_occurrence": {
     "clasificación__deepseek api": 1,
-    "automatización__clasificación": 3,
-    "clasificación__sistema": 4,
+    "automatización__clasificación": 4,
+    "clasificación__sistema": 5,
     "automatización__deepseek api": 1,
     "deepseek api__sistema": 1,
-    "automatización__sistema": 3,
+    "automatización__sistema": 4,
     "clasificación__inteligencia-artificial": 1,
-    "inteligencia-artificial__sistema": 1
+    "inteligencia-artificial__sistema": 1,
+    "automatización__deepseek": 1,
+    "deepseek__sistema": 1,
+    "clasificación__deepseek": 1
   },
   "corrections": [],
   "successful_examples": [
@@ -157,6 +160,20 @@
       "score": 1.338,
       "user_verified": false,
       "timestamp": "2026-07-05T00:21:26.728954+00:00Z"
+    },
+    {
+      "file": "Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md",
+      "tags": [
+        "clasificación",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 3,
+      "score": 1.336,
+      "user_verified": false,
+      "timestamp": "2026-07-05T00:43:47.498813+00:00Z"
     },
     {
       "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
@@ -188,18 +205,19 @@
       "timestamp": "2026-07-05T00:13:07.989923+00:00Z"
     },
     {
-      "file": "Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md",
       "tags": [
+        "automatización",
+        "sistema",
         "clasificación",
-        "inteligencia-artificial",
-        "sistema"
+        "deepseek"
       ],
       "category": "tecnologia",
-      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
-      "importance": 3,
-      "score": 1.336,
+      "summary": "Nota de prueba para verificar que el ai-watcher v3.0 detecta archivos nuevos y los clasifica automáticamente usando DeepSeek.",
+      "importance": 2,
+      "score": 1.322,
       "user_verified": false,
-      "timestamp": "2026-07-05T00:43:47.498813+00:00Z"
+      "timestamp": "2026-07-05T00:44:49.196575+00:00Z"
     }
   ]
 }
