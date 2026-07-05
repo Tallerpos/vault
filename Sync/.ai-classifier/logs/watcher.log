@@ -1,0 +1,199 @@
+[2026-07-04 17:11:38] AI Watcher started...
+[2026-07-04 17:16:36] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:16:38]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:16:38]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:16:38]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Diario/2026-07-04.md'"}
+[2026-07-04 17:16:38] ERROR: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:18:14] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
+[2026-07-04 17:18:16]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:18:16]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:18:16]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md'"}
+[2026-07-04 17:18:16] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
+[2026-07-04 17:18:34] AI Watcher started...
+[2026-07-04 17:19:41] PROCESSING: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:19:42]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:19:42]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:19:42]   {"status": "success", "tags": ["automatización", "inteligencia-artificial", "clasificación", "deepseek api"]}
+[2026-07-04 17:19:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:20:42] PROCESSING: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:20:42]   {"status": "skipped", "reason": "already classified"}
+[2026-07-04 17:20:42] SUCCESS: /opt/vault/Sync/Notas/test-automatic-classification.md
+[2026-07-04 17:21:44] AI Watcher started...
+[2026-07-04 17:24:08] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
+[2026-07-04 17:24:08]   {"status": "skipped", "reason": "already classified"}
+[2026-07-04 17:24:08] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Helado.md
+[2026-07-04 17:25:12] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:25:14]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:25:14]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:25:14]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Diario/2026-07-04.md'"}
+[2026-07-04 17:25:14] ERROR: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:26:14] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:26:15]   /opt/vault/Sync/.ai-classifier/classifier.py:59: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-07-04 17:26:15]   "classified_at": datetime.utcnow().isoformat() + "Z"
+[2026-07-04 17:26:15]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Diario/2026-07-04.md'"}
+[2026-07-04 17:26:15] ERROR: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 17:36:20] AI Watcher started...
+[2026-07-04 17:37:34] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:37:36]   {"status": "success", "action": "classified", "tags": ["prueba", "sistema", "clasificación", "inteligencia-artificial", "automatización"]}
+[2026-07-04 17:37:36] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:38:36] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:38:39]   {"status": "success", "action": "reclassified", "tags": ["inversión", "bitcoin", "ethereum", "criptomonedas", "hodl"]}
+[2026-07-04 17:38:39] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:39:39] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 17:39:39]   {"status": "skipped", "reason": "already classified, no significant change"}
+[2026-07-04 17:39:39] SUCCESS: /opt/vault/Sync/Notas/2026-07-04 - idea - Test Sistema Completo.md
+[2026-07-04 18:01:35] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 18:01:35]   {"status": "skipped", "reason": "already classified, no significant change"}
+[2026-07-04 18:01:35] SUCCESS: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 18:02:38] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:02:39]   {"status": "success", "action": "classified", "tags": []}
+[2026-07-04 18:02:39] SUCCESS: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:03:39] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:03:39]   {"status": "skipped", "reason": "already classified, no significant change"}
+[2026-07-04 18:03:40] SUCCESS: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:11:16] AI Watcher v2.0 started...
+[2026-07-04 18:13:06] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+[2026-07-04 18:13:08]   {"status": "success", "action": "classified", "tags": ["clasificación", "deepseek api", "automatización", "sistema"], "category": "tecnologia", "summary_length": 245, "key_topics_count": 4, "user_correction_detected": false}
+[2026-07-04 18:13:08] SUCCESS [clasificación, deepseek api, automatización, sistema]
+[2026-07-04 18:14:08] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+[2026-07-04 18:14:08]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 18:14:08] SKIPPED (no changes detected)
+[2026-07-04 18:17:38] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:17:40]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Sin título.md'"}
+[2026-07-04 18:17:40] ERROR: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:18:40] PROCESSING: /opt/vault/Sync/Templates/Nota Minimalista.md
+[2026-07-04 18:18:42]   {"status": "success", "action": "classified", "tags": ["automatización", "sistema", "clasificación"], "category": "tecnologia", "summary_length": 171, "key_topics_count": 3, "user_correction_detected": false}
+[2026-07-04 18:18:42] SUCCESS [automatización, sistema, clasificación]
+[2026-07-04 18:19:42] SKIPPED (no change): /opt/vault/Sync/Templates/Nota Minimalista.md
+[2026-07-04 18:21:25] PROCESSING: /opt/vault/Sync/Templates/Nota Minimalista.md
+[2026-07-04 18:21:26]   {"status": "success", "action": "classified", "tags": ["automatización", "sistema", "clasificación"], "category": "tecnologia", "summary_length": 171, "key_topics_count": 3, "user_correction_detected": false}
+[2026-07-04 18:21:26] SUCCESS [automatización, sistema, clasificación]
+[2026-07-04 18:22:26] PROCESSING: /opt/vault/Sync/Templates/Nota Minimalista.md
+[2026-07-04 18:22:27]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 18:22:27] SKIPPED (no changes detected)
+[2026-07-04 18:22:32] AI Watcher v2.0 started...
+[2026-07-04 18:25:05] AI Watcher v2.0 started...
+[2026-07-04 18:26:49] SKIPPED (no change): /opt/vault/Sync/Sin título.md
+[2026-07-04 18:36:27] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
+[2026-07-04 18:36:28]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md'"}
+[2026-07-04 18:36:28] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
+[2026-07-04 18:37:44] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md
+[2026-07-04 18:37:45]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md'"}
+[2026-07-04 18:37:45] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md
+[2026-07-04 18:43:34] AI Watcher v3.0 started...
+[2026-07-04 18:44:47] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md
+[2026-07-04 18:44:49]   {"status": "success", "action": "classified", "tags": ["automatización", "sistema", "clasificación", "deepseek"], "category": "tecnologia", "summary_length": 125, "key_topics_count": 3, "user_correction_detected": false}
+[2026-07-04 18:44:49] SUCCESS [automatización, sistema, clasificación, deepseek]
+[2026-07-04 18:45:49] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md
+[2026-07-04 18:45:49]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 18:45:49] SKIPPED (no changes detected)
+[2026-07-04 18:47:58] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 18:48:00]   {"status": "success", "action": "classified", "tags": ["clasificación", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "user_correction_detected": false}
+[2026-07-04 18:48:00] SUCCESS [clasificación, inteligencia-artificial, sistema]
+[2026-07-04 18:49:00] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 18:49:00]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 18:49:00] SKIPPED (no changes detected)
+[2026-07-04 18:58:29] AI Watcher v3.0 started...
+[2026-07-04 19:01:21] AI Watcher v4.0 started...
+[2026-07-04 19:02:33] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:02:35]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 19:02:35] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=0
+[2026-07-04 19:03:00] AI Watcher v4.0 started...
+[2026-07-04 19:04:10] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:04:10]   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 145
+[2026-07-04 19:04:10]   fields['related'] = related_links
+[2026-07-04 19:04:10]   IndentationError: unexpected indent
+[2026-07-04 19:04:10] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:05:19] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:05:21]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 19:05:21] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=0
+[2026-07-04 19:05:21] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md
+[2026-07-04 19:05:22]   {"status": "success", "action": "reclassified", "tags": ["automatizacion", "clasificacion", "deepseek-api", "sistema"], "category": "tecnologia", "summary_length": 214, "key_topics_count": 4, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:05:22] SUCCESS [automatizacion, clasificacion, deepseek-api, sistema] related=1
+[2026-07-04 19:05:22] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md
+[2026-07-04 19:05:22]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 19:05:22] SKIPPED (no changes detected)
+[2026-07-04 19:05:55] AI Watcher v4.0 started...
+[2026-07-04 19:08:17] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 19:08:19]   {"status": "success", "action": "classified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:08:19] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:08:19] PROCESSING: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 19:08:19]   {"status": "error", "error": "File not found: /opt/vault/Sync/Sin t\u00edtulo 1.md"}
+[2026-07-04 19:08:19] ERROR: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 19:09:19] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:09:21]   {"status": "success", "action": "classified", "tags": ["automatizacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 122, "key_topics_count": 3, "related_count": 2, "user_correction_detected": false}
+[2026-07-04 19:09:21] SUCCESS [automatizacion, inteligencia-artificial, sistema] related=2
+[2026-07-04 19:09:21] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 19:09:23]   {"status": "success", "action": "reclassified", "tags": ["inteligencia-artificial", "sistema", "automatizacion"], "category": "tecnologia", "summary_length": 143, "key_topics_count": 3, "related_count": 2, "user_correction_detected": true}
+[2026-07-04 19:09:23] SUCCESS [inteligencia-artificial, sistema, automatizacion] related=2
+[2026-07-04 19:09:23] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:09:24]   {"status": "success", "action": "reclassified", "tags": ["automatizacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 122, "key_topics_count": 3, "related_count": 3, "user_correction_detected": false}
+[2026-07-04 19:09:25] SUCCESS [automatizacion, inteligencia-artificial, sistema] related=3
+[2026-07-04 19:09:25] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:09:25]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 19:09:25] SKIPPED (no changes detected)
+[2026-07-04 19:09:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:09:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:10:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:10:25] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 19:10:25]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 19:10:25] SKIPPED (no changes detected)
+[2026-07-04 19:10:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:16:53] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+[2026-07-04 19:16:55]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "sistema", "automatizacion", "deepseek-api", "inteligencia-artificial"], "category": "tecnologia", "summary_length": 260, "key_topics_count": 4, "related_count": 2, "user_correction_detected": true}
+[2026-07-04 19:16:55] SUCCESS [clasificacion, sistema, automatizacion, deepseek-api, inteligencia-artificial] related=2
+[2026-07-04 19:16:55] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:16:56]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 2, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:16:57] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:16:57] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:16:58]   {"status": "success", "action": "reclassified", "tags": ["automatizacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 122, "key_topics_count": 3, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:16:58] SUCCESS [automatizacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:16:58] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:16:58]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 19:16:58] SKIPPED (no changes detected)
+[2026-07-04 19:17:04] AI Watcher v4.0 started...
+[2026-07-04 20:02:05] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:02:07]   {"status": "success", "action": "classified", "tags": ["clasificacion", "sistema", "automatizacion", "deepseek-api", "inteligencia-artificial"], "category": "tecnologia", "summary_length": 214, "key_topics_count": 4, "related_count": 2, "user_correction_detected": false}
+[2026-07-04 20:02:07] SUCCESS [clasificacion, sistema, automatizacion, deepseek-api, inteligencia-artificial] related=2
+[2026-07-04 20:03:07] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:03:08]   {"status": "success", "action": "reclassified", "tags": ["inteligencia-artificial", "sistema", "automatizacion"], "category": "tecnologia", "summary_length": 135, "key_topics_count": 3, "related_count": 2, "user_correction_detected": true}
+[2026-07-04 20:03:09] SUCCESS [inteligencia-artificial, sistema, automatizacion] related=2
+[2026-07-04 20:03:09] PROCESSING: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09]   {"status": "error", "error": "File not found: /opt/vault/Sync/Sin t\u00edtulo 1.md"}
+[2026-07-04 20:03:09] ERROR: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09] SKIPPED (no change): /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:10]   {"status": "success", "action": "classified", "tags": ["familia", "comida"], "category": "personal", "summary_length": 73, "key_topics_count": 2, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 20:03:10] SUCCESS [familia, comida] related=0
+[2026-07-04 20:03:10] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:10]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:03:11] SKIPPED (no changes detected)
+[2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:11] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:04:11]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:04:11] SKIPPED (no changes detected)
+[2026-07-04 20:04:11] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:12]   {"status": "success", "action": "classified", "tags": ["familia", "comida"], "category": "personal", "summary_length": 96, "key_topics_count": 3, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 20:04:13] SUCCESS [familia, comida] related=0
+[2026-07-04 20:04:13] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:13]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:04:13] SKIPPED (no changes detected)
+[2026-07-04 20:04:13] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:13] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:05:13] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:07:25] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:07:25]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:07:25] SKIPPED (no changes detected)
+[2026-07-04 20:07:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:11:11] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:11:11]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:11:11] SKIPPED (no changes detected)
+[2026-07-04 20:55:29] AI Watcher v4.0 started...
+[2026-07-04 20:56:41] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:56:42]   {"status": "success", "action": "reclassified", "tags": ["comida", "familia"], "category": "personal", "summary_length": 90, "key_topics_count": 0, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 20:56:42] SUCCESS [comida, familia] related=1
+[2026-07-04 20:57:42] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:57:43]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:57:43] SKIPPED (no changes detected)
+[2026-07-04 21:11:56] AI Watcher v5.0 started...
