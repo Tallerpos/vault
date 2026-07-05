@@ -2216,3 +2216,6 @@
 [2026-07-05 05:14:48] ✅ SUCCESS [] related=0
 [2026-07-05 05:14:48] Processing retry queue...
 [2026-07-05 05:14:48]   RETRY: {"status": "empty", "message": "No items in retry queue"}
+[2026-07-05 05:15:35] PROCESSING: /opt/vault/Sync/Diario/2026-07-04_1.md
+[2026-07-05 05:15:36]   {"status": "success", "action": "classified", "tags": [], "category": "personal", "summary_length": 46, "key_topics_count": 0, "related_count": 0, "user_correction_detected": false}
+[2026-07-05 05:15:36] ✅ SUCCESS [] related=0
