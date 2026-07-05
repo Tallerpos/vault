@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:30:04.793910+00:00",
+  "last_updated": "2026-07-05T03:30:53.293332+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,22 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
-      "tags": [
-        "clasificacion",
-        "sistema",
-        "automatizacion",
-        "deepseek-api",
-        "inteligencia-artificial"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre la implementación de mejoras en el sistema de clasificación automática de notas usando DeepSeek API, incluyendo prompt estructurado, aprendizaje de correcciones, validación de respuesta, few-shot learning y tag registry con seguimiento de confianza.",
-      "importance": 4,
-      "score": 1.211,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:16:55.306688+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
       "tags": [
         "comida"
@@ -553,6 +537,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:30:04.793889+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:30:53.293309+00:00"
     }
   ]
 }
