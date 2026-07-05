@@ -139,3 +139,10 @@
 [2026-07-04 19:10:25]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 19:10:25] SKIPPED (no changes detected)
 [2026-07-04 19:10:25] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 19:16:53] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+[2026-07-04 19:16:55]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "sistema", "automatizacion", "deepseek-api", "inteligencia-artificial"], "category": "tecnologia", "summary_length": 260, "key_topics_count": 4, "related_count": 2, "user_correction_detected": true}
+[2026-07-04 19:16:55] SUCCESS [clasificacion, sistema, automatizacion, deepseek-api, inteligencia-artificial] related=2
+[2026-07-04 19:16:55] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 19:16:56]   {"status": "success", "action": "reclassified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 2, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:16:57] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:16:57] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
