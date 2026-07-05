@@ -54,3 +54,6 @@
 2026-07-04 21:14:08,546 - INFO - Skipped (no significant change): /opt/vault/Sync/Diario/2026-07-04.md
 2026-07-04 21:14:08,546 - INFO - Retry success: /opt/vault/Sync/Diario/2026-07-04.md
 2026-07-04 21:15:08,435 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+2026-07-04 21:17:07,913 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md
+2026-07-04 21:17:09,199 - INFO - API call successful. Tags: ['diseno', 'cliente'], Category: trabajo
+2026-07-04 21:17:09,229 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md → tags=['diseno', 'cliente'], cat=trabajo, related=0

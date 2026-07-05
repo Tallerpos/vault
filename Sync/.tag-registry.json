@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:13:09.138699+00:00",
+  "last_updated": "2026-07-05T03:17:09.220593+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -153,6 +153,22 @@
       "first_seen": "2026-07-05T01:16:55.301154+00:00",
       "last_seen": "2026-07-05T01:16:55.301154+00:00",
       "category": "uncategorized"
+    },
+    "diseno": {
+      "count": 1,
+      "successes": 1,
+      "corrections": 0,
+      "first_seen": "2026-07-05T03:17:09.211247+00:00",
+      "last_seen": "2026-07-05T03:17:09.211247+00:00",
+      "category": "trabajo"
+    },
+    "cliente": {
+      "count": 1,
+      "successes": 1,
+      "corrections": 0,
+      "first_seen": "2026-07-05T03:17:09.211247+00:00",
+      "last_seen": "2026-07-05T03:17:09.211247+00:00",
+      "category": "trabajo"
     }
   },
   "categories": {},
@@ -170,7 +186,8 @@
     "clasificacion__deepseek": 1,
     "automatizacion__inteligencia-artificial": 10,
     "deepseek-api__inteligencia-artificial": 3,
-    "comida__familia": 5
+    "comida__familia": 5,
+    "cliente__diseno": 1
   },
   "corrections": [
     {
@@ -304,20 +321,6 @@
     }
   ],
   "successful_examples": [
-    {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
-      "tags": [
-        "clasificacion",
-        "inteligencia-artificial",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
-      "importance": 3,
-      "score": 1.302,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:05:21.011869+00:00"
-    },
     {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
       "tags": [
@@ -557,19 +560,6 @@
       "timestamp": "2026-07-05T03:12:35.874267+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
-      "tags": [
-        "inteligencia-artificial",
-        "automatizacion"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre la incorporación de mejoras en Obsidian para integrar inteligencia artificial de manera eficiente.",
-      "importance": 2,
-      "score": 1.105,
-      "user_verified": false,
-      "timestamp": "2026-07-05T03:12:32.351534+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
       "tags": [
         "clasificacion",
@@ -583,6 +573,32 @@
       "score": 1.126,
       "user_verified": false,
       "timestamp": "2026-07-05T03:13:09.138684+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
+      "tags": [
+        "inteligencia-artificial",
+        "automatizacion"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la incorporación de mejoras en Obsidian para integrar inteligencia artificial de manera eficiente.",
+      "importance": 2,
+      "score": 1.105,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:12:32.351534+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md",
+      "tags": [
+        "diseno",
+        "cliente"
+      ],
+      "category": "trabajo",
+      "summary": "Recordatorio de un cliente para arreglar un logo pendiente desde hace una semana.",
+      "importance": 2,
+      "score": 1.0,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:17:09.220573+00:00"
     }
   ]
 }

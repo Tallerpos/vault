@@ -215,3 +215,6 @@
 [2026-07-04 21:15:08] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
 [2026-07-04 21:15:08]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 21:15:08] SKIPPED (classifier decision)
+[2026-07-04 21:17:07] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md
+[2026-07-04 21:17:09]   {"status": "success", "action": "classified", "tags": ["diseno", "cliente"], "category": "trabajo", "summary_length": 81, "key_topics_count": 2, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 21:17:09] ✅ SUCCESS [diseno, cliente] related=0
