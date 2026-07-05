@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:36:32.314527+00:00",
+  "last_updated": "2026-07-05T03:37:20.603658+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,19 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md",
-      "tags": [
-        "diseno",
-        "cliente"
-      ],
-      "category": "trabajo",
-      "summary": "Recordatorio de un cliente para arreglar un logo pendiente desde hace una semana.",
-      "importance": 2,
-      "score": 1.0,
-      "user_verified": false,
-      "timestamp": "2026-07-05T03:17:09.220573+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
       "tags": [],
       "category": "personal",
@@ -523,6 +510,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:36:32.314505+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:37:20.603637+00:00"
     }
   ]
 }
