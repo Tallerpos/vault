@@ -5,4 +5,4 @@ tags: []
 relacionado: []
 ---
 
-Necesito arreglar un l
+Necesito arreglar un logo que me esta pidiendo un cliente, hace una semana me mando mensaje y le dije que si pero se 
