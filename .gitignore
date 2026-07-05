@@ -13,3 +13,9 @@ Sync/.silverbullet/
 # System files
 .DS_Store
 Thumbs.db
+
+# AI Classifier
+.ai-classifier/cache/
+.ai-classifier/logs/
+.ai-classifier/__pycache__/
+.ai-classifier/*.pyc
