@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T00:48:00.011596+00:00Z",
+  "last_updated": "2026-07-05T01:01:33.513272+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 5,
-      "successes": 5,
-      "corrections": 0,
+      "count": 6,
+      "successes": 6,
+      "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
+      "last_seen": "2026-07-05T01:01:33.512823+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 7,
-      "successes": 7,
-      "corrections": 0,
+      "count": 8,
+      "successes": 8,
+      "corrections": 2,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
+      "last_seen": "2026-07-05T01:01:33.512823+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -115,11 +115,11 @@
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 9,
+      "count": 10,
       "successes": 9,
-      "corrections": 0,
+      "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
+      "last_seen": "2026-07-05T01:01:33.512823+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -128,6 +128,14 @@
       "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481794+00:00Z",
       "last_seen": "2026-07-04T23:38:39.481794+00:00Z",
+      "category": "uncategorized"
+    },
+    "clasificación": {
+      "count": 1,
+      "successes": 1,
+      "corrections": 0,
+      "first_seen": "2026-07-05T01:01:33.507603+00:00",
+      "last_seen": "2026-07-05T01:01:33.507603+00:00",
       "category": "uncategorized"
     }
   },
@@ -140,13 +148,44 @@
     "deepseek api__sistema": 1,
     "automatización__sistema": 4,
     "clasificación__inteligencia-artificial": 2,
-    "inteligencia-artificial__sistema": 2,
+    "inteligencia-artificial__sistema": 3,
     "automatización__deepseek": 1,
     "deepseek__sistema": 1,
-    "clasificación__deepseek": 1
+    "clasificación__deepseek": 1,
+    "clasificacion__inteligencia-artificial": 1,
+    "clasificacion__sistema": 1
   },
-  "corrections": [],
+  "corrections": [
+    {
+      "note": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "auto": [
+        "inteligencia-artificial",
+        "clasificacion",
+        "sistema"
+      ],
+      "user": [
+        "inteligencia-artificial",
+        "sistema",
+        "clasificación"
+      ],
+      "timestamp": "2026-07-05T01:01:33.507603+00:00"
+    }
+  ],
   "successful_examples": [
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "tags": [
+        "clasificación",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 3,
+      "score": 1.369,
+      "user_verified": false,
+      "timestamp": "2026-07-05T00:48:00.011590+00:00Z"
+    },
     {
       "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
       "tags": [
@@ -220,18 +259,18 @@
       "timestamp": "2026-07-05T00:13:07.989923+00:00Z"
     },
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
-        "clasificación",
+        "clasificacion",
         "inteligencia-artificial",
         "sistema"
       ],
       "category": "tecnologia",
       "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
       "importance": 3,
-      "score": 1.369,
+      "score": 1.215,
       "user_verified": false,
-      "timestamp": "2026-07-05T00:48:00.011590+00:00Z"
+      "timestamp": "2026-07-05T01:01:33.513262+00:00"
     }
   ]
 }
