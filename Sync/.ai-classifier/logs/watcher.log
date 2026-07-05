@@ -152,3 +152,6 @@
 [2026-07-04 19:16:58]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 19:16:58] SKIPPED (no changes detected)
 [2026-07-04 19:17:04] AI Watcher v4.0 started...
+[2026-07-04 20:02:05] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:02:07]   {"status": "success", "action": "classified", "tags": ["clasificacion", "sistema", "automatizacion", "deepseek-api", "inteligencia-artificial"], "category": "tecnologia", "summary_length": 214, "key_topics_count": 4, "related_count": 2, "user_correction_detected": false}
+[2026-07-04 20:02:07] SUCCESS [clasificacion, sistema, automatizacion, deepseek-api, inteligencia-artificial] related=2
