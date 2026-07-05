@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T02:02:07.191521+00:00",
+  "last_updated": "2026-07-05T02:03:10.739397+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 19,
-      "successes": 18,
-      "corrections": 6,
+      "count": 20,
+      "successes": 19,
+      "corrections": 8,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T02:02:07.190723+00:00",
+      "last_seen": "2026-07-05T02:03:08.958646+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -27,20 +27,20 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 2,
-      "successes": 2,
+      "count": 3,
+      "successes": 3,
       "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-04T23:23:08.319491Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T02:03:10.738699+00:00",
+      "category": "personal"
     },
     "comida": {
-      "count": 2,
-      "successes": 2,
+      "count": 3,
+      "successes": 3,
       "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-04T23:23:08.319503Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T02:03:10.738699+00:00",
+      "category": "personal"
     },
     "prueba": {
       "count": 1,
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 24,
-      "successes": 24,
-      "corrections": 6,
+      "count": 25,
+      "successes": 25,
+      "corrections": 8,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T02:02:07.190723+00:00",
+      "last_seen": "2026-07-05T02:03:08.958646+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -100,26 +100,26 @@
     },
     "deepseek-api": {
       "count": 7,
-      "successes": 6,
+      "successes": 7,
       "corrections": 2,
       "first_seen": "2026-07-04T23:19:42.379911Z",
-      "last_seen": "2026-07-05T02:02:07.190723+00:00",
+      "last_seen": "2026-07-05T02:03:08.954929+00:00",
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 16,
-      "successes": 14,
-      "corrections": 4,
+      "count": 17,
+      "successes": 15,
+      "corrections": 6,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T02:02:07.190723+00:00",
+      "last_seen": "2026-07-05T02:03:08.958646+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
       "count": 22,
-      "successes": 21,
+      "successes": 22,
       "corrections": 4,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T02:02:07.190723+00:00",
+      "last_seen": "2026-07-05T02:03:08.954929+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -162,14 +162,15 @@
     "clasificacion__sistema": 19,
     "automatizacion__deepseek-api": 6,
     "deepseek-api__sistema": 6,
-    "automatizacion__sistema": 13,
+    "automatizacion__sistema": 14,
     "clasificacion__inteligencia-artificial": 12,
-    "inteligencia-artificial__sistema": 16,
+    "inteligencia-artificial__sistema": 17,
     "automatizacion__deepseek": 1,
     "deepseek__sistema": 1,
     "clasificacion__deepseek": 1,
-    "automatizacion__inteligencia-artificial": 6,
-    "deepseek-api__inteligencia-artificial": 2
+    "automatizacion__inteligencia-artificial": 7,
+    "deepseek-api__inteligencia-artificial": 2,
+    "comida__familia": 1
   },
   "corrections": [
     {
@@ -216,38 +217,25 @@
         "automatización"
       ],
       "timestamp": "2026-07-05T01:16:55.301154+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Sin título.md",
+      "auto": [
+        "sistema",
+        "automatizacion",
+        "inteligencia-artificial"
+      ],
+      "user": [
+        "clasificacion",
+        "inteligencia-artificial",
+        "sistema",
+        "deepseek-api",
+        "automatizacion"
+      ],
+      "timestamp": "2026-07-05T02:03:08.954929+00:00"
     }
   ],
   "successful_examples": [
-    {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
-      "tags": [
-        "automatizacion",
-        "clasificacion",
-        "deepseek-api",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
-      "importance": 4,
-      "score": 1.339,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:05:22.675900+00:00"
-    },
-    {
-      "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
-      "tags": [
-        "automatización",
-        "sistema",
-        "clasificación"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota de configuración del sistema de clasificación automática para vault de conocimiento personal, que define el prompt de clasificación y la estructura de respuesta JSON.",
-      "importance": 3,
-      "score": 1.338,
-      "user_verified": false,
-      "timestamp": "2026-07-05T00:21:26.728954+00:00Z"
-    },
     {
       "file": "Notas/2026-07-04 - idea - Incorpore la AI en obsidian.md",
       "tags": [
@@ -419,6 +407,22 @@
       "timestamp": "2026-07-05T01:16:56.911199+00:00"
     },
     {
+      "file": "/opt/vault/Sync/Sin título.md",
+      "tags": [
+        "clasificacion",
+        "sistema",
+        "automatizacion",
+        "deepseek-api",
+        "inteligencia-artificial"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
+      "importance": 4,
+      "score": 1.241,
+      "user_verified": false,
+      "timestamp": "2026-07-05T02:02:07.191510+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
         "clasificacion",
@@ -494,18 +498,29 @@
     {
       "file": "/opt/vault/Sync/Sin título.md",
       "tags": [
-        "clasificacion",
+        "inteligencia-artificial",
         "sistema",
-        "automatizacion",
-        "deepseek-api",
-        "inteligencia-artificial"
+        "automatizacion"
       ],
       "category": "tecnologia",
-      "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
-      "importance": 4,
-      "score": 1.241,
+      "summary": "Nota sobre la incorporación de mejoras e inteligencia artificial en Obsidian para automatizar y optimizar el flujo de trabajo personal.",
+      "importance": 3,
+      "score": 1.199,
       "user_verified": false,
-      "timestamp": "2026-07-05T02:02:07.191510+00:00"
+      "timestamp": "2026-07-05T02:03:08.959189+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
+      "tags": [
+        "familia",
+        "comida"
+      ],
+      "category": "personal",
+      "summary": "Salida a comer con mi pareja, registrando un momento personal y familiar.",
+      "importance": 2,
+      "score": 1.25,
+      "user_verified": false,
+      "timestamp": "2026-07-05T02:03:10.739385+00:00"
     }
   ]
 }

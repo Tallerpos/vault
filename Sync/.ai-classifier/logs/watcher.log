@@ -155,3 +155,18 @@
 [2026-07-04 20:02:05] PROCESSING: /opt/vault/Sync/Sin título.md
 [2026-07-04 20:02:07]   {"status": "success", "action": "classified", "tags": ["clasificacion", "sistema", "automatizacion", "deepseek-api", "inteligencia-artificial"], "category": "tecnologia", "summary_length": 214, "key_topics_count": 4, "related_count": 2, "user_correction_detected": false}
 [2026-07-04 20:02:07] SUCCESS [clasificacion, sistema, automatizacion, deepseek-api, inteligencia-artificial] related=2
+[2026-07-04 20:03:07] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:03:08]   {"status": "success", "action": "reclassified", "tags": ["inteligencia-artificial", "sistema", "automatizacion"], "category": "tecnologia", "summary_length": 135, "key_topics_count": 3, "related_count": 2, "user_correction_detected": true}
+[2026-07-04 20:03:09] SUCCESS [inteligencia-artificial, sistema, automatizacion] related=2
+[2026-07-04 20:03:09] PROCESSING: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09]   {"status": "error", "error": "File not found: /opt/vault/Sync/Sin t\u00edtulo 1.md"}
+[2026-07-04 20:03:09] ERROR: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09] SKIPPED (no change): /opt/vault/Sync/Sin título 1.md
+[2026-07-04 20:03:09] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:10]   {"status": "success", "action": "classified", "tags": ["familia", "comida"], "category": "personal", "summary_length": 73, "key_topics_count": 2, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 20:03:10] SUCCESS [familia, comida] related=0
+[2026-07-04 20:03:10] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:10]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:03:11] SKIPPED (no changes detected)
+[2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
