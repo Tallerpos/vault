@@ -212,3 +212,6 @@
 [2026-07-04 21:13:18] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
 [2026-07-04 21:13:18]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 21:13:18] SKIPPED (classifier decision)
+[2026-07-04 21:15:08] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 21:15:08]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:15:08] SKIPPED (classifier decision)
