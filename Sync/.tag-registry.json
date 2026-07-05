@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:25:14.884707+00:00",
+  "last_updated": "2026-07-05T03:26:03.349655+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,19 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
-      "tags": [
-        "familia",
-        "comida"
-      ],
-      "category": "personal",
-      "summary": "Salida a comer con mi pareja, registrando un momento personal y familiar.",
-      "importance": 2,
-      "score": 1.25,
-      "user_verified": false,
-      "timestamp": "2026-07-05T02:03:10.739385+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Sin título.md",
       "tags": [
         "clasificacion",
@@ -579,6 +566,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:25:14.884687+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:26:03.349637+00:00"
     }
   ]
 }
