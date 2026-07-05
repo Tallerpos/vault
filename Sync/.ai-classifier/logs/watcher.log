@@ -193,3 +193,6 @@
 [2026-07-04 20:56:41] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
 [2026-07-04 20:56:42]   {"status": "success", "action": "reclassified", "tags": ["comida", "familia"], "category": "personal", "summary_length": 90, "key_topics_count": 0, "related_count": 1, "user_correction_detected": false}
 [2026-07-04 20:56:42] SUCCESS [comida, familia] related=1
+[2026-07-04 20:57:42] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:57:43]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:57:43] SKIPPED (no changes detected)
