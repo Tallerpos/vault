@@ -23,3 +23,15 @@
 2026-07-04 21:12:16,144 - ERROR - Classification failed for /opt/vault/Sync/Diario/2026-07-04.md: DEEPSEEK_API_KEY not set. Check /etc/ai-classifier.env
 2026-07-04 21:12:16,147 - INFO - Added to retry queue: /opt/vault/Sync/Diario/2026-07-04.md
 2026-07-04 21:12:16,278 - INFO - Skipped (outside valid dirs and no valid frontmatter): /opt/vault/Sync/El hombre en busca de sentido.md
+2026-07-04 21:12:29,005 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+2026-07-04 21:12:30,610 - INFO - API call successful. Tags: ['inteligencia-artificial', 'automatizacion', 'clasificacion'], Category: tecnologia
+2026-07-04 21:12:30,633 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md → tags=['inteligencia-artificial', 'automatizacion', 'clasificacion'], cat=tecnologia, related=1
+2026-07-04 21:12:30,774 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+2026-07-04 21:12:32,335 - INFO - API call successful. Tags: ['inteligencia-artificial', 'automatizacion', 'sistema'], Category: tecnologia
+2026-07-04 21:12:32,354 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md → tags=['inteligencia-artificial', 'automatizacion'], cat=tecnologia, related=1
+2026-07-04 21:12:32,510 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+2026-07-04 21:12:33,897 - INFO - API call successful. Tags: ['comida'], Category: personal
+2026-07-04 21:12:33,916 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md → tags=['comida'], cat=personal, related=0
+2026-07-04 21:12:34,055 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04.md
+2026-07-04 21:12:35,858 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
+2026-07-04 21:12:35,877 - INFO - Success: /opt/vault/Sync/Diario/2026-07-04.md → tags=['comida', 'familia'], cat=personal, related=1

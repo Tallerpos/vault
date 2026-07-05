@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T02:56:42.667260+00:00",
+  "last_updated": "2026-07-05T03:12:35.874283+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 20,
-      "successes": 19,
-      "corrections": 8,
+      "count": 22,
+      "successes": 21,
+      "corrections": 12,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T02:03:08.958646+00:00",
+      "last_seen": "2026-07-05T03:12:32.349081+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -27,19 +27,19 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 6,
-      "successes": 6,
-      "corrections": 0,
+      "count": 7,
+      "successes": 8,
+      "corrections": 2,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-05T02:56:42.665477+00:00",
+      "last_seen": "2026-07-05T03:12:35.870896+00:00",
       "category": "personal"
     },
     "comida": {
-      "count": 6,
-      "successes": 6,
-      "corrections": 0,
+      "count": 8,
+      "successes": 8,
+      "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-05T02:56:42.665477+00:00",
+      "last_seen": "2026-07-05T03:12:35.870896+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -52,18 +52,18 @@
     },
     "sistema": {
       "count": 25,
-      "successes": 25,
+      "successes": 27,
       "corrections": 8,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T02:03:08.958646+00:00",
+      "last_seen": "2026-07-05T03:12:32.337263+00:00",
       "category": "tecnologia"
     },
     "planes": {
       "count": 1,
-      "successes": 1,
+      "successes": 2,
       "corrections": 0,
       "first_seen": "2026-07-04T23:37:55.793160+00:00Z",
-      "last_seen": "2026-07-04T23:37:55.793160+00:00Z",
+      "last_seen": "2026-07-05T03:12:35.859778+00:00",
       "category": "uncategorized"
     },
     "bitcoin": {
@@ -107,19 +107,19 @@
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 17,
-      "successes": 15,
-      "corrections": 6,
+      "count": 19,
+      "successes": 16,
+      "corrections": 10,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T02:03:08.958646+00:00",
+      "last_seen": "2026-07-05T03:12:32.349081+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 22,
-      "successes": 22,
-      "corrections": 4,
+      "count": 23,
+      "successes": 23,
+      "corrections": 6,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T02:03:08.954929+00:00",
+      "last_seen": "2026-07-05T03:12:30.625171+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -158,19 +158,19 @@
   "categories": {},
   "co_occurrence": {
     "clasificacion__deepseek-api": 6,
-    "automatizacion__clasificacion": 9,
+    "automatizacion__clasificacion": 10,
     "clasificacion__sistema": 19,
     "automatizacion__deepseek-api": 6,
     "deepseek-api__sistema": 6,
     "automatizacion__sistema": 14,
-    "clasificacion__inteligencia-artificial": 12,
+    "clasificacion__inteligencia-artificial": 13,
     "inteligencia-artificial__sistema": 17,
     "automatizacion__deepseek": 1,
     "deepseek__sistema": 1,
     "clasificacion__deepseek": 1,
-    "automatizacion__inteligencia-artificial": 7,
+    "automatizacion__inteligencia-artificial": 9,
     "deepseek-api__inteligencia-artificial": 2,
-    "comida__familia": 4
+    "comida__familia": 5
   },
   "corrections": [
     {
@@ -233,53 +233,60 @@
         "automatizacion"
       ],
       "timestamp": "2026-07-05T02:03:08.954929+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "auto": [
+        "inteligencia-artificial",
+        "automatizacion",
+        "clasificacion"
+      ],
+      "user": [
+        "sistema",
+        "inteligencia-artificial",
+        "clasificacion"
+      ],
+      "timestamp": "2026-07-05T03:12:30.611561+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
+      "auto": [
+        "inteligencia-artificial",
+        "automatizacion"
+      ],
+      "user": [
+        "inteligencia-artificial",
+        "sistema",
+        "automatizacion"
+      ],
+      "timestamp": "2026-07-05T03:12:32.337263+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
+      "auto": [
+        "comida"
+      ],
+      "user": [
+        "comida",
+        "familia"
+      ],
+      "timestamp": "2026-07-05T03:12:33.898316+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Diario/2026-07-04.md",
+      "auto": [
+        "familia",
+        "comida"
+      ],
+      "user": [
+        "planes",
+        "familia",
+        "comida"
+      ],
+      "timestamp": "2026-07-05T03:12:35.859778+00:00"
     }
   ],
   "successful_examples": [
-    {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md",
-      "tags": [
-        "automatización",
-        "sistema",
-        "clasificación",
-        "deepseek"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota de prueba para verificar que el ai-watcher v3.0 detecta archivos nuevos y los clasifica automáticamente usando DeepSeek.",
-      "importance": 2,
-      "score": 1.322,
-      "user_verified": false,
-      "timestamp": "2026-07-05T00:44:49.196575+00:00Z"
-    },
-    {
-      "file": "Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
-      "tags": [
-        "automatizacion",
-        "clasificacion",
-        "deepseek-api",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre la automatización de clasificación de notas usando DeepSeek API, que detecta cambios en archivos .md, clasifica con IA, asigna tags y categorías, y enlaza notas relacionadas con costo mínimo.",
-      "importance": 4,
-      "score": 1.313,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:04:40.845701+00:00"
-    },
-    {
-      "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
-      "tags": [
-        "automatización",
-        "sistema",
-        "clasificación"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota de configuración del sistema de clasificación automática para vault de conocimiento personal, que define el prompt de clasificación y la estructura de respuesta JSON.",
-      "importance": 3,
-      "score": 1.306,
-      "user_verified": false,
-      "timestamp": "2026-07-05T00:18:42.755550+00:00Z"
-    },
     {
       "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
@@ -494,6 +501,18 @@
       "timestamp": "2026-07-05T01:16:55.306688+00:00"
     },
     {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
+      "tags": [
+        "comida"
+      ],
+      "category": "personal",
+      "summary": "Nota sobre una salida a comer con Rosa, aclarando que no es su pareja.",
+      "importance": 1,
+      "score": 1.2,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:12:33.913612+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Sin título.md",
       "tags": [
         "inteligencia-artificial",
@@ -508,17 +527,44 @@
       "timestamp": "2026-07-05T02:03:08.959189+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "tags": [
+        "inteligencia-artificial",
+        "automatizacion",
+        "clasificacion"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la idea de integrar inteligencia artificial en Obsidian para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 2,
+      "score": 1.179,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:12:30.628725+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
+      "tags": [
+        "inteligencia-artificial",
+        "automatizacion"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la incorporación de mejoras en Obsidian para integrar inteligencia artificial de manera eficiente.",
+      "importance": 2,
+      "score": 1.105,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:12:32.351534+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04.md",
       "tags": [
         "comida",
         "familia"
       ],
       "category": "personal",
-      "summary": "Nota sobre salir a comer con Rosa y mencionar a Josselin, aclarando que Rosa no es pareja.",
-      "importance": 1,
-      "score": 1.357,
+      "summary": "Nota personal sobre la compra de helado de café con chispas de chocolate. Se menciona que a Rosa le gustó y que posiblemente salga con su prima. Abner la invitó a comer tacos, pero no está seguro si irán.",
+      "importance": 2,
+      "score": 1.171,
       "user_verified": false,
-      "timestamp": "2026-07-05T02:56:42.667243+00:00"
+      "timestamp": "2026-07-05T03:12:35.874267+00:00"
     }
   ]
 }
