@@ -5,4 +5,4 @@ tags: []
 relacionado: []
 ---
 
-Incorpore algunas mejora a obsidian para que p
+Incorpore algunas mejora a obsidian para que peuda funcionar de manera eficiente con la ai
