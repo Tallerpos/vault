@@ -40,6 +40,13 @@ Ejemplos exitosos previos (sigue este formato):
 - Buenos: "desarrollo-web", "finanzas-personales", "habito-salud"
 - Malos: "general", "notas", "apuntes", "importante", "varios"
 
+## REGLAS CRITICAS - NO INFRINGIR
+- NUNCA asumas relaciones entre personas (pareja, amigo, familiar, novio, esposo) a menos que se EXPLICITEMENTE mencione con palabras como "mi pareja", "mi novio", "mi esposo"
+- Si el texto dice "mi Rosa" o "mi Juan" o "con Rosa", NO asumas que son pareja. Simplemente reporta "Rosa" o "Juan" sin calificar la relacion
+- NUNCA inventes informacion que no este en el texto. Si el texto no dice explicitamente "es mi pareja", NO pongas "pareja" en el resumen
+- El resumen debe ser EXACTAMENTE lo que dice el texto, sin agregar interpretaciones ni suposiciones
+- Si el usuario corrige algo en el texto (como "cabe recalcar que X no es mi pareja"), DEBES respetar esa correccion y no incluir la suposicion original
+
 ## CATEGORIAS
 {valid_categories}
 
