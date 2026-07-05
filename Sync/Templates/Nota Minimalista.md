@@ -1,24 +1,25 @@
 <%*
 const tipo = await tp.system.suggester(
-  ["diario", "aprendizaje", "idea", "proyecto", "reunion", "persona", "lectura", "finanzas", "tecnologia", "salud"],
-  ["diario", "aprendizaje", "idea", "proyecto", "reunion", "persona", "lectura", "finanzas", "tecnologia", "salud"]
+  ["idea", "reunión", "aprendizaje", "persona", "proyecto", "diario", "lectura", "finanzas", "tecnología", "salud"],
+  ["idea", "reunion", "aprendizaje", "persona", "proyecto", "diario", "lectura", "finanzas", "tecnologia", "salud"]
 );
 const fecha = tp.date.now("YYYY-MM-DD");
 let carpeta = tipo === "diario" ? "Diario" : "Notas";
 let titulo = "";
 if (tipo !== "diario") {
-  titulo = await tp.system.prompt("Titulo");
+  titulo = await tp.system.prompt("Título");
 }
 const cleanTitulo = titulo.replace(/[\\/:*?"<>|]/g, "").trim();
 const filename = tipo === "diario"
   ? fecha
   : (cleanTitulo ? `${fecha} - ${tipo} - ${cleanTitulo}` : `${fecha} - ${tipo}`);
 await tp.file.move(`${carpeta}/${filename}`);
-%>
+-%>
 ---
-fecha: <% fecha %>
+fecha: <% tp.date.now("YYYY-MM-DD") %>
 tipo: <% tipo %>
 tags: []
 relacionado: []
 ---
 
+Escribe aquí tu nota.
