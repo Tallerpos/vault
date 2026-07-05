@@ -38,3 +38,8 @@
 2026-07-04 21:13:07,398 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
 2026-07-04 21:13:09,123 - INFO - API call successful. Tags: ['clasificacion', 'inteligencia-artificial', 'sistema', 'deepseek-api', 'automatizacion'], Category: tecnologia
 2026-07-04 21:13:09,141 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md → tags=['clasificacion', 'inteligencia-artificial', 'deepseek-api', 'automatizacion'], cat=tecnologia, related=2
+2026-07-04 21:13:17,769 - INFO - Skipped (no significant change): /opt/vault/Sync/Diario/2026-07-04.md
+2026-07-04 21:13:17,942 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+2026-07-04 21:13:18,121 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+2026-07-04 21:13:18,306 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+2026-07-04 21:13:18,491 - INFO - Skipped (no significant change): /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md

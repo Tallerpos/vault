@@ -197,3 +197,18 @@
 [2026-07-04 20:57:43]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 20:57:43] SKIPPED (no changes detected)
 [2026-07-04 21:11:56] AI Watcher v5.0 started...
+[2026-07-04 21:13:17] PROCESSING: /opt/vault/Sync/Diario/2026-07-04.md
+[2026-07-04 21:13:17]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:13:17] SKIPPED (classifier decision)
+[2026-07-04 21:13:17] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 21:13:17]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:13:17] SKIPPED (classifier decision)
+[2026-07-04 21:13:18] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md
+[2026-07-04 21:13:18]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:13:18] SKIPPED (classifier decision)
+[2026-07-04 21:13:18] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 21:13:18]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:13:18] SKIPPED (classifier decision)
+[2026-07-04 21:13:18] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+[2026-07-04 21:13:18]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 21:13:18] SKIPPED (classifier decision)
