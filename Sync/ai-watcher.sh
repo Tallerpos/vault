@@ -6,7 +6,7 @@ HASH_DIR="/opt/vault/Sync/.ai-classifier/cache/hashes"
 LOG_FILE="/opt/vault/Sync/.ai-classifier/logs/watcher.log"
 DEBOUNCE=60
 
-mkdir -p "$HASH_DIR" "$(dirname $LOG_FILE)"
+mkdir -p "$HASH_DIR" "$(dirname "$LOG_FILE")"
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"; }
 get_hash() { sha256sum "$1" | awk '{print $1}'; }
 file_changed() {
@@ -17,12 +17,16 @@ file_changed() {
     echo "$ch" > "$hf"; return 0
 }
 
-log "AI Watcher v2.0 started..."
-inotifywait -m -r "$VAULT_DIR" --exclude 'Templates/|.git|\.optimizer|\.silverbullet|\.ai-classifier|\.tag-registry' -e close_write -e moved_to --format '%w%f' |
+log "AI Watcher v3.0 started..."
+inotifywait -m -r "$VAULT_DIR" \
+    --exclude '\.(git|optimizer|silverbullet|ai-classifier|tag-registry)|Templates/' \
+    -e close_write -e moved_to \
+    --format '%w%f' |
 while read -r file; do
     [[ "$file" != *.md ]] && continue
     sleep $DEBOUNCE
     while read -r -t 0.1 additional; do file="$additional"; done
+    sudo chown abner:abner "$file" 2>/dev/null
     if ! file_changed "$file"; then log "SKIPPED (no change): $file"; continue; fi
     log "PROCESSING: $file"
     result=$(python3 "$CLASSIFIER" "$file" 2>&1)
