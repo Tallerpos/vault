@@ -1,3 +1,12 @@
+---
+ai_tags: [automatización, sistema, clasificación]
+ai_category: tecnologia
+ai_summary: Nota de configuración del sistema de clasificación automática para vault de conocimiento personal, que define
+  el prompt de clasificación y la estructura de respuesta JSON.
+ai_importance: 3
+ai_key_topics: [plantilla, organización, metadatos]
+ai_classified_at: '2026-07-05T00:21:26.727253+00:00'
+---
 <%*
 const tipo = await tp.system.suggester(
   ["diario", "aprendizaje", "idea", "proyecto", "reunión", "persona", "lectura", "finanzas", "tecnología", "salud"],
