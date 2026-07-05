@@ -1,30 +1,59 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "api": {
     "base_url": "https://api.deepseek.com",
     "model": "deepseek-chat",
     "max_retries": 3,
     "retry_delay": 2,
-    "timeout": 30,
-    "cache_enabled": true
+    "timeout": 30
   },
   "classification": {
     "prefix": "ai_",
     "max_tags": 5,
     "debounce_seconds": 60,
-    "reclassify_threshold": 0.5
+    "reclassify_threshold": 0.4,
+    "valid_categories": [
+      "personal",
+      "trabajo",
+      "finanzas",
+      "tecnologia",
+      "aprendizaje",
+      "ideas",
+      "salud",
+      "ocio",
+      "familia",
+      "proyectos",
+      "compras",
+      "viajes",
+      "lectura",
+      "desarrollo",
+      "miscelanea"
+    ],
+    "required_fields": [
+      "tags",
+      "category",
+      "summary",
+      "importance",
+      "key_topics"
+    ]
+  },
+  "learning": {
+    "min_observations": 3,
+    "max_few_shot_examples": 3,
+    "max_tags_in_prompt": 25,
+    "correction_learning": true
   },
   "tag_registry": {
     "path": "/opt/vault/Sync/.tag-registry.json",
     "aliases": {
       "finanza": "economia",
       "finanzas": "economia",
-      "economía": "economia",
       "finance": "economia",
       "programacion": "programacion",
       "programación": "programacion",
       "programming": "programacion",
       "coding": "programacion",
+      "desarollo": "programacion",
       "desarrollo": "programacion",
       "dev": "programacion",
       "ciencia": "ciencia",
@@ -34,16 +63,22 @@
       "notes": "notas",
       "apuntes": "notas",
       "tecnologia": "tecnologia",
-      "tecnología": "tecnologia",
       "technology": "tecnologia",
       "ia": "inteligencia-artificial",
       "ai": "inteligencia-artificial",
+      "machine learning": "inteligencia-artificial",
       "machine-learning": "inteligencia-artificial",
       "ml": "inteligencia-artificial"
     }
   },
   "watcher": {
-    "exclude_patterns": [".git", ".optimizer", ".silverbullet", ".ai-classifier", ".tag-registry"],
+    "exclude_patterns": [
+      ".git",
+      ".optimizer",
+      ".silverbullet",
+      ".ai-classifier",
+      ".tag-registry"
+    ],
     "file_pattern": "*.md"
   }
 }
