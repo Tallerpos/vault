@@ -7,19 +7,17 @@ const fecha = tp.date.now("YYYY-MM-DD");
 let carpeta = tipo === "diario" ? "Diario" : "Notas";
 let titulo = "";
 if (tipo !== "diario") {
-  titulo = await tp.system.prompt("Título");
+  titulo = await tp.system.prompt("Sítulo");
 }
 const cleanTitulo = titulo.replace(/[\\/:*?"<>|]/g, "").trim();
 const filename = tipo === "diario"
   ? fecha
   : (cleanTitulo ? `${fecha} - ${tipo} - ${cleanTitulo}` : `${fecha} - ${tipo}`);
 await tp.file.move(`${carpeta}/${filename}`);
--%>
+%>
 ---
 fecha: <% fecha %>
 tipo: <% tipo %>
 tags: []
 relacionado: []
 ---
-
-<% tp.file.cursor() %>
