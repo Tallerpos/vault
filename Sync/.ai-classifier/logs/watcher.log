@@ -84,3 +84,6 @@
 [2026-07-04 18:44:47] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md
 [2026-07-04 18:44:49]   {"status": "success", "action": "classified", "tags": ["automatización", "sistema", "clasificación", "deepseek"], "category": "tecnologia", "summary_length": 125, "key_topics_count": 3, "user_correction_detected": false}
 [2026-07-04 18:44:49] SUCCESS [automatización, sistema, clasificación, deepseek]
+[2026-07-04 18:45:49] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md
+[2026-07-04 18:45:49]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 18:45:49] SKIPPED (no changes detected)
