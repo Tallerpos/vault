@@ -18,7 +18,7 @@ file_changed() {
 }
 
 log "AI Watcher v2.0 started..."
-inotifywait -m -r "$VAULT_DIR" --exclude '\.git|\.optimizer|\.silverbullet|\.ai-classifier|\.tag-registry' -e close_write -e moved_to --format '%w%f' |
+inotifywait -m -r "$VAULT_DIR" --exclude 'Templates/|.git|\.optimizer|\.silverbullet|\.ai-classifier|\.tag-registry' -e close_write -e moved_to --format '%w%f' |
 while read -r file; do
     [[ "$file" != *.md ]] && continue
     sleep $DEBOUNCE
