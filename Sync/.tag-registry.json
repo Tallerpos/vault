@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T01:05:22.675907+00:00",
+  "last_updated": "2026-07-05T01:05:33.355981+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 10,
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 14,
-      "successes": 14,
+      "count": 15,
+      "successes": 15,
       "corrections": 2,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T01:05:22.675415+00:00",
+      "last_seen": "2026-07-05T01:05:33.355400+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -99,27 +99,27 @@
       "category": "uncategorized"
     },
     "deepseek-api": {
-      "count": 4,
-      "successes": 4,
+      "count": 5,
+      "successes": 5,
       "corrections": 0,
       "first_seen": "2026-07-04T23:19:42.379911Z",
-      "last_seen": "2026-07-05T01:05:22.675415+00:00",
+      "last_seen": "2026-07-05T01:05:33.355400+00:00",
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 9,
-      "successes": 9,
+      "count": 10,
+      "successes": 10,
       "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T01:05:22.675415+00:00",
+      "last_seen": "2026-07-05T01:05:33.355400+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 16,
-      "successes": 15,
+      "count": 17,
+      "successes": 16,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T01:05:22.675415+00:00",
+      "last_seen": "2026-07-05T01:05:33.355400+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -141,12 +141,12 @@
   },
   "categories": {},
   "co_occurrence": {
-    "clasificacion__deepseek-api": 3,
-    "automatizacion__clasificacion": 6,
-    "clasificacion__sistema": 13,
-    "automatizacion__deepseek-api": 3,
-    "deepseek-api__sistema": 3,
-    "automatizacion__sistema": 6,
+    "clasificacion__deepseek-api": 4,
+    "automatizacion__clasificacion": 7,
+    "clasificacion__sistema": 14,
+    "automatizacion__deepseek-api": 4,
+    "deepseek-api__sistema": 4,
+    "automatizacion__sistema": 7,
     "clasificacion__inteligencia-artificial": 7,
     "inteligencia-artificial__sistema": 7,
     "automatizacion__deepseek": 1,
@@ -183,6 +183,21 @@
       "score": 1.369,
       "user_verified": false,
       "timestamp": "2026-07-05T00:48:00.011590+00:00Z"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
+      "tags": [
+        "automatizacion",
+        "clasificacion",
+        "deepseek-api",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
+      "importance": 4,
+      "score": 1.339,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:05:22.675900+00:00"
     },
     {
       "file": "/opt/vault/Sync/Templates/Nota Minimalista.md",
@@ -342,7 +357,7 @@
       "timestamp": "2026-07-05T01:01:33.513262+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
+      "file": "Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
       "tags": [
         "automatizacion",
         "clasificacion",
@@ -352,9 +367,9 @@
       "category": "tecnologia",
       "summary": "Nota sobre la automatización de la clasificación de notas en Obsidian usando DeepSeek API, incluyendo detección de cambios, clasificación con IA, asignación de tags y enlace de notas relacionadas, con costo mínimo.",
       "importance": 4,
-      "score": 1.339,
+      "score": 1.354,
       "user_verified": false,
-      "timestamp": "2026-07-05T01:05:22.675900+00:00"
+      "timestamp": "2026-07-05T01:05:33.355971+00:00"
     }
   ]
 }
