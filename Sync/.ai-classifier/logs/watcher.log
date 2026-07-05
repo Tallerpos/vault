@@ -170,3 +170,14 @@
 [2026-07-04 20:03:11] SKIPPED (no changes detected)
 [2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
 [2026-07-04 20:03:11] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:11] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 20:04:11]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:04:11] SKIPPED (no changes detected)
+[2026-07-04 20:04:11] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:12]   {"status": "success", "action": "classified", "tags": ["familia", "comida"], "category": "personal", "summary_length": 96, "key_topics_count": 3, "related_count": 0, "user_correction_detected": false}
+[2026-07-04 20:04:13] SUCCESS [familia, comida] related=0
+[2026-07-04 20:04:13] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:13]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-04 20:04:13] SKIPPED (no changes detected)
+[2026-07-04 20:04:13] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
+[2026-07-04 20:04:13] SKIPPED (no change): /opt/vault/Sync/Notas/2026-07-04 - idea - Sali a comer con rosa.md
