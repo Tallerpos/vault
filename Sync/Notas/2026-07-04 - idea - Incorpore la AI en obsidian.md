@@ -4,4 +4,4 @@ tipo: idea
 tags: []
 relacionado: []
 ---
-Estoy utilizando obsidian para supuestamente ponerle AI, porque asi puedo clasificar de manera precisa los datos, y las
+Estoy utilizando obsidian para supuestamente ponerle AI, porque asi puedo clasificar de manera precisa los datos, y las notas en obsidian de manera presci
