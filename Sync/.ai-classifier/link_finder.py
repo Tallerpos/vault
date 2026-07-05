@@ -21,6 +21,24 @@ class LinkFinder:
         except Exception:
             return {'tags': {}, 'co_occurrence': {}}
 
+    def _is_useful_note(self, md, content, fm):
+        name = md.stem.lower()
+        if name in ['sin título', 'untitled', 'sin titulo']:
+            return False
+        if 'prueba' in name or 'test' in name:
+            return False
+        body = content
+        m = re.search(r'^---\s*
+.*?
+---\s*
+', content, re.DOTALL)
+        if m:
+            body = content[m.end():]
+        body = body.strip()
+        if len(body) < 50:
+            return False
+        return True
+
     def _index_notes(self):
         index = {}
         for md in VAULT_ROOT.rglob('*.md'):
@@ -32,6 +50,8 @@ class LinkFinder:
                 content = md.read_text(encoding='utf-8')
                 fm = self._parse_frontmatter(content)
                 if not fm:
+                    continue
+                if not self._is_useful_note(md, content, fm):
                     continue
                 rel = str(md.relative_to(VAULT_ROOT))
                 index[rel] = {
