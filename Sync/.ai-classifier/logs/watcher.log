@@ -114,3 +114,9 @@
 [2026-07-04 19:05:22]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 19:05:22] SKIPPED (no changes detected)
 [2026-07-04 19:05:55] AI Watcher v4.0 started...
+[2026-07-04 19:08:17] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 19:08:19]   {"status": "success", "action": "classified", "tags": ["clasificacion", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "related_count": 1, "user_correction_detected": false}
+[2026-07-04 19:08:19] SUCCESS [clasificacion, inteligencia-artificial, sistema] related=1
+[2026-07-04 19:08:19] PROCESSING: /opt/vault/Sync/Sin título 1.md
+[2026-07-04 19:08:19]   {"status": "error", "error": "File not found: /opt/vault/Sync/Sin t\u00edtulo 1.md"}
+[2026-07-04 19:08:19] ERROR: /opt/vault/Sync/Sin título 1.md
