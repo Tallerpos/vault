@@ -57,3 +57,6 @@
 2026-07-04 21:17:07,913 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md
 2026-07-04 21:17:09,199 - INFO - API call successful. Tags: ['diseno', 'cliente'], Category: trabajo
 2026-07-04 21:17:09,229 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md → tags=['diseno', 'cliente'], cat=trabajo, related=0
+2026-07-04 21:17:56,457 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md
+2026-07-04 21:17:58,304 - INFO - API call successful. Tags: ['cliente', 'diseno'], Category: trabajo
+2026-07-04 21:17:58,348 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md → tags=['cliente', 'diseno'], cat=trabajo, related=0
