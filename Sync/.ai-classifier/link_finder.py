@@ -86,7 +86,7 @@ class LinkFinder:
         return self._jaccard(set_a, set_b)
 
     def find_related(self, current_path, tags, category, key_topics):
-        current = Path(current_path)
+        current = Path(current_path).resolve()
         candidates = []
 
         for rel, note in self.notes_index.items():
