@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:32:30.063007+00:00",
+  "last_updated": "2026-07-05T03:33:18.438385+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,20 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
-      "tags": [
-        "inteligencia-artificial",
-        "automatizacion",
-        "clasificacion"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre la idea de integrar inteligencia artificial en Obsidian para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
-      "importance": 2,
-      "score": 1.179,
-      "user_verified": false,
-      "timestamp": "2026-07-05T03:12:30.628725+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Diario/2026-07-04.md",
       "tags": [
         "comida",
@@ -541,6 +527,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:32:30.062988+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:33:18.438362+00:00"
     }
   ]
 }
