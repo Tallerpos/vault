@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:28:28.159703+00:00",
+  "last_updated": "2026-07-05T03:29:16.379229+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,20 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
-      "tags": [
-        "automatizacion",
-        "inteligencia-artificial",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre mejoras en Obsidian para integrar inteligencia artificial de manera eficiente, optimizando el flujo de trabajo.",
-      "importance": 3,
-      "score": 1.232,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:16:58.320751+00:00"
-    },
-    {
       "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
         "clasificacion",
@@ -561,6 +547,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:28:28.159688+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:29:16.379211+00:00"
     }
   ]
 }
