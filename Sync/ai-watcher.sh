@@ -1,6 +1,5 @@
 #!/bin/bash
 VAULT_DIR="/opt/vault/Sync"
-# source /etc/environment (moved to systemd EnvironmentFile)
 CLASSIFIER="/opt/vault/Sync/.ai-classifier/classifier.py"
 HASH_DIR="/opt/vault/Sync/.ai-classifier/cache/hashes"
 LOG_FILE="/opt/vault/Sync/.ai-classifier/logs/watcher.log"
@@ -17,7 +16,24 @@ file_changed() {
     echo "$ch" > "$hf"; return 0
 }
 
-log "AI Watcher v3.0 started..."
+classify_file() {
+    local file="$1"
+    [[ "$file" != *.md ]] && return
+    sudo chown abner:abner "$file" 2>/dev/null
+    if ! file_changed "$file"; then log "SKIPPED (no change): $file"; return; fi
+    log "PROCESSING: $file"
+    result=$(python3 "$CLASSIFIER" "$file" 2>&1)
+    echo "$result" | while read -r line; do log "  $line"; done
+    status=$(echo "$result" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','unknown'))" 2>/dev/null)
+    if [ "$status" = "success" ]; then
+        tags=$(echo "$result" | python3 -c "import sys,json; print(', '.join(json.load(sys.stdin).get('tags',[])))" 2>/dev/null)
+        related=$(echo "$result" | python3 -c "import sys,json; print(json.load(sys.stdin).get('related_count',0))" 2>/dev/null)
+        log "SUCCESS [$tags] related=$related"
+    elif [ "$status" = "skipped" ]; then log "SKIPPED (no changes detected)"
+    else log "ERROR: $file"; fi
+}
+
+log "AI Watcher v4.0 started..."
 inotifywait -m -r "$VAULT_DIR" \
     --exclude '\.(git|optimizer|silverbullet|ai-classifier|tag-registry)|Templates/' \
     -e close_write -e moved_to \
@@ -25,16 +41,11 @@ inotifywait -m -r "$VAULT_DIR" \
 while read -r file; do
     [[ "$file" != *.md ]] && continue
     sleep $DEBOUNCE
-    while read -r -t 0.1 additional; do file="$additional"; done
-    sudo chown abner:abner "$file" 2>/dev/null
-    if ! file_changed "$file"; then log "SKIPPED (no change): $file"; continue; fi
-    log "PROCESSING: $file"
-    result=$(python3 "$CLASSIFIER" "$file" 2>&1)
-    echo "$result" | while read -r line; do log "  $line"; done
-    status=$(echo "$result" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','unknown'))" 2>/dev/null)
-    if [ "$status" = "success" ]; then
-        tags=$(echo "$result" | python3 -c "import sys,json; print(', '.join(json.load(sys.stdin).get('tags',[])))" 2>/dev/null)
-        log "SUCCESS [$tags]"
-    elif [ "$status" = "skipped" ]; then log "SKIPPED (no changes detected)"
-    else log "ERROR: $file"; fi
+    files=("$file")
+    while read -r -t 0.1 additional; do
+        [[ "$additional" == *.md ]] && files+=("$additional")
+    done
+    for f in "${files[@]}"; do
+        classify_file "$f"
+    done
 done

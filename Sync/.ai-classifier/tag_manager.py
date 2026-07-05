@@ -23,7 +23,7 @@ class TagManager:
         return {'version': '2.0', 'last_updated': old.get('last_updated',''), 'tags': {n: {'count': d.get('count',0), 'successes': d.get('count',1), 'corrections': 0, 'first_seen': d.get('first_seen',''), 'last_seen': d.get('first_seen',''), 'category': d.get('category','uncategorized')} for n,d in old.get('tags',{}).items()}, 'categories': old.get('categories',{}), 'co_occurrence': {}, 'corrections': [], 'successful_examples': []}
 
     def _save_registry(self):
-        self.registry['last_updated'] = datetime.now(timezone.utc).isoformat() + 'Z'
+        self.registry['last_updated'] = datetime.now(timezone.utc).isoformat()
         with open(self.registry_path, 'w') as f:
             json.dump(self.registry, f, indent=2, ensure_ascii=False)
 
@@ -51,12 +51,10 @@ class TagManager:
         return self.aliases.get(tag.lower().strip(), tag.lower().strip())
 
     def register_classification(self, tags, category=None, user_corrected=False):
-        now = datetime.now(timezone.utc).isoformat() + 'Z'
-        updated = False
+        now = datetime.now(timezone.utc).isoformat()
         for tag in tags:
             if tag not in self.registry['tags']:
                 self.registry['tags'][tag] = {'count': 0, 'successes': 0, 'corrections': 0, 'first_seen': now, 'last_seen': now, 'category': category or 'uncategorized'}
-                updated = True
             d = self.registry['tags'][tag]
             d['count'] = d.get('count', 0) + 1
             d['last_seen'] = now
@@ -68,7 +66,7 @@ class TagManager:
                 k = f'{tuple(sorted([t1,t2]))[0]}__{tuple(sorted([t1,t2]))[1]}'
                 self.registry.setdefault('co_occurrence', {})
                 self.registry['co_occurrence'][k] = self.registry['co_occurrence'].get(k, 0) + 1
-        if updated: self._save_registry()
+        self._save_registry()
 
     def detect_and_register_correction(self, auto_tags, existing_ai_tags, note_path):
         auto_set = set(t.lower() for t in auto_tags)
@@ -80,7 +78,7 @@ class TagManager:
         return False
 
     def register_correction(self, auto_tags, user_tags, note_path):
-        now = datetime.now(timezone.utc).isoformat() + 'Z'
+        now = datetime.now(timezone.utc).isoformat()
         for t in auto_tags:
             if t in self.registry['tags']:
                 self.registry['tags'][t]['corrections'] = self.registry['tags'][t].get('corrections',0) + 1
@@ -99,7 +97,7 @@ class TagManager:
         conf_sum = sum(self._tag_confidence(t) for t in tags) / max(len(tags), 1)
         score = (1.5 if user_verified else 1.0) * (0.5 + conf_sum)
         self.registry.setdefault('successful_examples', [])
-        self.registry['successful_examples'].append({'file': file_path, 'tags': tags, 'category': category, 'summary': summary, 'importance': importance, 'score': round(score, 3), 'user_verified': user_verified, 'timestamp': datetime.now(timezone.utc).isoformat() + 'Z'})
+        self.registry['successful_examples'].append({'file': file_path, 'tags': tags, 'category': category, 'summary': summary, 'importance': importance, 'score': round(score, 3), 'user_verified': user_verified, 'timestamp': datetime.now(timezone.utc).isoformat()})
         self.registry['successful_examples'] = self.registry['successful_examples'][-20:]
         self._save_registry()
 

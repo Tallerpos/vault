@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "api": {
     "base_url": "https://api.deepseek.com",
     "model": "deepseek-chat",
@@ -12,73 +12,57 @@
     "max_tags": 5,
     "debounce_seconds": 60,
     "reclassify_threshold": 0.4,
-    "valid_categories": [
-      "personal",
-      "trabajo",
-      "finanzas",
-      "tecnologia",
-      "aprendizaje",
-      "ideas",
-      "salud",
-      "ocio",
-      "familia",
-      "proyectos",
-      "compras",
-      "viajes",
-      "lectura",
-      "desarrollo",
-      "miscelanea"
-    ],
-    "required_fields": [
-      "tags",
-      "category",
-      "summary",
-      "importance",
-      "key_topics"
-    ]
+    "valid_categories": ["personal", "trabajo", "finanzas", "tecnologia", "aprendizaje", "ideas", "salud", "ocio", "familia", "proyectos", "compras", "viajes", "lectura", "desarrollo", "miscelanea"],
+    "required_fields": ["tags", "category", "summary", "importance", "key_topics"]
   },
   "learning": {
-    "min_observations": 3,
+    "min_observations": 1,
     "max_few_shot_examples": 3,
     "max_tags_in_prompt": 25,
     "correction_learning": true
+  },
+  "linking": {
+    "min_score": 0.35,
+    "max_links": 5,
+    "weights": {
+      "tag_jaccard": 0.40,
+      "co_occurrence": 0.30,
+      "topic_overlap": 0.20,
+      "category_bonus": 0.10
+    }
   },
   "tag_registry": {
     "path": "/opt/vault/Sync/.tag-registry.json",
     "aliases": {
       "finanza": "economia",
       "finanzas": "economia",
+      "economía": "economia",
       "finance": "economia",
       "programacion": "programacion",
       "programación": "programacion",
       "programming": "programacion",
       "coding": "programacion",
-      "desarollo": "programacion",
-      "desarrollo": "programacion",
       "dev": "programacion",
       "ciencia": "ciencia",
       "ciencias": "ciencia",
       "science": "ciencia",
-      "notas": "notas",
-      "notes": "notas",
-      "apuntes": "notas",
       "tecnologia": "tecnologia",
+      "tecnología": "tecnologia",
       "technology": "tecnologia",
       "ia": "inteligencia-artificial",
       "ai": "inteligencia-artificial",
-      "machine learning": "inteligencia-artificial",
       "machine-learning": "inteligencia-artificial",
-      "ml": "inteligencia-artificial"
+      "ml": "inteligencia-artificial",
+      "automatización": "automatizacion",
+      "automatizacion": "automatizacion",
+      "clasificación": "clasificacion",
+      "clasificacion": "clasificacion",
+      "inversión": "inversion",
+      "inversion": "inversion"
     }
   },
   "watcher": {
-    "exclude_patterns": [
-      ".git",
-      ".optimizer",
-      ".silverbullet",
-      ".ai-classifier",
-      ".tag-registry"
-    ],
+    "exclude_patterns": [".git", ".optimizer", ".silverbullet", ".ai-classifier", ".tag-registry"],
     "file_pattern": "*.md"
   }
 }
