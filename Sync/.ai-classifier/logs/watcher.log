@@ -87,3 +87,6 @@
 [2026-07-04 18:45:49] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md
 [2026-07-04 18:45:49]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-04 18:45:49] SKIPPED (no changes detected)
+[2026-07-04 18:47:58] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md
+[2026-07-04 18:48:00]   {"status": "success", "action": "classified", "tags": ["clasificación", "inteligencia-artificial", "sistema"], "category": "tecnologia", "summary_length": 132, "key_topics_count": 3, "user_correction_detected": false}
+[2026-07-04 18:48:00] SUCCESS [clasificación, inteligencia-artificial, sistema]
