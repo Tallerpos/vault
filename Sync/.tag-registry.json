@@ -10,22 +10,6 @@
       "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
       "category": "tecnologia"
     },
-    "automatización": {
-      "count": 7,
-      "successes": 7,
-      "corrections": 0,
-      "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
-      "category": "tecnologia"
-    },
-    "clasificación": {
-      "count": 9,
-      "successes": 9,
-      "corrections": 0,
-      "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
-      "category": "tecnologia"
-    },
     "deepseek": {
       "count": 2,
       "successes": 2,
@@ -41,14 +25,6 @@
       "first_seen": "2026-07-04T23:10:50.716243Z",
       "last_seen": "2026-07-04T23:10:50.716243Z",
       "category": "uncategorized"
-    },
-    "deepseek api": {
-      "count": 2,
-      "successes": 2,
-      "corrections": 0,
-      "first_seen": "2026-07-04T23:19:42.379911Z",
-      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
-      "category": "tecnologia"
     },
     "familia": {
       "count": 2,
@@ -90,14 +66,6 @@
       "last_seen": "2026-07-04T23:37:55.793160+00:00Z",
       "category": "uncategorized"
     },
-    "inversión": {
-      "count": 1,
-      "successes": 1,
-      "corrections": 0,
-      "first_seen": "2026-07-04T23:38:39.481794+00:00Z",
-      "last_seen": "2026-07-04T23:38:39.481794+00:00Z",
-      "category": "uncategorized"
-    },
     "bitcoin": {
       "count": 1,
       "successes": 1,
@@ -128,6 +96,38 @@
       "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481815+00:00Z",
       "last_seen": "2026-07-04T23:38:39.481815+00:00Z",
+      "category": "uncategorized"
+    },
+    "deepseek-api": {
+      "count": 2,
+      "successes": 2,
+      "corrections": 0,
+      "first_seen": "2026-07-04T23:19:42.379911Z",
+      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "category": "tecnologia"
+    },
+    "automatizacion": {
+      "count": 7,
+      "successes": 7,
+      "corrections": 0,
+      "first_seen": "2026-07-04T23:10:50.716236Z",
+      "last_seen": "2026-07-05T00:44:49.196517+00:00Z",
+      "category": "tecnologia"
+    },
+    "clasificacion": {
+      "count": 9,
+      "successes": 9,
+      "corrections": 0,
+      "first_seen": "2026-07-04T23:10:50.716239Z",
+      "last_seen": "2026-07-05T00:48:00.011537+00:00Z",
+      "category": "tecnologia"
+    },
+    "inversion": {
+      "count": 1,
+      "successes": 1,
+      "corrections": 0,
+      "first_seen": "2026-07-04T23:38:39.481794+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481794+00:00Z",
       "category": "uncategorized"
     }
   },
