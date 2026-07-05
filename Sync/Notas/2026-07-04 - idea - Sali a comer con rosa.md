@@ -11,4 +11,4 @@ ai_key_topics: [salida a comer, pareja, compras]
 ai_classified_at: '2026-07-05T02:04:12.957086+00:00'
 ai_related: []
 ---
-El día de hoy salimos a comer con mi rosa, le dije a la Josselin pero andaba en suma comprando con la rosa 
+El día de hoy salimos a comer con mi rosa, le dije a la Josselin pero andaba en suma comprando con la rosa ,  cabe recalcar que rosa no es mi pareja debes de arre
