@@ -48,3 +48,6 @@
 [2026-07-04 18:02:38] PROCESSING: /opt/vault/Sync/Sin título.md
 [2026-07-04 18:02:39]   {"status": "success", "action": "classified", "tags": []}
 [2026-07-04 18:02:39] SUCCESS: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:03:39] PROCESSING: /opt/vault/Sync/Sin título.md
+[2026-07-04 18:03:39]   {"status": "skipped", "reason": "already classified, no significant change"}
+[2026-07-04 18:03:40] SUCCESS: /opt/vault/Sync/Sin título.md
