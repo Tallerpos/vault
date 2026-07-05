@@ -28,10 +28,7 @@ class LinkFinder:
         if 'prueba' in name or 'test' in name:
             return False
         body = content
-        m = re.search(r'^---\s*
-.*?
----\s*
-', content, re.DOTALL)
+        m = re.search(r'^---\s*\n.*?\n---\s*\n', content, re.DOTALL)
         if m:
             body = content[m.end():]
         body = body.strip()
@@ -166,8 +163,22 @@ class LinkFinder:
         body_links = self.build_body_links(related)
         if not body_links:
             return content
-        if body_links.strip() in content:
-            return content
+        if '**Notas relacionadas:**' in content:
+            lines = content.split('\n')
+            new_lines = []
+            skip = False
+            for line in lines:
+                if '**Notas relacionadas:**' in line:
+                    skip = True
+                    continue
+                if skip and line.strip() == '---':
+                    skip = False
+                    continue
+                if skip and line.strip() == '':
+                    continue
+                if not skip:
+                    new_lines.append(line)
+            content = '\n'.join(new_lines)
 
         m = re.search(r'^---\s*\n.*?\n---\s*\n', content, re.DOTALL)
         if m:
