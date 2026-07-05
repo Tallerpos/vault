@@ -1,87 +1,161 @@
 {
-  "version": "1.0",
-  "last_updated": "2026-07-04T23:38:39.481819+00:00Z",
+  "version": "2.0",
+  "last_updated": "2026-07-05T00:13:07.989929+00:00Z",
   "tags": {
     "inteligencia-artificial": {
       "count": 3,
+      "successes": 3,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716223Z",
+      "last_seen": "2026-07-04T23:10:50.716223Z",
       "category": "uncategorized"
     },
     "automatización": {
-      "count": 3,
+      "count": 4,
+      "successes": 4,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "category": "tecnologia"
     },
     "clasificación": {
-      "count": 3,
+      "count": 4,
+      "successes": 4,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "category": "tecnologia"
     },
     "deepseek": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716241Z",
+      "last_seen": "2026-07-04T23:10:50.716241Z",
       "category": "uncategorized"
     },
     "python": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:10:50.716243Z",
+      "last_seen": "2026-07-04T23:10:50.716243Z",
       "category": "uncategorized"
     },
     "deepseek api": {
-      "count": 1,
+      "count": 2,
+      "successes": 2,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:19:42.379911Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "category": "tecnologia"
     },
     "familia": {
       "count": 2,
+      "successes": 2,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319491Z",
+      "last_seen": "2026-07-04T23:23:08.319491Z",
       "category": "uncategorized"
     },
     "comida": {
       "count": 2,
+      "successes": 2,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:23:08.319503Z",
+      "last_seen": "2026-07-04T23:23:08.319503Z",
       "category": "uncategorized"
     },
     "prueba": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:37:36.770318+00:00Z",
+      "last_seen": "2026-07-04T23:37:36.770318+00:00Z",
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 1,
+      "count": 2,
+      "successes": 2,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "category": "uncategorized"
+      "last_seen": "2026-07-05T00:13:07.989853+00:00Z",
+      "category": "tecnologia"
     },
     "planes": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:37:55.793160+00:00Z",
+      "last_seen": "2026-07-04T23:37:55.793160+00:00Z",
       "category": "uncategorized"
     },
     "inversión": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481794+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481794+00:00Z",
       "category": "uncategorized"
     },
     "bitcoin": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481808+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481808+00:00Z",
       "category": "uncategorized"
     },
     "ethereum": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481811+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481811+00:00Z",
       "category": "uncategorized"
     },
     "criptomonedas": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481814+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481814+00:00Z",
       "category": "uncategorized"
     },
     "hodl": {
       "count": 1,
+      "successes": 1,
+      "corrections": 0,
       "first_seen": "2026-07-04T23:38:39.481815+00:00Z",
+      "last_seen": "2026-07-04T23:38:39.481815+00:00Z",
       "category": "uncategorized"
     }
   },
-  "categories": {}
+  "categories": {},
+  "co_occurrence": {
+    "clasificación__deepseek api": 1,
+    "automatización__clasificación": 1,
+    "clasificación__sistema": 1,
+    "automatización__deepseek api": 1,
+    "deepseek api__sistema": 1,
+    "automatización__sistema": 1
+  },
+  "corrections": [],
+  "successful_examples": [
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
+      "tags": [
+        "clasificación",
+        "deepseek api",
+        "automatización",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota de prueba del clasificador v2 que documenta mejoras en el sistema de clasificación automática usando la API de DeepSeek, incluyendo prompt estructurado, aprendizaje de correcciones, validación de respuesta, few-shot learning y tag registry.",
+      "importance": 3,
+      "score": 1.233,
+      "user_verified": false,
+      "timestamp": "2026-07-05T00:13:07.989923+00:00Z"
+    }
+  ]
 }
