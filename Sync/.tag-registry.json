@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:27:39.885473+00:00",
+  "last_updated": "2026-07-05T03:28:28.159703+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,21 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
-      "tags": [
-        "clasificación",
-        "deepseek api",
-        "automatización",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota de prueba del clasificador v2 que documenta mejoras en el sistema de clasificación automática usando la API de DeepSeek, incluyendo prompt estructurado, aprendizaje de correcciones, validación de respuesta, few-shot learning y tag registry.",
-      "importance": 3,
-      "score": 1.233,
-      "user_verified": false,
-      "timestamp": "2026-07-05T00:13:07.989923+00:00Z"
-    },
-    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
       "tags": [
         "automatizacion",
@@ -566,6 +551,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:27:39.885459+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:28:28.159688+00:00"
     }
   ]
 }
