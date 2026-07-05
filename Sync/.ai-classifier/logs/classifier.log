@@ -3884,3 +3884,6 @@
 2026-07-05 14:33:47,600 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04_1.md
 2026-07-05 14:33:48,979 - INFO - API call successful. Tags: [], Category: personal
 2026-07-05 14:33:49,075 - INFO - Success: /opt/vault/Sync/Diario/2026-07-04_1.md → tags=[], cat=personal, related=0
+2026-07-05 14:34:36,310 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04_1.md
+2026-07-05 14:34:37,355 - INFO - API call successful. Tags: [], Category: personal
+2026-07-05 14:34:37,371 - INFO - Success: /opt/vault/Sync/Diario/2026-07-04_1.md → tags=[], cat=personal, related=0
