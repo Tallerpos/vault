@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T01:08:19.369558+00:00",
+  "last_updated": "2026-07-05T01:09:24.940837+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 11,
-      "successes": 11,
-      "corrections": 2,
+      "count": 14,
+      "successes": 14,
+      "corrections": 4,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T01:08:19.367850+00:00",
+      "last_seen": "2026-07-05T01:09:24.940242+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 16,
-      "successes": 16,
-      "corrections": 2,
+      "count": 19,
+      "successes": 19,
+      "corrections": 4,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T01:08:19.367850+00:00",
+      "last_seen": "2026-07-05T01:09:24.940242+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -107,19 +107,19 @@
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 10,
-      "successes": 10,
-      "corrections": 0,
+      "count": 13,
+      "successes": 12,
+      "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T01:05:33.355400+00:00",
+      "last_seen": "2026-07-05T01:09:24.940242+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
       "count": 18,
-      "successes": 17,
+      "successes": 18,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T01:08:19.367850+00:00",
+      "last_seen": "2026-07-05T01:09:23.320125+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -146,12 +146,13 @@
     "clasificacion__sistema": 15,
     "automatizacion__deepseek-api": 4,
     "deepseek-api__sistema": 4,
-    "automatizacion__sistema": 7,
+    "automatizacion__sistema": 10,
     "clasificacion__inteligencia-artificial": 8,
-    "inteligencia-artificial__sistema": 8,
+    "inteligencia-artificial__sistema": 11,
     "automatizacion__deepseek": 1,
     "deepseek__sistema": 1,
-    "clasificacion__deepseek": 1
+    "clasificacion__deepseek": 1,
+    "automatizacion__inteligencia-artificial": 3
   },
   "corrections": [
     {
@@ -167,6 +168,20 @@
         "clasificación"
       ],
       "timestamp": "2026-07-05T01:01:33.507603+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Sin título.md",
+      "auto": [
+        "inteligencia-artificial",
+        "sistema",
+        "automatizacion"
+      ],
+      "user": [
+        "inteligencia-artificial",
+        "clasificacion",
+        "sistema"
+      ],
+      "timestamp": "2026-07-05T01:09:23.320125+00:00"
     }
   ],
   "successful_examples": [
@@ -183,6 +198,20 @@
       "score": 1.369,
       "user_verified": false,
       "timestamp": "2026-07-05T00:48:00.011590+00:00Z"
+    },
+    {
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
+      "tags": [
+        "automatizacion",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre mejoras en Obsidian para integrar inteligencia artificial de manera eficiente, optimizando el flujo de trabajo.",
+      "importance": 3,
+      "score": 1.356,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:09:21.442386+00:00"
     },
     {
       "file": "Notas/2026-07-04 - idea - Automatizar clasificacion con DeepSeek.md",
@@ -241,6 +270,20 @@
       "score": 1.336,
       "user_verified": false,
       "timestamp": "2026-07-05T00:43:47.498813+00:00Z"
+    },
+    {
+      "file": "/opt/vault/Sync/Sin título.md",
+      "tags": [
+        "clasificacion",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 3,
+      "score": 1.326,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:08:19.369536+00:00"
     },
     {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Test watcher v3.md",
@@ -315,6 +358,20 @@
       "timestamp": "2026-07-05T01:04:19.394158+00:00"
     },
     {
+      "file": "/opt/vault/Sync/Sin título.md",
+      "tags": [
+        "inteligencia-artificial",
+        "sistema",
+        "automatizacion"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre la incorporación de inteligencia artificial en Obsidian para automatizar tareas y mejorar la organización del conocimiento personal.",
+      "importance": 3,
+      "score": 1.264,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:09:23.325356+00:00"
+    },
+    {
       "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
         "clasificacion",
@@ -372,18 +429,18 @@
       "timestamp": "2026-07-05T01:01:33.513262+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Sin título.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
       "tags": [
-        "clasificacion",
+        "automatizacion",
         "inteligencia-artificial",
         "sistema"
       ],
       "category": "tecnologia",
-      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "summary": "Nota sobre mejoras en Obsidian para integrar inteligencia artificial de manera eficiente, optimizando el flujo de trabajo.",
       "importance": 3,
-      "score": 1.326,
+      "score": 1.276,
       "user_verified": false,
-      "timestamp": "2026-07-05T01:08:19.369536+00:00"
+      "timestamp": "2026-07-05T01:09:24.940829+00:00"
     }
   ]
 }
