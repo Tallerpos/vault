@@ -3868,3 +3868,6 @@
 [2026-07-05 11:49:17] PROCESSING: /opt/vault/Sync/Diario/2026-07-04_1.md
 [2026-07-05 11:49:18]   {"status": "success", "action": "classified", "tags": [], "category": "personal", "summary_length": 46, "key_topics_count": 0, "related_count": 0, "user_correction_detected": false}
 [2026-07-05 11:49:18] ✅ SUCCESS [] related=0
+[2026-07-05 11:50:05] PROCESSING: /opt/vault/Sync/Diario/2026-07-04_1.md
+[2026-07-05 11:50:07]   {"status": "success", "action": "classified", "tags": [], "category": "personal", "summary_length": 46, "key_topics_count": 0, "related_count": 0, "user_correction_detected": false}
+[2026-07-05 11:50:07] ✅ SUCCESS [] related=0
