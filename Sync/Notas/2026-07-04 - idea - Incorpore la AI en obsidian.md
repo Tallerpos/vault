@@ -6,3 +6,4 @@ relacionado: []
 ---
 
 Escribe aquí tu nota.
+tENGO UN ERROR CON EL TEMPLATER DE OBSIDIAN ESTOY INTENTANDO ARREGLARLO 

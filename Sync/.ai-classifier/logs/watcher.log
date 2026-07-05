@@ -75,3 +75,5 @@
 [2026-07-04 18:25:05] AI Watcher v2.0 started...
 [2026-07-04 18:26:49] SKIPPED (no change): /opt/vault/Sync/Sin título.md
 [2026-07-04 18:36:27] PROCESSING: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
+[2026-07-04 18:36:28]   {"status": "error", "error": "[Errno 13] Permission denied: '/opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md'"}
+[2026-07-04 18:36:28] ERROR: /opt/vault/Sync/Notas/2026-07-04 - idea - HOLA.md
