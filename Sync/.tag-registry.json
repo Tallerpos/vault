@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T01:03:10.291401+00:00",
+  "last_updated": "2026-07-05T01:04:19.394172+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 8,
-      "successes": 8,
+      "count": 9,
+      "successes": 9,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T01:03:10.290917+00:00",
+      "last_seen": "2026-07-05T01:04:19.393308+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -51,11 +51,11 @@
       "category": "uncategorized"
     },
     "sistema": {
-      "count": 10,
-      "successes": 10,
+      "count": 11,
+      "successes": 11,
       "corrections": 2,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T01:03:10.290917+00:00",
+      "last_seen": "2026-07-05T01:04:19.393308+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -115,11 +115,11 @@
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 12,
-      "successes": 11,
+      "count": 13,
+      "successes": 12,
       "corrections": 2,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T01:03:10.290917+00:00",
+      "last_seen": "2026-07-05T01:04:19.393308+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -148,12 +148,12 @@
     "deepseek api__sistema": 1,
     "automatización__sistema": 4,
     "clasificación__inteligencia-artificial": 2,
-    "inteligencia-artificial__sistema": 5,
+    "inteligencia-artificial__sistema": 6,
     "automatización__deepseek": 1,
     "deepseek__sistema": 1,
     "clasificación__deepseek": 1,
-    "clasificacion__inteligencia-artificial": 3,
-    "clasificacion__sistema": 3
+    "clasificacion__inteligencia-artificial": 4,
+    "clasificacion__sistema": 4
   },
   "corrections": [
     {
@@ -244,6 +244,20 @@
       "timestamp": "2026-07-05T00:18:42.755550+00:00Z"
     },
     {
+      "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
+      "tags": [
+        "clasificacion",
+        "inteligencia-artificial",
+        "sistema"
+      ],
+      "category": "tecnologia",
+      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
+      "importance": 3,
+      "score": 1.261,
+      "user_verified": false,
+      "timestamp": "2026-07-05T01:03:10.291394+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
         "clasificacion",
@@ -296,9 +310,9 @@
       "category": "tecnologia",
       "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
       "importance": 3,
-      "score": 1.261,
+      "score": 1.279,
       "user_verified": false,
-      "timestamp": "2026-07-05T01:03:10.291394+00:00"
+      "timestamp": "2026-07-05T01:04:19.394158+00:00"
     }
   ]
 }
