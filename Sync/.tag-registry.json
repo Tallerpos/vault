@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:33:18.438385+00:00",
+  "last_updated": "2026-07-05T03:34:06.873487+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -322,19 +322,6 @@
   ],
   "successful_examples": [
     {
-      "file": "/opt/vault/Sync/Diario/2026-07-04.md",
-      "tags": [
-        "comida",
-        "familia"
-      ],
-      "category": "personal",
-      "summary": "Nota personal sobre la compra de helado de café con chispas de chocolate. Se menciona que a Rosa le gustó y que posiblemente salga con su prima. Abner la invitó a comer tacos, pero no está seguro si irán.",
-      "importance": 2,
-      "score": 1.171,
-      "user_verified": false,
-      "timestamp": "2026-07-05T03:12:35.874267+00:00"
-    },
-    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Tengo que hacer el logo.md",
       "tags": [
         "cliente",
@@ -537,6 +524,16 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T03:33:18.438362+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
+      "tags": [],
+      "category": "personal",
+      "summary": "Nota sin contenido suficiente para clasificar.",
+      "importance": 1,
+      "score": 0.5,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:34:06.873466+00:00"
     }
   ]
 }
