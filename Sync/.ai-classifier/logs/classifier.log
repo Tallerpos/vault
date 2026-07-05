@@ -35,3 +35,6 @@
 2026-07-04 21:12:34,055 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-04.md
 2026-07-04 21:12:35,858 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
 2026-07-04 21:12:35,877 - INFO - Success: /opt/vault/Sync/Diario/2026-07-04.md → tags=['comida', 'familia'], cat=personal, related=1
+2026-07-04 21:13:07,398 - INFO - Classifying: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md
+2026-07-04 21:13:09,123 - INFO - API call successful. Tags: ['clasificacion', 'inteligencia-artificial', 'sistema', 'deepseek-api', 'automatizacion'], Category: tecnologia
+2026-07-04 21:13:09,141 - INFO - Success: /opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md → tags=['clasificacion', 'inteligencia-artificial', 'deepseek-api', 'automatizacion'], cat=tecnologia, related=2

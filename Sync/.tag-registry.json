@@ -1,13 +1,13 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T03:12:35.874283+00:00",
+  "last_updated": "2026-07-05T03:13:09.138699+00:00",
   "tags": {
     "inteligencia-artificial": {
-      "count": 22,
-      "successes": 21,
-      "corrections": 12,
+      "count": 23,
+      "successes": 22,
+      "corrections": 14,
       "first_seen": "2026-07-04T23:10:50.716223Z",
-      "last_seen": "2026-07-05T03:12:32.349081+00:00",
+      "last_seen": "2026-07-05T03:13:09.136075+00:00",
       "category": "tecnologia"
     },
     "deepseek": {
@@ -52,10 +52,10 @@
     },
     "sistema": {
       "count": 25,
-      "successes": 27,
+      "successes": 28,
       "corrections": 8,
       "first_seen": "2026-07-04T23:37:36.770333+00:00Z",
-      "last_seen": "2026-07-05T03:12:32.337263+00:00",
+      "last_seen": "2026-07-05T03:13:09.124416+00:00",
       "category": "tecnologia"
     },
     "planes": {
@@ -99,27 +99,27 @@
       "category": "uncategorized"
     },
     "deepseek-api": {
-      "count": 7,
-      "successes": 7,
-      "corrections": 2,
+      "count": 8,
+      "successes": 8,
+      "corrections": 4,
       "first_seen": "2026-07-04T23:19:42.379911Z",
-      "last_seen": "2026-07-05T02:03:08.954929+00:00",
+      "last_seen": "2026-07-05T03:13:09.136075+00:00",
       "category": "tecnologia"
     },
     "automatizacion": {
-      "count": 19,
-      "successes": 16,
-      "corrections": 10,
+      "count": 20,
+      "successes": 17,
+      "corrections": 12,
       "first_seen": "2026-07-04T23:10:50.716236Z",
-      "last_seen": "2026-07-05T03:12:32.349081+00:00",
+      "last_seen": "2026-07-05T03:13:09.136075+00:00",
       "category": "tecnologia"
     },
     "clasificacion": {
-      "count": 23,
-      "successes": 23,
-      "corrections": 6,
+      "count": 24,
+      "successes": 24,
+      "corrections": 8,
       "first_seen": "2026-07-04T23:10:50.716239Z",
-      "last_seen": "2026-07-05T03:12:30.625171+00:00",
+      "last_seen": "2026-07-05T03:13:09.136075+00:00",
       "category": "tecnologia"
     },
     "inversion": {
@@ -157,19 +157,19 @@
   },
   "categories": {},
   "co_occurrence": {
-    "clasificacion__deepseek-api": 6,
-    "automatizacion__clasificacion": 10,
+    "clasificacion__deepseek-api": 7,
+    "automatizacion__clasificacion": 11,
     "clasificacion__sistema": 19,
-    "automatizacion__deepseek-api": 6,
+    "automatizacion__deepseek-api": 7,
     "deepseek-api__sistema": 6,
     "automatizacion__sistema": 14,
-    "clasificacion__inteligencia-artificial": 13,
+    "clasificacion__inteligencia-artificial": 14,
     "inteligencia-artificial__sistema": 17,
     "automatizacion__deepseek": 1,
     "deepseek__sistema": 1,
     "clasificacion__deepseek": 1,
-    "automatizacion__inteligencia-artificial": 9,
-    "deepseek-api__inteligencia-artificial": 2,
+    "automatizacion__inteligencia-artificial": 10,
+    "deepseek-api__inteligencia-artificial": 3,
     "comida__familia": 5
   },
   "corrections": [
@@ -284,23 +284,26 @@
         "comida"
       ],
       "timestamp": "2026-07-05T03:12:35.859778+00:00"
+    },
+    {
+      "note": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
+      "auto": [
+        "inteligencia-artificial",
+        "deepseek-api",
+        "automatizacion",
+        "clasificacion"
+      ],
+      "user": [
+        "clasificacion",
+        "automatizacion",
+        "inteligencia-artificial",
+        "deepseek-api",
+        "sistema"
+      ],
+      "timestamp": "2026-07-05T03:13:09.124416+00:00"
     }
   ],
   "successful_examples": [
-    {
-      "file": "Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
-      "tags": [
-        "clasificacion",
-        "inteligencia-artificial",
-        "sistema"
-      ],
-      "category": "tecnologia",
-      "summary": "Nota sobre el uso de Obsidian con inteligencia artificial para clasificar notas de manera precisa y eficaz, evitando datos erróneos.",
-      "importance": 3,
-      "score": 1.305,
-      "user_verified": false,
-      "timestamp": "2026-07-05T01:16:08.560286+00:00"
-    },
     {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore Ai en Obsidian.md",
       "tags": [
@@ -541,6 +544,19 @@
       "timestamp": "2026-07-05T03:12:30.628725+00:00"
     },
     {
+      "file": "/opt/vault/Sync/Diario/2026-07-04.md",
+      "tags": [
+        "comida",
+        "familia"
+      ],
+      "category": "personal",
+      "summary": "Nota personal sobre la compra de helado de café con chispas de chocolate. Se menciona que a Rosa le gustó y que posiblemente salga con su prima. Abner la invitó a comer tacos, pero no está seguro si irán.",
+      "importance": 2,
+      "score": 1.171,
+      "user_verified": false,
+      "timestamp": "2026-07-05T03:12:35.874267+00:00"
+    },
+    {
       "file": "/opt/vault/Sync/Notas/2026-07-04 - idea - Incorpore mejoras al obsidian.md",
       "tags": [
         "inteligencia-artificial",
@@ -554,17 +570,19 @@
       "timestamp": "2026-07-05T03:12:32.351534+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Diario/2026-07-04.md",
+      "file": "/opt/vault/Sync/Notas/2026-07-04 - prueba - v2.md",
       "tags": [
-        "comida",
-        "familia"
+        "clasificacion",
+        "inteligencia-artificial",
+        "deepseek-api",
+        "automatizacion"
       ],
-      "category": "personal",
-      "summary": "Nota personal sobre la compra de helado de café con chispas de chocolate. Se menciona que a Rosa le gustó y que posiblemente salga con su prima. Abner la invitó a comer tacos, pero no está seguro si irán.",
-      "importance": 2,
-      "score": 1.171,
+      "category": "tecnologia",
+      "summary": "Nota de prueba del clasificador v2 que documenta mejoras en el sistema de clasificación automática usando la API de DeepSeek, incluyendo system prompt estructurado, aprendizaje de correcciones, validación de respuesta, few-shot learning y tag registry.",
+      "importance": 3,
+      "score": 1.126,
       "user_verified": false,
-      "timestamp": "2026-07-05T03:12:35.874267+00:00"
+      "timestamp": "2026-07-05T03:13:09.138684+00:00"
     }
   ]
 }
