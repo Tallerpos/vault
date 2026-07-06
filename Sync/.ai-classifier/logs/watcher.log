@@ -5092,3 +5092,6 @@
 [2026-07-06 16:07:29] PROCESSING: /opt/vault/Sync/Diario/2026-07-06.md
 [2026-07-06 16:07:31]   {"status": "success", "action": "classified", "tags": ["comida", "familia"], "category": "personal", "summary_length": 128, "key_topics_count": 2, "related_count": 0, "user_correction_detected": false}
 [2026-07-06 16:07:31] ✅ SUCCESS [comida, familia] related=0
+[2026-07-06 16:08:18] PROCESSING: /opt/vault/Sync/Diario/2026-07-06.md
+[2026-07-06 16:08:18]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-06 16:08:18] SKIPPED (classifier decision)

@@ -4353,3 +4353,4 @@
 2026-07-06 16:07:29,916 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-06.md
 2026-07-06 16:07:31,572 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
 2026-07-06 16:07:31,587 - INFO - Success: /opt/vault/Sync/Diario/2026-07-06.md → tags=['comida', 'familia'], cat=personal, related=0
+2026-07-06 16:08:18,835 - INFO - Skipped (no significant change): /opt/vault/Sync/Diario/2026-07-06.md
