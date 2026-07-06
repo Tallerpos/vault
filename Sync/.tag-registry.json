@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-06T22:07:31.584554+00:00",
+  "last_updated": "2026-07-06T22:10:42.745602+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -27,19 +27,19 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 10,
-      "successes": 11,
+      "count": 11,
+      "successes": 12,
       "corrections": 2,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-06T22:07:31.581140+00:00",
+      "last_seen": "2026-07-06T22:10:42.743042+00:00",
       "category": "personal"
     },
     "comida": {
-      "count": 11,
-      "successes": 11,
+      "count": 12,
+      "successes": 12,
       "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-06T22:07:31.581140+00:00",
+      "last_seen": "2026-07-06T22:10:42.743042+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -186,7 +186,7 @@
     "clasificacion__deepseek": 1,
     "automatizacion__inteligencia-artificial": 10,
     "deepseek-api__inteligencia-artificial": 3,
-    "comida__familia": 8,
+    "comida__familia": 9,
     "cliente__diseno": 2
   },
   "corrections": [
@@ -512,7 +512,7 @@
       "timestamp": "2026-07-05T22:37:47.912096+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Diario/2026-07-06.md",
+      "file": "/opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md",
       "tags": [
         "comida",
         "familia"
@@ -520,9 +520,9 @@
       "category": "personal",
       "summary": "Cena con Rosa y Josselin en el restaurante Dana, donde esperaron 10 minutos sin ser atendidos, por lo que se fueron al Marbella.",
       "importance": 2,
-      "score": 1.237,
+      "score": 1.253,
       "user_verified": false,
-      "timestamp": "2026-07-06T22:07:31.584531+00:00"
+      "timestamp": "2026-07-06T22:10:42.745586+00:00"
     }
   ]
 }

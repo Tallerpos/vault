@@ -3,7 +3,17 @@ fecha: 2026-07-06
 tipo: diario
 tags: []
 relacionado: []
+ai_tags: [comida, familia]
+ai_category: personal
+ai_summary: Cena con Rosa y Josselin en el restaurante Dana, donde esperaron 10 minutos sin ser atendidos, por lo que se fueron al Marbella.
+ai_importance: 2
+ai_key_topics: []
+ai_related: ['[[2026-07-06]]']
+ai_classified_at: '2026-07-06T22:10:42.736314+00:00'
 ---
 Hoy fui a cenar con rosa y Josselin, fuimos al Dana y estuvimos esperando como 10 minutos y no nos atendían, literal a los 9 minutos llegó un grupo y se sentaron enfrente de nosotros, no más se sentaron y les llevaron carta y a nosotros no nos llevaron ni carta en ese momento yo me pare y le dije a las patojas que nos fuéramos, eso que mi Josselin levantó varias veces la mano antes para que nos atendieran pero ni la prestaron atención y yo le había dicho que no levantará la mano, por esa razón no volveré nunca al Dana porque eso no se vale, entonces mejor nos fuimos al Marbella 
 
 La razón por la que ya no voy al Dana restaurante 
+
+> [!abstract]- Notas relacionadas
+> [[2026-07-06]]

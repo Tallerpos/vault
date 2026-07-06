@@ -5095,3 +5095,10 @@
 [2026-07-06 16:08:18] PROCESSING: /opt/vault/Sync/Diario/2026-07-06.md
 [2026-07-06 16:08:18]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-06 16:08:18] SKIPPED (classifier decision)
+[2026-07-06 16:10:40] SKIPPED (filter): /opt/vault/Sync/2026-07-05.md
+[2026-07-06 16:10:40] PROCESSING: /opt/vault/Sync/Diario/2026-07-06.md
+[2026-07-06 16:10:41]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-06 16:10:41] SKIPPED (classifier decision)
+[2026-07-06 16:10:41] PROCESSING: /opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md
+[2026-07-06 16:10:42]   {"status": "success", "action": "classified", "tags": ["comida", "familia"], "category": "personal", "summary_length": 128, "key_topics_count": 0, "related_count": 1, "user_correction_detected": false}
+[2026-07-06 16:10:42] ✅ SUCCESS [comida, familia] related=1
