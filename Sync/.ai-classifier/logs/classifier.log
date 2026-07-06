@@ -4350,3 +4350,6 @@
 2026-07-06 16:06:40,641 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-06.md
 2026-07-06 16:06:42,500 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
 2026-07-06 16:06:42,518 - INFO - Success: /opt/vault/Sync/Diario/2026-07-06.md → tags=['comida', 'familia'], cat=personal, related=0
+2026-07-06 16:07:29,916 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-06.md
+2026-07-06 16:07:31,572 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
+2026-07-06 16:07:31,587 - INFO - Success: /opt/vault/Sync/Diario/2026-07-06.md → tags=['comida', 'familia'], cat=personal, related=0
