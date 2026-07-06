@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-05T22:37:47.912114+00:00",
+  "last_updated": "2026-07-06T22:05:53.318631+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -27,19 +27,19 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 7,
-      "successes": 8,
+      "count": 8,
+      "successes": 9,
       "corrections": 2,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-05T03:12:35.870896+00:00",
+      "last_seen": "2026-07-06T22:05:53.315412+00:00",
       "category": "personal"
     },
     "comida": {
-      "count": 8,
-      "successes": 8,
+      "count": 9,
+      "successes": 9,
       "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-05T03:12:35.870896+00:00",
+      "last_seen": "2026-07-06T22:05:53.315412+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -186,7 +186,7 @@
     "clasificacion__deepseek": 1,
     "automatizacion__inteligencia-artificial": 10,
     "deepseek-api__inteligencia-artificial": 3,
-    "comida__familia": 5,
+    "comida__familia": 6,
     "cliente__diseno": 2
   },
   "corrections": [
@@ -321,16 +321,6 @@
     }
   ],
   "successful_examples": [
-    {
-      "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
-      "tags": [],
-      "category": "personal",
-      "summary": "Nota sin contenido suficiente para clasificar.",
-      "importance": 1,
-      "score": 0.5,
-      "user_verified": false,
-      "timestamp": "2026-07-05T22:22:22.739574+00:00"
-    },
     {
       "file": "/opt/vault/Sync/Diario/2026-07-04_1.md",
       "tags": [],
@@ -520,6 +510,19 @@
       "score": 0.5,
       "user_verified": false,
       "timestamp": "2026-07-05T22:37:47.912096+00:00"
+    },
+    {
+      "file": "/opt/vault/Sync/Diario/2026-07-06.md",
+      "tags": [
+        "comida",
+        "familia"
+      ],
+      "category": "personal",
+      "summary": "Cena con Rosa y Josselin en el restaurante Dana, donde esperaron 10 minutos sin ser atendidos.",
+      "importance": 2,
+      "score": 1.196,
+      "user_verified": false,
+      "timestamp": "2026-07-06T22:05:53.318616+00:00"
     }
   ]
 }
