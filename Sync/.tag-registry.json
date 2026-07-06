@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-06T22:05:53.318631+00:00",
+  "last_updated": "2026-07-06T22:06:42.514918+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -27,19 +27,19 @@
       "category": "uncategorized"
     },
     "familia": {
-      "count": 8,
-      "successes": 9,
+      "count": 9,
+      "successes": 10,
       "corrections": 2,
       "first_seen": "2026-07-04T23:23:08.319491Z",
-      "last_seen": "2026-07-06T22:05:53.315412+00:00",
+      "last_seen": "2026-07-06T22:06:42.510798+00:00",
       "category": "personal"
     },
     "comida": {
-      "count": 9,
-      "successes": 9,
+      "count": 10,
+      "successes": 10,
       "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-06T22:05:53.315412+00:00",
+      "last_seen": "2026-07-06T22:06:42.510798+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -186,7 +186,7 @@
     "clasificacion__deepseek": 1,
     "automatizacion__inteligencia-artificial": 10,
     "deepseek-api__inteligencia-artificial": 3,
-    "comida__familia": 6,
+    "comida__familia": 7,
     "cliente__diseno": 2
   },
   "corrections": [
@@ -520,9 +520,9 @@
       "category": "personal",
       "summary": "Cena con Rosa y Josselin en el restaurante Dana, donde esperaron 10 minutos sin ser atendidos.",
       "importance": 2,
-      "score": 1.196,
+      "score": 1.218,
       "user_verified": false,
-      "timestamp": "2026-07-06T22:05:53.318616+00:00"
+      "timestamp": "2026-07-06T22:06:42.514896+00:00"
     }
   ]
 }
