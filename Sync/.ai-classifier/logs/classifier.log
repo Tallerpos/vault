@@ -4358,3 +4358,4 @@
 2026-07-06 16:10:41,270 - INFO - Classifying: /opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md
 2026-07-06 16:10:42,734 - INFO - API call successful. Tags: ['comida', 'familia'], Category: personal
 2026-07-06 16:10:42,748 - INFO - Success: /opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md → tags=['comida', 'familia'], cat=personal, related=1
+2026-07-06 16:11:29,983 - INFO - Skipped (no significant change): /opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md
