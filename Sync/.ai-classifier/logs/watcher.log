@@ -5108,3 +5108,4 @@
 [2026-07-06 23:25:35] SKIPPED (filter): /opt/vault/Sync/Sin título.md
 [2026-07-06 23:25:35] Processing retry queue...
 [2026-07-06 23:25:35]   RETRY: {"status": "empty", "message": "No items in retry queue"}
+[2026-07-06 23:31:30] SKIPPED (filter): /opt/vault/Sync/Sin título.md
