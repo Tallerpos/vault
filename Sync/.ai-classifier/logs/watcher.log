@@ -5105,3 +5105,6 @@
 [2026-07-06 16:11:29] PROCESSING: /opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md
 [2026-07-06 16:11:30]   {"status": "skipped", "reason": "no significant change"}
 [2026-07-06 16:11:30] SKIPPED (classifier decision)
+[2026-07-06 23:25:35] SKIPPED (filter): /opt/vault/Sync/Sin título.md
+[2026-07-06 23:25:35] Processing retry queue...
+[2026-07-06 23:25:35]   RETRY: {"status": "empty", "message": "No items in retry queue"}
