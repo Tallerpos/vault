@@ -312,6 +312,21 @@ class NoteClassifier:
             return [tags]
         return list(tags)
 
+    def _is_genuine_correction(self, auto_tags, existing_tags):
+        """Detecta si es corrección REAL del usuario o solo variación de re-clasificación.
+        Usa Jaccard similarity: si >50% solapamiento, es probable re-clasificación, NO corrección."""
+        if not existing_tags:
+            return False
+        if not auto_tags:
+            return bool(existing_tags)
+        set_a = set(t.lower() for t in auto_tags)
+        set_b = set(t.lower() for t in existing_tags)
+        union = set_a | set_b
+        if not union:
+            return False
+        jaccard = len(set_a & set_b) / len(union)
+        return jaccard < 0.5
+
     # ── Prompt building ──────────────────────────────────────────
 
     def _build_system_prompt(self):
@@ -598,7 +613,7 @@ class NoteClassifier:
 
             # Detectar correcciones del usuario
             corrected = False
-            if already_classified and existing_tags:
+            if already_classified and self._is_genuine_correction(validated['tags'], existing_tags):
                 corrected = self.tag_manager.detect_and_register_correction(
                     validated['tags'], existing_tags, str(file_path)
                 )
