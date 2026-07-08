@@ -575,6 +575,7 @@ class NoteClassifier:
 
             # Check si ya fue clasificada (usa ai_classified_at como señal definitiva,
             # NO bool(ai_tags) porque [] vacío es clasificación válida pero falsy)
+            existing_tags = self._get_existing_ai_tags(content)
             already_classified = 'ai_classified_at' in frontmatter
             if already_classified:
                 cached_body = self._read_body_cache(file_path)
