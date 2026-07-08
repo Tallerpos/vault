@@ -628,6 +628,12 @@ class NoteClassifier:
             # Extraer metadata del filename
             filename_meta = self._extract_filename_meta(file_path)
 
+            # Rate limiting: evitar gastos inesperados de API
+            if not self.rate_limiter.allow():
+                remaining = self.rate_limiter.remaining()
+                self.logger.warning(f'Rate limit reached. {remaining} slots remaining this hour. Skipping: {file_path}')
+                return {'status': 'skipped', 'reason': 'rate limit reached'}
+
             # Llamar a la API
             self.logger.info(f'Classifying: {file_path}')
             classification = self.api_client.classify(

@@ -26,8 +26,11 @@
     "correction_learning": true,
     "max_recent_corrections": 3
   },
+  "rate_limit": {
+    "max_per_hour": 30
+  },
   "linking": {
-    "min_score": 0.30,
+    "min_score": 0.35,
     "max_links": 5,
     "weights": {
       "tag_jaccard": 0.40,
