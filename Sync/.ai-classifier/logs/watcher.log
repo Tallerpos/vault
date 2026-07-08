@@ -5123,3 +5123,6 @@
 [2026-07-07 19:35:49] ✅ SUCCESS [comida] related=1
 [2026-07-07 19:35:49] Processing retry queue...
 [2026-07-07 19:35:49]   RETRY: {"status": "empty", "message": "No items in retry queue"}
+[2026-07-07 19:36:36] PROCESSING: /opt/vault/Sync/Diario/2026-07-07.md
+[2026-07-07 19:36:36]   {"status": "skipped", "reason": "no significant change"}
+[2026-07-07 19:36:36] SKIPPED (classifier decision)
