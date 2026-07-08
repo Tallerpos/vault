@@ -573,9 +573,9 @@ class NoteClassifier:
                 self.logger.info(f'Skipped (placeholder): {file_path}')
                 return {'status': 'skipped', 'reason': 'placeholder content'}
 
-            # Check si ya fue clasificada y el body no cambió
-            existing_tags = self._get_existing_ai_tags(content)
-            already_classified = bool(existing_tags)
+            # Check si ya fue clasificada (usa ai_classified_at como señal definitiva,
+            # NO bool(ai_tags) porque [] vacío es clasificación válida pero falsy)
+            already_classified = 'ai_classified_at' in frontmatter
             if already_classified:
                 cached_body = self._read_body_cache(file_path)
                 if cached_body and not self._content_changed_significantly(cached_body, body):

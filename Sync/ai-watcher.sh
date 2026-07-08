@@ -24,15 +24,23 @@ mkdir -p "$HASH_DIR" "$(dirname "$LOG_FILE")"
 # ── Logging ──────────────────────────────────────────────
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"; }
 
-# ── Hash change detection ────────────────────────────────
-get_hash() { sha256sum "$1" 2>/dev/null | awk '{print $1}'; }
+# ── Hash change detection (body-only) ─────────────────────
+# IMPORTANTE: Hashea solo el body (sin frontmatter) para que cambios
+# en campos ai_* NO vuelvan a disparar clasificación.
+get_body_hash() {
+    # Extraer todo después del primer ---\n...\n--- block
+    awk 'BEGIN{skip=1} /^---$/ {if(skip){skip=0; next}} !skip' "$1" 2>/dev/null | sha256sum | awk '{print $1}'
+}
 
 file_changed() {
     local file="$1"
     local hash_file="$HASH_DIR/$(echo "$file" | sha256sum | awk '{print $1}')"
     local current_hash
-    current_hash=$(get_hash "$file")
+    current_hash=$(get_body_hash "$file")
     
+    if [ -z "$current_hash" ]; then
+        return 1  # No se pudo hashear, skip
+    fi
     if [ -f "$hash_file" ] && [ "$current_hash" = "$(cat "$hash_file" 2>/dev/null)" ]; then
         return 1  # No cambió
     fi
