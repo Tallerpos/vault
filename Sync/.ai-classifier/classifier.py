@@ -160,12 +160,22 @@ class NoteClassifier:
             self.config = json.load(f)
         LOG_DIR.mkdir(exist_ok=True)
         HASH_DIR.mkdir(parents=True, exist_ok=True)
+        self._rotate_log_if_needed(LOG_DIR / 'classifier.log')
         logging.basicConfig(
             filename=LOG_DIR / 'classifier.log',
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s'
         )
         self.logger = logging.getLogger(__name__)
+
+    @staticmethod
+    def _rotate_log_if_needed(log_path):
+        """Rota el log si supera 10MB sin depender de logrotate externo."""
+        try:
+            if log_path.exists() and log_path.stat().st_size > 10 * 1024 * 1024:
+                log_path.rename(log_path.with_suffix('.log.old'))
+        except OSError:
+            pass
         self.tag_manager = TagManager(
             self.config['tag_registry']['path'],
             self.config['tag_registry']['aliases'],

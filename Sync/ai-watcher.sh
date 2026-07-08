@@ -21,8 +21,15 @@ CLASSIFY_COUNTER=0
 
 mkdir -p "$HASH_DIR" "$(dirname "$LOG_FILE")"
 
-# ── Logging ──────────────────────────────────────────────
-log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"; }
+# ── Logging (auto-rotate at 10MB) ────────────────────────
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
+    # Rotación inline si el log supera 10MB
+    if [ -f "$LOG_FILE" ] && [ "$(stat -c%s "$LOG_FILE" 2>/dev/null || echo 0)" -gt 10485760 ]; then
+        mv "$LOG_FILE" "$LOG_FILE.old" 2>/dev/null || true
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Log rotated (was >10MB)" > "$LOG_FILE"
+    fi
+}
 
 # ── Hash change detection (body-only) ─────────────────────
 # IMPORTANTE: Hashea solo el body (sin frontmatter) para que cambios
