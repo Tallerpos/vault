@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-06T22:10:42.745602+00:00",
+  "last_updated": "2026-07-08T01:33:21.978591+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -35,11 +35,11 @@
       "category": "personal"
     },
     "comida": {
-      "count": 12,
-      "successes": 12,
+      "count": 13,
+      "successes": 13,
       "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-06T22:10:42.743042+00:00",
+      "last_seen": "2026-07-08T01:33:21.974913+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -512,17 +512,16 @@
       "timestamp": "2026-07-05T22:37:47.912096+00:00"
     },
     {
-      "file": "/opt/vault/Sync/Diario/2026-07-06 Ya no Dana restaurante.md",
+      "file": "/opt/vault/Sync/Diario/2026-07-07.md",
       "tags": [
-        "comida",
-        "familia"
+        "comida"
       ],
       "category": "personal",
-      "summary": "Cena con Rosa y Josselin en el restaurante Dana, donde esperaron 10 minutos sin ser atendidos, por lo que se fueron al Marbella.",
+      "summary": "Tania invitó a Abner a almorzar en el restaurante Nineth, donde comió una tortilla de harina con adobado y café.",
       "importance": 2,
-      "score": 1.253,
+      "score": 1.222,
       "user_verified": false,
-      "timestamp": "2026-07-06T22:10:42.745586+00:00"
+      "timestamp": "2026-07-08T01:33:21.978558+00:00"
     }
   ]
 }
