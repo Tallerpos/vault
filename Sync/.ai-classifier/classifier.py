@@ -19,6 +19,7 @@ import hashlib
 import logging
 import fcntl
 import tempfile
+import time
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -34,6 +35,30 @@ HASH_DIR = Path(__file__).parent / 'cache' / 'hashes'
 RETRY_QUEUE_PATH = Path(__file__).parent / 'cache' / 'retry_queue.json'
 
 # Placeholders que indican nota vacía — NO gastar API en estos
+# ── Rate Limiter ───────────────────────────────────────────
+class RateLimiter:
+    """Limita clasificaciones a max_per_hour por hora.
+    Previene gastos inesperados de API por loops o bugs."""
+    def __init__(self, max_per_hour=30):
+        self.max_per_hour = max_per_hour
+        self.history = []
+
+    def allow(self):
+        now = time.time()
+        cutoff = now - 3600
+        self.history = [t for t in self.history if t > cutoff]
+        if len(self.history) >= self.max_per_hour:
+            return False
+        self.history.append(now)
+        return True
+
+    def remaining(self):
+        now = time.time()
+        cutoff = now - 3600
+        self.history = [t for t in self.history if t > cutoff]
+        return max(0, self.max_per_hour - len(self.history))
+
+
 PLACEHOLDERS = {
     'escribe aquí tu nota.',
     'escribe aqui tu nota.',
@@ -147,6 +172,8 @@ class NoteClassifier:
             self.config.get('learning', {})
         )
         self.api_client = DeepSeekClient(self.config['api'])
+        max_rate = self.config.get('rate_limit', {}).get('max_per_hour', 30)
+        self.rate_limiter = RateLimiter(max_per_hour=max_rate)
         self.yaml_updater = YAMLUpdater(prefix=self.config['classification']['prefix'])
         self.link_finder = LinkFinder(
             self.config['tag_registry']['path'],
