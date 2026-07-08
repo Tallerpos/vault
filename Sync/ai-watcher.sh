@@ -92,8 +92,10 @@ classify_file() {
         return
     fi
     
-    # Arreglar permisos proactivamente
-    sudo chown abner:abner "$file" 2>/dev/null || true
+    # Arreglar permisos proactivamente (falla silenciosa si no hay sudo)
+    if command -v sudo &>/dev/null; then
+        sudo chown abner:abner "$file" 2>/dev/null || true
+    fi
     
     # Verificar cambio real
     if ! file_changed "$file"; then
@@ -170,8 +172,16 @@ trap cleanup EXIT
 # ── Main ─────────────────────────────────────────────────
 log "AI Watcher v5.0 started..."
 
-# Fix permisos globales al inicio
-sudo chown -R abner:abner "$VAULT_DIR" 2>/dev/null || true
+# Validar que DEEPSEEK_API_KEY esté configurada
+if [ -z "${DEEPSEEK_API_KEY:-}" ]; then
+    log "❌ CRITICAL: DEEPSEEK_API_KEY no está configurada. Revisa /etc/ai-classifier.env"
+    log "El watcher se iniciará igual, pero las clasificaciones fallarán hasta que se configure."
+fi
+
+# Fix permisos globales al inicio (falla silenciosa si no hay sudo)
+if command -v sudo &>/dev/null; then
+    sudo chown -R abner:abner "$VAULT_DIR" 2>/dev/null || true
+fi
 
 inotifywait -m -r "$VAULT_DIR" \
     --exclude '\.(git|optimizer|silverbullet|ai-classifier|tag-registry)|Templates/' \
