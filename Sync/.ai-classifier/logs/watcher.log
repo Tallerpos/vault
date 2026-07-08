@@ -5118,3 +5118,8 @@
 [2026-07-07 19:34:58] PROCESSING: /opt/vault/Sync/Diario/2026-07-07.md
 [2026-07-07 19:35:00]   {"status": "success", "action": "classified", "tags": ["comida"], "category": "personal", "summary_length": 163, "key_topics_count": 3, "related_count": 1, "user_correction_detected": false}
 [2026-07-07 19:35:00] ✅ SUCCESS [comida] related=1
+[2026-07-07 19:35:47] PROCESSING: /opt/vault/Sync/Diario/2026-07-07.md
+[2026-07-07 19:35:49]   {"status": "success", "action": "classified", "tags": ["comida"], "category": "personal", "summary_length": 163, "key_topics_count": 0, "related_count": 1, "user_correction_detected": false}
+[2026-07-07 19:35:49] ✅ SUCCESS [comida] related=1
+[2026-07-07 19:35:49] Processing retry queue...
+[2026-07-07 19:35:49]   RETRY: {"status": "empty", "message": "No items in retry queue"}

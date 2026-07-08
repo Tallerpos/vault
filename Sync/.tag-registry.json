@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "last_updated": "2026-07-08T01:35:00.336285+00:00",
+  "last_updated": "2026-07-08T01:35:49.019348+00:00",
   "tags": {
     "inteligencia-artificial": {
       "count": 23,
@@ -35,11 +35,11 @@
       "category": "personal"
     },
     "comida": {
-      "count": 15,
-      "successes": 15,
+      "count": 16,
+      "successes": 16,
       "corrections": 4,
       "first_seen": "2026-07-04T23:23:08.319503Z",
-      "last_seen": "2026-07-08T01:35:00.332434+00:00",
+      "last_seen": "2026-07-08T01:35:49.016518+00:00",
       "category": "personal"
     },
     "prueba": {
@@ -519,9 +519,9 @@
       "category": "personal",
       "summary": "Tania invitó a Abner a almorzar en el restaurante Nineth, donde comió una tortilla de harina con adobado y café soluble, confundiendo este último con café hervido.",
       "importance": 2,
-      "score": 1.25,
+      "score": 1.262,
       "user_verified": false,
-      "timestamp": "2026-07-08T01:35:00.336267+00:00"
+      "timestamp": "2026-07-08T01:35:49.019327+00:00"
     }
   ]
 }
