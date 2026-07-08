@@ -124,11 +124,6 @@ class TagManager:
 
     def normalize_tag(self, tag):
         """Normaliza un tag usando aliases configurados."""
-        cleaned = tag.lower().strip()
-        # Remover caracteres no deseados
-        cleaned = cleaned.replace('á', 'a').replace('é', 'e').replace('í', 'i')
-        cleaned = cleaned.replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n')
-        # Wait — mantener ñ y acentos en los aliases, solo normalizar para lookup
         normalized = tag.lower().strip()
         return self.aliases.get(normalized, normalized)
 

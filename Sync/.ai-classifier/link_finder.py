@@ -13,6 +13,7 @@ Outputs Obsidian-native callout blocks instead of raw markdown.
 import os
 import json
 import re
+import yaml
 from pathlib import Path
 
 VAULT_ROOT = Path('/opt/vault/Sync')
@@ -102,7 +103,6 @@ class LinkFinder:
         if not m:
             return {}
         try:
-            import yaml
             return yaml.safe_load(m.group(1)) or {}
         except Exception:
             return {}
