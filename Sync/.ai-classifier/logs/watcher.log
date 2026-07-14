@@ -5269,3 +5269,17 @@
 [2026-07-13 21:52:18]       ^^^^
 [2026-07-13 21:52:18]   NameError: name 'self' is not defined
 [2026-07-13 21:52:18] ❌ ERROR: /opt/vault/Sync/Trabajo/Programaciones.md (status=unknown)
+[2026-07-13 21:55:49] SKIPPED (filter): /opt/vault/Sync/baloncesto.md
+[2026-07-13 21:55:49] Processing retry queue...
+[2026-07-13 21:55:49]   RETRY: Traceback (most recent call last):
+[2026-07-13 21:55:49]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 761, in <module>
+[2026-07-13 21:55:49]   RETRY:     main()
+[2026-07-13 21:55:49]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 736, in main
+[2026-07-13 21:55:49]   RETRY:     NoteClassifier().process_retry_queue()
+[2026-07-13 21:55:49]   RETRY:     ^^^^^^^^^^^^^^^^
+[2026-07-13 21:55:49]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 163, in __init__
+[2026-07-13 21:55:49]   RETRY:     self._rotate_log_if_needed(LOG_DIR / 'classifier.log')
+[2026-07-13 21:55:49]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 180, in _rotate_log_if_needed
+[2026-07-13 21:55:49]   RETRY:     self.config['tag_registry']['path'],
+[2026-07-13 21:55:49]   RETRY:     ^^^^
+[2026-07-13 21:55:49]   RETRY: NameError: name 'self' is not defined
