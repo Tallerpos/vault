@@ -7,3 +7,5 @@ obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-p
 
 Permisos para Mef en Santos tomas 
 Masculino 
+obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-puertobarrios.pdf
+
