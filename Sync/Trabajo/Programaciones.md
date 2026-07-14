@@ -1,2 +1,2 @@
 FÚTBOL
-MASCULINO SANTOS TOMAS
+[MASCULINO SANTOS TOMAS](obsidian://open?vault=Sync&file=Adjuntos%2FProgramacion-futbol-masculino-primaria-santos-tomas.pdf)
