@@ -10,3 +10,4 @@ Masculino
 obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-puertobarrios.pdf
 
 Femenino
+obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-puertobarrios.pdf
