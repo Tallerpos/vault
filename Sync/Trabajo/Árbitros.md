@@ -4,70 +4,150 @@ tags: [jde-2026, arbitros]
 
 # Árbitros — JDE 2026
 
-Oficios DDEI/OMEF 05–08
+Oficios DDEI/OMEF 05–08 · Ordenado por fecha de arbitraje
 
-## Santos Tomás
-
-Colinas II · Orozco Posada
-
-### ♂
-**📄** [Permiso ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-
-- **Alexis Connor** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 08-07 Colinas II · [ ] 17-07 Est. Municipal · [ ] 24-07 Colinas II · [ ] 31-07 Colinas II
-- **Axel Geovanny Ramos Vàsquez** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-  - [ ] 23-07 Inst. Experimental · [ ] 30-07 Colinas II
-- **Denelfer Roberto Sarceño Gutierrez** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-  - [ ] 16-07 Inst. Experimental · [ ] 17-07 Colinas II
-- **Elmer Elly De Leon Rustrian** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 15-07 Est. Municipal · [ ] 22-07 Colinas II
-- **Gustavo Adolfo Martinez Arias** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 10-07 Colinas II · [ ] 29-07 Est. Municipal
-- **José Rolando Contreras Guerra** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 09-07 Est. Municipal · [ ] 15-07 Colinas II
-- **Julio Roberto De Paz Nájera** — [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 08-07 Est. Municipal / Inst. Experimental · [ ] 29-07 Est. Municipal / Inst. Experimental
-- **Karl Steve Delva Corleto** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-  - [ ] 09-07 Inst. Experimental · [ ] 09-07 Colinas II
-- **Kevin Juventino Leal López** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-  - [ ] 16-07 Colinas II · [ ] 23-07 Colinas II
-- **Mario Miguel Tobar Ramirez** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
-  - [ ] 22-07 Inst. Experimental · [ ] 30-07 Colinas II
-- **Melvin Eduardo Contreras Jacome** — [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 24-07 Est. Municipal
-- **Omali Alexander Cordoba Gutierrez** — [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 16-07 Est. Municipal
-- **Oscar Alejandro Sajchè Osorio** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 22-07 Est. Municipal · [ ] 29-07 Colinas II
-- **Selvin Grenet Henrry Lizama** — [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 10-07 Est. Municipal
-- **Xavi Gerar Diaz Luna** — [P. ST](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [P. PB](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
-  - [ ] 23-07 Est. Municipal · [ ] 29-07 Colinas II
-
-### ♀
-**📄** [Permiso ST](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
-
-- **Aylin Haydee Cardona**
-  - [ ] 07-08 Orozco Posada
-- **Belsi Valenzuela**
-  - [ ] 17-07 Orozco Posada · [ ] 04-09 Orozco Posada
-- **Evelyn Natali Solis Iguardia**
-  - [ ] 10-07 Pasteur · [ ] 24-07 Pasteur · [ ] 31-07 Orozco Posada
-- **Jessica Xuc**
-  - [ ] 24-07 Orozco Posada
-- **Marlyn Selene Azmitia Aldana**
-  - [ ] 17-07 Pasteur · [ ] 14-08 Orozco Posada · [ ] 21-08 Orozco Posada
-- **Thania Monroy**
-  - [ ] 10-07 Orozco Posada · [ ] 28-08 Orozco Posada
+📄 ST = Santos Tomás · PB = Puerto Barrios
 
 ---
 
-## Pendientes de sede
+## 08 jul
 
-Árbitros asignados a sedes no confirmadas (Inst. Experimental, Pasteur).
+**Alexis Connor** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 08 Colinas II · [ ] 17 Est. Municipal · [ ] 24 Colinas II · [ ] 31 Colinas II
 
-- **Alexis Santiago Silva Mogollon** — [ ] 10-07 Inst. Experimental
-- **Erick Armando Molina Torres** — [ ] 08-07 Inst. Experimental
-- **Rene Humberto Escobar Palencia** — [ ] 24-07 Inst. Experimental
-- **Robin Mauricio Garcia Cabrera** — [ ] 17-07 Inst. Experimental
-- **Ruben Feliciano Guzman Monterroso** — [ ] 15-07 Inst. Experimental
+**Erick Armando Molina Torres** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 08 Inst. Experimental
+
+**Julio Roberto De Paz Nájera** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 08 Est. Municipal / Inst. Experimental · [ ] 29 Est. Municipal / Inst. Experimental
+
+---
+
+## 09 jul
+
+**José Rolando Contreras Guerra** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 09 Est. Municipal · [ ] 15 Colinas II
+
+**Karl Steve Delva Corleto** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 09 Inst. Experimental · [ ] 09 Colinas II
+
+---
+
+## 10 jul
+
+**Alexis Santiago Silva Mogollon** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 10 Inst. Experimental
+
+**Gustavo Adolfo Martinez Arias** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 10 Colinas II · [ ] 29 Est. Municipal
+
+**Selvin Grenet Henrry Lizama** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 10 Est. Municipal
+
+**Thania Monroy** — ST
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 10 Orozco Posada · [ ] 28 Orozco Posada (ago)
+
+**Evelyn Natali Solis Iguardia** — ST + ¿Pasteur?
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 10 Pasteur · [ ] 24 Pasteur · [ ] 31 Orozco Posada
+
+---
+
+## 15 jul
+
+**Elmer Elly De Leon Rustrian** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 15 Est. Municipal · [ ] 22 Colinas II
+
+**Ruben Feliciano Guzman Monterroso** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 15 Inst. Experimental
+
+---
+
+## 16 jul
+
+**Denelfer Roberto Sarceño Gutierrez** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 16 Inst. Experimental · [ ] 17 Colinas II
+
+**Kevin Juventino Leal López** — ST
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf)
+- [ ] 16 Colinas II · [ ] 23 Colinas II
+
+**Omali Alexander Cordoba Gutierrez** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 16 Est. Municipal
+
+---
+
+## 17 jul
+
+**Belsi Valenzuela** — ST
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 17 Orozco Posada · [ ] 04 Orozco Posada (sep)
+
+**Robin Mauricio Garcia Cabrera** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 17 Inst. Experimental
+
+**Marlyn Selene Azmitia Aldana** — ST + ¿Pasteur?
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 17 Pasteur · [ ] 14 Orozco Posada (ago) · [ ] 21 Orozco Posada (ago)
+
+---
+
+## 22 jul
+
+**Mario Miguel Tobar Ramirez** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 22 Inst. Experimental · [ ] 30 Colinas II
+
+**Oscar Alejandro Sajchè Osorio** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 22 Est. Municipal · [ ] 29 Colinas II
+
+---
+
+## 23 jul
+
+**Axel Geovanny Ramos Vàsquez** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 23 Inst. Experimental · [ ] 30 Colinas II
+
+**Xavi Gerar Diaz Luna** — ST + PB
+📄 [ST ♂](Adjuntos/Sede/jde/Permisos/permisos-mef-santos-tomas-masculino.pdf) · [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 23 Est. Municipal · [ ] 29 Colinas II
+
+---
+
+## 24 jul
+
+**Jessica Xuc** — ST
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 24 Orozco Posada
+
+**Melvin Eduardo Contreras Jacome** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 24 Est. Municipal
+
+**Rene Humberto Escobar Palencia** — PB
+📄 [PB ♂](Adjuntos/Sede/jde/Futbol/permisos-arbitraje-mef-puerto-barrios-masculino.pdf)
+- [ ] 24 Inst. Experimental
+
+---
+
+## 07 ago
+
+**Aylin Haydee Cardona** — ST
+📄 [ST ♀](Adjuntos/Sede/jde/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf)
+- [ ] 07 Orozco Posada
