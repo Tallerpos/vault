@@ -5,7 +5,8 @@ FÚTBOL
 Baloncesto Puerto Barrios y Santos 
 obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-puertobarrios.pdf
 
-Permisos para Mef en Santos tomas 
+Permisos para arbitraje Mef en Santos tomas 
 Masculino 
 obsidian://open?vault=Sync&file=Adjuntos%2Fprogramacion-baloncesto-santostomas-puertobarrios.pdf
 
+Femenino
