@@ -5241,3 +5241,17 @@
 [2026-07-13 21:50:14]       ^^^^
 [2026-07-13 21:50:14]   NameError: name 'self' is not defined
 [2026-07-13 21:50:15] ❌ ERROR: /opt/vault/Sync/Trabajo/Programaciones.md (status=unknown)
+[2026-07-13 21:51:14] PROCESSING: /opt/vault/Sync/Trabajo/Programaciones.md
+[2026-07-13 21:51:14]   Traceback (most recent call last):
+[2026-07-13 21:51:14]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 761, in <module>
+[2026-07-13 21:51:14]       main()
+[2026-07-13 21:51:14]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 755, in main
+[2026-07-13 21:51:14]       result = NoteClassifier().classify_note(fp)
+[2026-07-13 21:51:14]                ^^^^^^^^^^^^^^^^
+[2026-07-13 21:51:14]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 163, in __init__
+[2026-07-13 21:51:14]       self._rotate_log_if_needed(LOG_DIR / 'classifier.log')
+[2026-07-13 21:51:14]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 180, in _rotate_log_if_needed
+[2026-07-13 21:51:14]       self.config['tag_registry']['path'],
+[2026-07-13 21:51:14]       ^^^^
+[2026-07-13 21:51:14]   NameError: name 'self' is not defined
+[2026-07-13 21:51:14] ❌ ERROR: /opt/vault/Sync/Trabajo/Programaciones.md (status=unknown)
