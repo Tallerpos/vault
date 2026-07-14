@@ -22,8 +22,8 @@ relacionado: []
 
 ## Permisos
 
-| Descripción | Archivo | Estado |
-|-------------|---------|--------|
-| Arbitraje MEF — Santos Tomás (Masculino) | [Permiso](Adjuntos/Sede/Permisos/permisos-mef-santos-tomas-masculino.pdf) | ✅ Gestionado |
-| Arbitraje MEF — Santos Tomás (Femenino) | [Permiso](Adjuntos/Sede/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf) | ✅ Gestionado |
-| Puerto Barrios | _Pendiente_ | ⏳ Por gestionar |
+| Descripción                              | Archivo                                                                            | Estado          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------- | --------------- |
+| Arbitraje MEF — Santos Tomás (Masculino) | [Permiso](Adjuntos/Sede/Permisos/permisos-mef-santos-tomas-masculino.pdf)          | ✅ Gestionado    |
+| Arbitraje MEF — Santos Tomás (Femenino)  | [Permiso](Adjuntos/Sede/Permisos/permisos-arbitraje-mef-santos-tomas-femenino.pdf) | ✅ Gestionado    |
+| Puerto Barrios                           | _Pendiente_                                                                        | ⏳ Por gestionar |
