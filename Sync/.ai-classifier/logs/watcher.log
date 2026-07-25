@@ -5479,3 +5479,4 @@
 [2026-07-23 10:08:36]       ^^^^
 [2026-07-23 10:08:36]   NameError: name 'self' is not defined
 [2026-07-23 10:08:36] ❌ ERROR: /opt/vault/Sync/Trabajo/JDE-2026.md (status=unknown)
+[2026-07-25 15:43:19] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
