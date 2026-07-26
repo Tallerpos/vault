@@ -5494,3 +5494,4 @@
 [2026-07-26 12:16:05]   RETRY:     self.config['tag_registry']['path'],
 [2026-07-26 12:16:05]   RETRY:     ^^^^
 [2026-07-26 12:16:05]   RETRY: NameError: name 'self' is not defined
+[2026-07-26 16:33:24] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
