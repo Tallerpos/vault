@@ -5480,3 +5480,17 @@
 [2026-07-23 10:08:36]   NameError: name 'self' is not defined
 [2026-07-23 10:08:36] ❌ ERROR: /opt/vault/Sync/Trabajo/JDE-2026.md (status=unknown)
 [2026-07-25 15:43:19] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
+[2026-07-26 12:16:05] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
+[2026-07-26 12:16:05] Processing retry queue...
+[2026-07-26 12:16:05]   RETRY: Traceback (most recent call last):
+[2026-07-26 12:16:05]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 761, in <module>
+[2026-07-26 12:16:05]   RETRY:     main()
+[2026-07-26 12:16:05]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 736, in main
+[2026-07-26 12:16:05]   RETRY:     NoteClassifier().process_retry_queue()
+[2026-07-26 12:16:05]   RETRY:     ^^^^^^^^^^^^^^^^
+[2026-07-26 12:16:05]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 163, in __init__
+[2026-07-26 12:16:05]   RETRY:     self._rotate_log_if_needed(LOG_DIR / 'classifier.log')
+[2026-07-26 12:16:05]   RETRY:   File "/opt/vault/Sync/.ai-classifier/classifier.py", line 180, in _rotate_log_if_needed
+[2026-07-26 12:16:05]   RETRY:     self.config['tag_registry']['path'],
+[2026-07-26 12:16:05]   RETRY:     ^^^^
+[2026-07-26 12:16:05]   RETRY: NameError: name 'self' is not defined
