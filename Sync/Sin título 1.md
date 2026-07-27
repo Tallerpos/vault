@@ -8,3 +8,5 @@ NO se puede tocar `.env`, `docker-compose.dev.yml`, ni `docker-compose.prod.y
 
 - Rotar `DB_PASS`, `REDIS_PASSWORD`, `TELEGRAM_BOT_TOKEN` en prod (diferentes a dev)
 - Mover passwords inline de compose a `env_file`
+
+analiza que falta y hazme un plan para corregirlo completo lo que falta y hacer el commit de opt/tallerpos/frontend, ademas de actualizar de manera precisa todo lo neccesario que todo funcione perfectamente, siempre cumpliendo la orden de nunca inventar etc, que todo funcione a precision y seguro
