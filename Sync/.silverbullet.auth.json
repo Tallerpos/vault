@@ -1,1 +1,5 @@
-{"secret_key":"geNet+gxNoMRolMSHzkqFBxxk6oLt4Udi0ojlJQMvcM=","auth_hash":"014b2f564849a3fa1723c7ef6f5e1a869531821485bb7565789d899f05b89153","salt":"3goNCwdtb2D+cN7n+x3Hxw=="}
+{
+  "secret": "d+vZgFV6mR9qfesknFs3D1uCU7pMwI/yFV6tGzbvxGM=",
+  "config_hash": "00358868ce243675732b5b988b015d070e3f748fe915e289e6ff86664d0a5939",
+  "salt": "23vF7J1oq/g4YDqMhyiaJQ=="
+}
