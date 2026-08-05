@@ -5496,3 +5496,17 @@
 [2026-07-26 12:16:05]   RETRY: NameError: name 'self' is not defined
 [2026-07-26 16:33:24] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
 [2026-07-26 22:55:14] SKIPPED (filter): /opt/vault/Sync/Sin título 1.md
+[2026-08-05 15:51:18] PROCESSING: /opt/vault/Sync/Trabajo/JDE-2026.md
+[2026-08-05 15:51:18]   Traceback (most recent call last):
+[2026-08-05 15:51:18]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 761, in <module>
+[2026-08-05 15:51:18]       main()
+[2026-08-05 15:51:18]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 755, in main
+[2026-08-05 15:51:18]       result = NoteClassifier().classify_note(fp)
+[2026-08-05 15:51:18]                ^^^^^^^^^^^^^^^^
+[2026-08-05 15:51:18]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 163, in __init__
+[2026-08-05 15:51:18]       self._rotate_log_if_needed(LOG_DIR / 'classifier.log')
+[2026-08-05 15:51:18]     File "/opt/vault/Sync/.ai-classifier/classifier.py", line 180, in _rotate_log_if_needed
+[2026-08-05 15:51:18]       self.config['tag_registry']['path'],
+[2026-08-05 15:51:18]       ^^^^
+[2026-08-05 15:51:18]   NameError: name 'self' is not defined
+[2026-08-05 15:51:18] ❌ ERROR: /opt/vault/Sync/Trabajo/JDE-2026.md (status=unknown)
